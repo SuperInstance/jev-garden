@@ -1,15 +1,15 @@
 {
   "charter": "jev-garden pre-registration seal",
   "sealed_at_iso": "2026-09-28T07:24:39Z",
-  "sealed_note": "top block = current seal (v14); seal_history is append-only (v9 restored from the v9 top-block seal during the v10 hand-reseal)",
+  "sealed_note": "top block = current seal (v15); seal_history is append-only (v9 restored from the v9 top-block seal during the v10 hand-reseal)",
   "predictions": {
     "path": "docs/PREDICTIONS.md",
-    "sha256": "3234563980addaea211b7e85dacbb9d00382b8cd07fb3e7762f6a1f2c8b648db",
-    "mtime_ns": 1790624468883398286,
-    "mtime_s": "1790624468883",
-    "size": 35247,
-    "v": 14,
-    "note": "addendum A9 verdicts of record (P-A9 PASS 4/4) + receipt provenance note (v12 run of record; committed receipt is the v13 re-run, measured bytes identical)"
+    "sha256": "1298981f546ee3976d7cfda0b3fe764c8b3dde13ac0aee4b2781b81c73f7f33c",
+    "mtime_ns": 1790631810836922379,
+    "mtime_s": "1790631810",
+    "size": 46253,
+    "v": 15,
+    "note": "addendum A10 (P-A10 fresh-everywhere trial mode) registered pre-run; A10 runs execute under v15"
   },
   "design": {
     "path": "docs/DESIGN.md",
@@ -109,6 +109,13 @@
       "mtime_ns": 1790624468883398286,
       "size": 35247,
       "note": "A9 verdict section + receipt provenance note (v12 run of record, committed receipt is the v13 re-run, measured bytes identical; e_a8 receipt of record stays the committed v10 run)"
+    },
+    {
+      "v": 15,
+      "sha256": "1298981f546ee3976d7cfda0b3fe764c8b3dde13ac0aee4b2781b81c73f7f33c",
+      "mtime_ns": 1790631810836922379,
+      "size": 46253,
+      "note": "addendum A10 (P-A10 fresh-everywhere trial mode, soil-level opt-in, risk priced) registered pre-run; A10 runs execute under v15"
     }
   ]
 }

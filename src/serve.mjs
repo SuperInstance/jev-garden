@@ -36,6 +36,10 @@ export function loadWeave(artifact) {
     loaded.field = new SenseTablePrior(artifact.arms.field);
     loaded.ens3 = artifact.hyper.ens3 ?? { wh: 0.4, wq: 0.4, wf: 0.2 };
     loaded.fresh = artifact.hyper?.fresh?.serve_with_fresh === true;
+    // A10 (addendum A10, seal v15): the fresh-everywhere trial mode — the A9
+    // fresh law with the gate REMOVED, opt-in only. Zero new constants: the
+    // mode has no threshold at all. Artifacts without the flag are untouched.
+    loaded.freshEverywhere = artifact.hyper?.fresh?.fresh_everywhere === true;
   }
   return loaded;
 }
@@ -74,9 +78,28 @@ export function judge(loaded, state, questions, judged) {
   // (byte-identical); gate-open serves priorCounted rebuilt from the
   // SERIALIZED aggregate — the P-G2d law of record (lambda* = 0: all fresh
   // memory on the open branch). Grow-as-used: the lane re-serializes
-  // arms.field from its own watched stream before serving. Branch order:
-  // A7 serve_with_field -> A9 serve_with_fresh -> A8 hardness_gate -> v1.
+  // arms.field from its own watched stream before serving.
+  // A10 (P-A10, addendum A10, seal v15): the FRESH-EVERYWHERE trial mode —
+  // the A9 law with the gate removed, opt-in only
+  // (hyper.fresh.fresh_everywhere = true). A9 priced the gap it leaves:
+  // ungated fresh-everywhere = 298/343 on shift-H2 vs 252 gated (+46 net rows
+  // the gate stays closed on); characterization PROVED no train-only H* can
+  // capture that gap without reopening the saturated slice (gap rows and
+  // protection rows INTERLEAVE in top.p; the train walk-forward objective is
+  // exactly flat in H* — 569/582 at every grid point — so a compile-time
+  // calibration cannot rank thresholds). The selector is therefore SOIL-LEVEL
+  // (the A6 law: hardness is a property of the world, not the row): the lane
+  // that has registered its soil hard opts in, with the saturated risk
+  // PRICED at the A9 receipt pin (eval slice: 0.9382 vs v1 0.9537, flips
+  // -6/+2 — archived memory still damages new soil, the P-G2b pattern).
+  // Serves priorCounted from the SERIALIZED aggregate on EVERY row (the exact
+  // A9 payload, gate removed; zero new constants — the mode has no
+  // threshold). Registered branch order: A7 serve_with_field -> A10
+  // fresh_everywhere -> A9 serve_with_fresh -> A8 hardness_gate -> default
+  // v1 (strictest-freshest wins among fresh modes; A7's ens3 blend kept
+  // first for byte-compat with the A7-A9 registered order).
   // Modes: default = v1 law; `serve_with_field` = unconditional ens3 (A7);
+  // `fresh_everywhere: true` = the fresh-everywhere trial (A10, opt-in);
   // `serve_with_fresh: true` = the registered gated fresh law (A9, opt-in);
   // `hardness_gate: true` = the registered gated blend (A8, opt-in).
   let probs;
@@ -85,6 +108,8 @@ export function judge(loaded, state, questions, judged) {
     const { wh, wq, wf } = loaded.ens3;
     probs = {};
     for (const o of OPS) probs[o] = wh * ph[o] + wq * pq[o] + wf * pf[o];
+  } else if (loaded.field && loaded.freshEverywhere === true) {
+    probs = loaded.field.priorCounted(tokens.join('|'));
   } else if (loaded.field && loaded.fresh === true) {
     const e2 = ensemble(ph, pq, 0.5); // gate-closed path is THIS expression
     if (argmax(e2).p >= ESCALATE_BELOW) {

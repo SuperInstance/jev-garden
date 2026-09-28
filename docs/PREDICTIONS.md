@@ -554,3 +554,172 @@ freshness in production).
 > v12-run receipt is the seal version stamp, as designed). The e_a8
 > receipt of record remains the committed v10 run (tip 1ac2699bffe07d6d);
 > its A9-law regression re-run is documented above, not re-committed.
+
+## Addendum A10 (2026-09-28, BEFORE the A10 run) — P-A10: the fresh-everywhere trial mode (soil-level opt-in, risk priced)
+
+A9's verdict priced the gap its gate leaves open: ungated fresh-everywhere =
+298/343 (0.8688, the P-G2d pin) vs 252/343 gated — 46 NET rows where the gate
+STAYS CLOSED but fresh memory would still pay. This addendum registers A9's
+successor BEFORE any A10 run. Runs execute under seal v15.
+
+### Characterization of the 46 gap rows (pre-registration analysis; receipted as A10 contrast rows, no verdicts)
+
+Per-row anatomy of the 303 shift-H2 gate-closed rows (A9 battery protocol,
+grow-as-used: watch H1 per ledger, serve H2; priorCounted from the live H1
+table):
+
+- GROSS gains 50 rows (gate closed, ens2 wrong, fresh right): ALL 50 are
+  EXACT-CONTEXT rows in the fresh H1 table (fallback 0), and on all 50 the
+  fresh argmax IS the label. Labels: TICK 36 / BIND 14; the ens2 argmax is
+  EFFECT on 50/50; transitions BIND->TICK 21, VIEW->TICK 15, TICK->BIND 13 —
+  the injected echo rhythm of the shift family (mid-stream readout/collapse
+  cycles that do not occur in train soil). ens2 is CONFIDENTLY wrong there
+  (top.p 0.5560-0.8514, median 0.6595) — its EFFECT-heavy continuation is a
+  train bias; the fresh table memorized the echo.
+- Gross losses 4 rows (gate closed, ens2 right, fresh wrong): all EFFECT
+  rows, exact-context, top.p 0.7890-0.8514 — H1 saw those windows continue
+  differently (ambiguity), the gate saves exactly these.
+- Other closed rows 249 (fresh and ens2 agree on 243; 20 fallback rows).
+- Accounting: everywhere-on-closed = 226 + 50 - 4 = 272; open-row fresh hits
+  26/40; everywhere total 272 + 26 = 298 = the pin; gated 226 + 26 = 252.
+- THE INTERLEAVE PROOF: protection rows' top.p range [0.7890, 0.8514] is
+  NESTED INSIDE the gap rows' range [0.5560, 0.8514]; other-closed rows span
+  [0.5777, 0.8514]. NO row-level threshold separates gain from loss: any H*
+  low enough to open the gap rows (H* <= 0.5560) opens the 11 damaging eval
+  rows too (eval damage -4 hits, the A9 measured cost); higher H* captures
+  only part of the gap (H*=0.65 -> 270, H*=0.70 -> 290, H*=0.75 -> 300 —
+  above everywhere only because the 4 protection rows stay closed — but
+  costs the same -4 on eval; H* >= 0.80 -> 298 everywhere-equivalent).
+  Full frontier receipted as a contrast row.
+- The train-only calibration counterfactual (compile-time legal: train soil
+  only): walk-forward over the 12 train ledgers (watch H1, serve H2, gated
+  fresh law) gives 569/582 (0.9777) at EVERY H* in {0.40, 0.45, ..., 0.95,
+  1.01} — the objective is EXACTLY FLAT in H*. On the only soil compile time
+  sees, fresh H1-memory and ens2 agree row-for-row (the gate is a no-op on
+  saturated soil), so no registered derivation from train soil can rank
+  threshold values, let alone transfer them. Mechanism (a) — a compile-time
+  calibration of H* — is IMPOSSIBLE-BY-DERIVATION on this soil, and the
+  row-level signal is proven unable to separate the soils (interleave
+  proof). The separating variable is the SOIL (echo rhythm present or not),
+  which does not exist at compile time (shift_family_gen.py built it after
+  training, receipted). This is the A6 law again, now with a proof shape:
+  hardness is a property of the WORLD, not the row.
+- Saturated cost of fresh-everywhere, priced from the A9 receipts: on the
+  sealed eval slice the compile-time train aggregate served on ALL 259 rows
+  scores 243/259 = 0.9382 = micro 938224 — EXACTLY the A9 receipt's
+  eval fresh_micro (structural: on the 248 gate-closed eval rows,
+  fresh(train) == ens2 hit-for-hit in aggregate, so gated == everywhere ==
+  243). The A9 receipt therefore already pins the everywhere number; flips
+  vs ens2 are -6/+2 (net -4 = -0.0154). Provenance audit note (append-only,
+  honest): the committed A9 receipt's eval_optin_contrast flip FIELDS carry
+  swapped labels (w2r=6/r2w=2 is inconsistent with the same row's pinned
+  micros 953668/938224; the A9 verdict text of record "-6/+2" is the
+  consistent reading; the A9 receipt of record stays untouched). A10
+  receipts label flips explicitly.
+
+### Design choice (ONE mechanism taken)
+
+(a) compile-time calibration of H*: REFUTED pre-run by the flat train
+objective + the interleave proof (above) — receipted, not shipped, and no
+threshold surgery on the A9 mode (the A9 gate keeps H* = ESCALATE_BELOW =
+0.55 byte-for-byte). (b) is taken: the FRESH-EVERYWHERE TRIAL MODE — the A9
+fresh law with the gate removed, opt-in only. The selector is SOIL-LEVEL and
+HONEST about it: the lane that has registered its soil hard (the P-G2d
+hardness gate — pooled frozen-head accuracy < 0.90, a PREDICTION-accuracy
+meter per the L2 law) — or is deliberately trialing — sets the flag and
+accepts the priced saturated risk. The gap closes because the trial stops
+pretending a per-row confidence signal can do a soil-level job.
+
+### The registered law (serve, opt-in only; default untouched)
+
+- Flag: `hyper.fresh.fresh_everywhere === true` (explicit opt-in), riding the
+  artifact hyper (set at compile / re-serialization) or the loaded handle;
+  both paths MUST produce identical bytes. NO new arm, NO schema change, NO
+  new numeric constant — the mode has no threshold at all; the compiled
+  weave-v2 artifact bytes are UNCHANGED (artifact_sha256 stays pinned to the
+  e_w2 receipt 1bbc4fa7cc7a69726db28378507dafad9679d391ff9555bee98d110fe5902519).
+- Serve branch: `loaded.field && loaded.freshEverywhere` -> probs =
+  `loaded.field.priorCounted(tokens.join('|'))` — the EXACT A9 payload
+  (priorCounted over the SERIALIZED arms.field.observed; the P-G2d law of
+  record, lambda* = 0) served on EVERY row. The escalate organ is unchanged
+  and mode-independent: escalate = (top.p of the SERVED distribution) <
+  ESCALATE_BELOW — an everywhere judgment escalates exactly when the memory
+  itself is not confident.
+- Registered branch order (total, for artifacts setting multiple opt-ins):
+  A7 serve_with_field -> A10 fresh_everywhere -> A9 serve_with_fresh -> A8
+  hardness_gate -> default v1. (Strictest-freshest wins among fresh modes;
+  A7's ens3 blend stays first for byte-compatibility with the A7-A9
+  registered order. Artifacts setting only A9/A8 flags, or none, are
+  byte-unchanged by construction — verified in P-A10a.)
+- Default law untouched: artifacts without the flag behave exactly as the
+  A9-era law (v1 default everywhere). Grow-as-used semantics unchanged:
+  freshness is temporal, not architectural — the everywhere law consumes
+  whatever the lane's own watching produced (the re-serialized live table),
+  or the compile-time train aggregate if the lane has not re-serialized.
+
+### Protocols of record
+
+- Wire protocol (P-A10a): serve.judge() driven exactly as P-A9a — state.context
+  = the K rows before the target, judged = the target row (tokens include the
+  judged row's channel; the A8/A9 wire convention).
+- Battery protocol (P-A10b/c): the P-G2d/P-A9c convention — the row under
+  judgment contributes NO token (judged-free serve calls; priorCounted over
+  the pre-judgment window), per-ledger windows (pipeline-v2), grow-as-used on
+  the shift family.
+
+### Predictions (pre-registered under seal v15)
+
+- **P-A10a (wire mechanics + default safety + precedence)**: over every
+  serve.judge() call on the two soils of record (sealed eval slice n=259;
+  shift-family H2 n=343; wire protocol, full-response JSON): (i) with the
+  everywhere opt-in ON, every response is byte-identical to the registered
+  everywhere reference expression (priorCounted over the serve tokens —
+  0 mismatches); (ii) with the flag ABSENT, all 602 calls are byte-identical
+  to the pre-A10 v1-law reference (the default is untouched); (iii) the
+  artifact-hyper opt-in path and the loaded-handle opt-in path produce
+  identical bytes (sampled on both soils); (iv) precedence: an artifact
+  setting BOTH fresh_everywhere and serve_with_fresh serves EVERYWHERE on
+  every sampled call (A10 > A9 in the registered order). PASS iff zero
+  mismatches in all four.
+- **P-A10b (shift-H2 gain — the gap closed)**: battery protocol, grow-as-used
+  (watch H1 per shift ledger, re-serialize arms.field, serve H2 under the
+  everywhere opt-in): pooled everywhere top-1 == 298/343 EXACTLY (the
+  P-G2d/A9 ungated pin reproduced through the serve path — rebuild
+  faithfulness; any other number is a wire divergence) AND 100*(everywhere_hits
+  - ens2_hits) >= 343 (ens2 pinned to 242, the P-A8c/A9 receipt number).
+  PASS iff both. Registered cost note: everywhere pays 4 protection rows on
+  shift (298 < the 302 an oracle-gated everywhere would score) — the priced
+  price of dropping the row gate, receipted as contrast.
+- **P-A10c (saturated cost — the priced risk, pinned)**: on the sealed eval
+  slice (battery protocol; memory = the compile-time train aggregate),
+  everywhere top-1 micro == 938224 (243/259 = 0.9382 — the A9 receipt pin)
+  AND ens2 micro == 953668 (247/259, the P-W2b pin). PASS iff both pins
+  hold. Interpretation of record: the saturation risk of fresh-everywhere is
+  CONFIRMED at -0.0154 (net -4 hits: flips -6/+2) — the mode ships opt-in
+  ONLY, the served default stays the v1 law, and the trial's contract is
+  "price paid, receipt published". Honest FAIL = a pin moves (a real
+  divergence receipt).
+- **P-A10d (twin + battery green)**: (i) P-W2a re-verified under seal v15 —
+  weave-core-v2 JS == Python byte-identical (9960B == 9960B); the compiled
+  artifact stays pinned to the e_w2 receipt; (ii) the grow-as-used live
+  tables remain byte-identical to the Python twin's fresh tables (4/4
+  ledgers) and live re-serialization stays byte-deterministic (4/4) — A10
+  adds zero new serialized state; (iii) the A9 experiment re-runs under the
+  A10 law and reproduces every MEASURED byte of receipts/e_a9.jsonl —
+  identical after stripping the seal version stamp and the chain row_hashes
+  (row_hash = sha256 over the stamped row by construction, so the stamp
+  change propagates into the hashes; every measured field must match) — the
+  A9 verdict of record stands unchanged; the committed A9 receipt of record
+  is restored byte-for-byte after the check (append-only); (iv) smoke 9/9;
+  (v) selftest green. PASS iff all five hold.
+
+Contrast receipts (no gates): the full gap anatomy (per-ledger counts, top.p
+profiles, transition mix, exact-ctx coverage — the numbers cited above); the
+H* frontier table on both soils (the interleave proof in numbers, incl. the
+[0.50, 0.55) 4-row eval damage band and the H*=0.75 point 300/243); the
+train-only calibration flatness receipt (569/582 at every grid point —
+mechanism (a) impossible-by-derivation); the 4 shift protection rows
+identified (the row gate's only remaining value); everywhere's open-row vs
+closed-row hit decomposition on both soils; the A9 eval-contrast field-label
+audit (w2r/r2w swapped in the committed A9 receipt row; verdict text of
+record correct; both A9 micro pins reproduce exactly).
