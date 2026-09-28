@@ -3,15 +3,39 @@
   "sealed_at_iso": "2026-09-28T07:24:39Z",
   "predictions": {
     "path": "docs/PREDICTIONS.md",
-    "sha256": "712b5497041521f54ca98787fac96469bb1c6af378bc34a97d654c99917372a6",
-    "mtime_ns": 1790580265116256011,
-    "size": 4246
+    "sha256": "577fe99014e2b333665eee7da62c27ae2f24f9ceb2793bdae8db81ca0f709d33",
+    "mtime_ns": 1790581576779731817,
+    "mtime_s": "1790581576",
+    "size": 8780,
+    "v": 4,
+    "note": "addendum A3: pipeline v2 per-file; corrected re-runs supersede run-1"
   },
   "design": {
     "path": "docs/DESIGN.md",
     "sha256": "4a2954afcb14363075d86c8fa1cc6bc2e7ebdff34e323a75953d67f6364322a3",
     "mtime_ns": 1790580226506206302,
-    "size": 9521
+    "size": 9521,
+    "mtime_s": "1790580226"
   },
-  "rule": "experiments verify these seals at startup; mismatch -> exit 2 (fail-closed). sealed BEFORE first run."
+  "rule": "experiments verify these seals at startup; mismatch -> exit 2 (fail-closed). sealed BEFORE first run.",
+  "seal_history": [
+    {
+      "v": 1,
+      "sha256": "712b5497041521f54ca98787fac96469bb1c6af378bc34a97d654c99917372a6",
+      "mtime_ns": 1790580265116256011,
+      "note": "original pre-run seal (e_g1 run 1 executed under v1)"
+    },
+    {
+      "v": 2,
+      "sha256": "2f536e514c3f8462cdd3bfb192f99eba83ea892b459a6a7c780db6ed4a2cc9b4",
+      "mtime_s": "1790580918",
+      "note": "addendum A1 (P-G2b/P-G4b runs executed under v2)"
+    },
+    {
+      "v": 3,
+      "sha256": "4e9844691ea3426799f721d96a70bc0f7c9501ffe84365253a908d76b11bf602",
+      "mtime_s": "1790581133",
+      "note": "addendum A2 (P-G2c executed under v3)"
+    }
+  ]
 }

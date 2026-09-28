@@ -1,0 +1,70 @@
+{
+  "run": "e_g1_grow",
+  "measured_timings": {
+    "grow_ms": 26.34,
+    "compile_ms": 636.509,
+    "serve_ms_per_judgment": 0.0555
+  },
+  "note": "timings are measurements, kept out of the deterministic chain",
+  "pg1": {
+    "a_hash_gt_field": true,
+    "b_qthe_ge_chance": true,
+    "c_hash_beats_bigram_by_003": true,
+    "numbers": {
+      "bigram": 0.9305019305019305,
+      "qthe": 0.9266409266409267,
+      "hash": 0.9613899613899614,
+      "field": 0.8957528957528957,
+      "ens": 0.915057915057915
+    },
+    "verdict": "PASS"
+  },
+  "pg2": {
+    "ens": 0.915057915057915,
+    "best_single": 0.9613899613899614,
+    "margin": -0.04633204633204635,
+    "verdict": "FAIL"
+  },
+  "pg3": {
+    "compile_ms": 636.509,
+    "compile_budget_ms": 2000,
+    "serve_ms_per_judgment": 0.0555,
+    "serve_budget_ms": 0.5,
+    "verdict": "PASS"
+  },
+  "pg4": {
+    "auc": 0.9294,
+    "auc_budget": 0.9,
+    "fpr": 0.0353,
+    "fpr_budget": 0.1,
+    "anomalies": 4,
+    "clean_rows": 255,
+    "verdict": "PASS"
+  },
+  "train_ledgers": [
+    "bell.jsonl",
+    "crossed_measure.jsonl",
+    "crx_case.jsonl",
+    "forget_bell.jsonl",
+    "ghz3.jsonl",
+    "init_complex.jsonl",
+    "init_flat.jsonl",
+    "layers_depth.jsonl",
+    "measure_only.jsonl",
+    "noise_bell.jsonl",
+    "ry_decomposition.jsonl",
+    "swap_case.jsonl"
+  ],
+  "eval_ledgers": [
+    "unsealed_bell.jsonl",
+    "xx_return.jsonl",
+    "y_decomposition.jsonl",
+    "zt_decomposition.jsonl"
+  ],
+  "soil": {
+    "ledgers": 16,
+    "rows": 1418,
+    "train_samples": 1159,
+    "eval_samples": 259
+  }
+}

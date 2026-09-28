@@ -1,0 +1,6 @@
+{"n":1,"pipeline":"v2-per-file","supersedes":"run1-leaked-boundaries (git history)","claim":"P-G1","verdict":"PASS","clauses":{"a":true,"b":true,"c":true},"acc":{"bigram":0.930502,"qthe":0.926641,"hash":0.96139,"field":0.895753,"ens":0.915058},"eval_n":259,"row_hash":"328c696c9cfc6c34a24990522f277dced89915e7550a326b219cb9940321c0b9"}
+{"n":2,"claim":"P-G2","verdict":"FAIL","ens":0.915058,"best_single":0.96139,"row_hash":"a5e013a1e839e792adb0ccbe23acfd6c88079de54ae296414594cdd93e728dc5"}
+{"n":3,"claim":"P-G3","verdict":"PASS","compile_within_budget":true,"serve_within_budget":true,"row_hash":"de5bfa713e380576b316c3978b1201802d4dda6d61553765d64076887c677d30"}
+{"n":4,"claim":"P-G4","verdict":"PASS","auc":0.9294,"fpr":0.0353,"anomalies":4,"clean":255,"threshold":0.951113,"row_hash":"6391617f1201003f09a6f9c3f9ad6825ca97812e6a3b99b6ffabd8fc32728855"}
+{"n":5,"pipeline":"v2-per-file","claim":"promotion-gate","weave1":"PROMOTE","weave2_same_data":"REVIEW","journal_tip":"aaa3ce6ab0dcbc946df8cce867431c59c7c1fc390d9b180a8e0f4368e67dd187","row_hash":"83c59b6643b1dbcfca4e94061b38b48ce94c460f5ebfe5c36f18d12960244ada"}
+{"n":6,"claim":"P-G0-selftest","verdict":"PASS","note":"30/30 green before this run (gate)","row_hash":"d92e4aba5ac1391e98014c5b72239db4a92bf6a92662f74a8d5135dea83ce39e"}

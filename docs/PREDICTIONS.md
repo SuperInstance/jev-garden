@@ -84,3 +84,80 @@ prediction — a gate.
 ## Addenda
 
 (none yet — append-only)
+
+## Addendum A1 (2026-09-28, AFTER e_g1 run 1 — receipts/e_g1.jsonl tip 3fc2f3426ba278b9)
+
+Run-1 verdicts: P-G1 PASS (hash 96.53 > field 91.89; qthe 93.82 ≥ 14.29;
+hash − bigram = +4.25pp ≥ 3pp), P-G2 FAIL, P-G3 PASS (compile 581.7ms,
+serve 0.0569ms), P-G4 FAIL. The two FAILs localize mechanisms; the
+following re-registrations are sealed BEFORE their runs.
+
+### P-G2b (why the rhizome prior was noise, and the corrected prior)
+
+Mechanism of failure: grow() deforms with gamma=0 (unobserved judgment),
+so prior weights (gamma+1e-9)/(1+d) are all ~1e-9 — the prior collapses
+to a distance-tilted global frequency, and λ=0.5 drags the head down.
+Re-registration: the rhizome prior is rebuilt from OBSERVATION COUNTS
+(the supervision aggregate, add-1 smoothing toward the global op
+distribution), and λ is chosen on TRAIN only (walk-forward over the 12
+train ledgers: λ ∈ {0.6,0.7,0.8,0.9,1.0}; eval untouched by the choice).
+Prediction: ens2 (count-prior, train-chosen λ) ≥ hash + 0.005 top-1 on
+the sealed eval slice. PASS iff true. Honest either way: if FAIL, the
+verdict is "on this soil the parametric tissue wins; the rhizome's value
+is structural memory (Task B / judgment provenance), not prior mass."
+
+### P-G4b (the validator can only judge the channel it sees)
+
+Mechanism of failure: seq-break and prev-break anomalies do not change
+any (kind, op) token — invisible to a token-space judge; arg-corrupt
+changes args.op, also not in the v1 token. Re-registration: (i) tokens
+gain the arg channel — "kind/op/argOp" (argOp = args.op when present);
+(ii) the anomaly family for JEV duty is the SEMANTIC family only:
+op-swap and arg-corrupt (rate 0.25 over non-collapse rows);
+(iii) seq-break and prev-break are DELEGATED to the chain reader
+(quilt-qcells two-reader discipline already localizes those exactly —
+4254/4254 receipted there); the garden does not re-adjudicate structure.
+Prediction: with arg-channel tokens, window-max statistic, train-only
+threshold (95th pct), on eval ledgers with semantic anomalies:
+AUC ≥ 0.85 AND clean-row FPR ≤ 0.10. PASS iff both.
+Structural delegation is itself a claim: any seq/prev-break injected is
+assumed caught by the chain reader, not scored here (honest division).
+
+## Addendum A2 (2026-09-28, AFTER e_g1b — receipts/e_g1b.jsonl tip a18ea2e9ee69f62d)
+
+P-G4b PASS (AUC 0.9469, FPR 0.0551 — the semantic judge works in its own
+channel). P-G2b FAIL again, and the failure localizes further: the
+walk-forward TRAIN choice said λ*=0.7 (helped there), but on held-out
+LEDGERS the count-prior blends train-ledger quirks — memory from old
+soil does not transfer to new circuit families. The corrected hypothesis
+is the founder's own words: the model grows as it's USED — the rhizome's
+value must be fresh memory of the live stream, not priors from archived
+ledgers.
+
+### P-G2c (growth-as-used: fresh memory of the watched stream)
+
+Protocol: for each of the 4 sealed eval ledgers, the garden WATCHES the
+first half H1 (deform + observe per row) — simulating a live quilt lane
+feeding judgments — and is then judged on predicting the second half H2.
+Arm head: hash head (12 train ledgers) alone. Arm ens3: λ·head +
+(1-λ)·priorCounted where the rhizome holds ONLY H1 memory (no train-ledger
+prior — fresh memory only). λ is chosen per ledger on H1 itself (fit on
+the watched data; H2 untouched until the verdict). Prediction: pooled
+over the 4 ledgers, ens3(H2) ≥ head(H2) + 0.01 top-1. PASS iff true.
+This is the living-model claim in its honest form: memory of what the
+garden just watched must beat a frozen head on what it is watching.
+
+## Addendum A3 (2026-09-28, AFTER e_g2c — the twin catches a pipeline bug)
+
+P-G2c FAIL, but while preparing P-G5 the Python twin diverged from the JS
+garden at journal seq 151 — root cause: the JS experiments built context
+windows over the FLATTENED 12-ledger stream, so the tail rows of one
+ledger leaked into the head context of the next (11 boundary leaks); the
+twin resets windows per ledger. Correction: all experiments build samples
+PER LEDGER (no cross-ledger leakage) and compute surprise per ledger.
+Run-1 receipts (e_g1, e_g1b, e_g2c — git history retains their bytes) are
+marked pipeline-v1 and SUPERSEDED by corrected re-runs under seal v4
+(pipeline-v2-per-file). The predictions P-G1..G4, P-G2b, P-G2c are
+re-evaluated unchanged; the corrected verdicts are the verdicts of record.
+The cross-substrate discipline did its job: a solo-substrate lane would
+have shipped the leak silently.

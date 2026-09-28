@@ -1,0 +1,45 @@
+{
+  "run": "e_g2c_growth",
+  "pg2c": {
+    "head": 0.969231,
+    "ens3": 0.969231,
+    "margin": 0,
+    "judged_rows": 130,
+    "protocol": "watch H1 -> judge H2, λ fit on H1 only",
+    "verdict": "FAIL"
+  },
+  "perLedger": [
+    {
+      "ledger": "unsealed_bell.jsonl",
+      "h1": 37,
+      "h2": 37,
+      "lam_star": 0,
+      "head_h2": 0.972973,
+      "ens3_h2": 0.972973
+    },
+    {
+      "ledger": "xx_return.jsonl",
+      "h1": 20,
+      "h2": 21,
+      "lam_star": 0,
+      "head_h2": 0.952381,
+      "ens3_h2": 0.952381
+    },
+    {
+      "ledger": "y_decomposition.jsonl",
+      "h1": 36,
+      "h2": 36,
+      "lam_star": 0,
+      "head_h2": 0.972222,
+      "ens3_h2": 0.972222
+    },
+    {
+      "ledger": "zt_decomposition.jsonl",
+      "h1": 36,
+      "h2": 36,
+      "lam_star": 0,
+      "head_h2": 0.972222,
+      "ens3_h2": 0.972222
+    }
+  ]
+}

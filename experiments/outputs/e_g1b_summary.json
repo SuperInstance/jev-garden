@@ -1,0 +1,49 @@
+{
+  "run": "e_g1b_addendum",
+  "pg2b": {
+    "lam_star": 0.8,
+    "ens2": 0.953668,
+    "hash": 0.96139,
+    "margin": -0.007722,
+    "verdict": "FAIL"
+  },
+  "pg4b": {
+    "auc": 0.9539,
+    "fpr": 0.0551,
+    "anomalies": 5,
+    "clean_rows": 254,
+    "threshold": 0.951113,
+    "note": "seq/prev structural breaks delegated to the chain reader (quilt-qcells 4254/4254)",
+    "verdict": "PASS"
+  },
+  "lambda_walkforward": [
+    {
+      "lam": 0.6,
+      "acc": 0.9723899913718723
+    },
+    {
+      "lam": 0.7,
+      "acc": 0.9732528041415013
+    },
+    {
+      "lam": 0.8,
+      "acc": 0.9741156169111302
+    },
+    {
+      "lam": 0.9,
+      "acc": 0.9741156169111302
+    },
+    {
+      "lam": 1,
+      "acc": 0.9741156169111302
+    }
+  ],
+  "task_a_context": {
+    "bigram": 0.9305019305019305,
+    "qthe": 0.9266409266409267,
+    "hash": 0.9613899613899614,
+    "field": 0.8957528957528957,
+    "ens1": 0.915057915057915,
+    "ens2": 0.9459459459459459
+  }
+}

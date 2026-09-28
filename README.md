@@ -84,3 +84,31 @@ tests (usage receipts are published under `receipts/`).
   experiments verify the seal and refuse to run otherwise (fail-closed).
 - Honest negatives are crown jewels; a FAIL is receipted, not repaired.
 - Zero force-push, append-only journals, every weave chain-tipped.
+
+---
+
+## First harvest (wave 50, pipeline v2 — verdicts of record)
+
+| Claim | Verdict | Numbers |
+|-------|---------|---------|
+| P-G0 selftest gate | GREEN | 30/30, fail-closed seal checks |
+| P-G1 bake-off order | **PASS** | hash 96.14% > field 89.58%; qthe 92.66% ≥ chance 14.29%; hash − bigram = +3.09pp |
+| P-G2 kinda-both ens (λ=0.5) | FAIL | 91.51% vs 96.14% — amplitude prior is noise (γ=0 deformations) |
+| P-G2b count-prior ens, λ on train | FAIL | 95.37% vs 96.14% — archived memory doesn't transfer across circuit families |
+| P-G2c growth-as-used (watch H1 → judge H2) | FAIL | λ*=0 on every ledger — the head saturates (~97%); fresh memory has no gap to fill |
+| P-G3 streamlining | **PASS** | full-journal compile 636ms < 2s; serve 0.056ms/judgment < 0.5ms |
+| P-G4 validator duty (all families) | **PASS** | AUC 0.9294 ≥ 0.90; FPR 0.0353 ≤ 0.10 |
+| P-G4b semantic-only + delegation doctrine | **PASS** | AUC 0.9539; FPR 0.0551; seq/prev breaks delegated to the chain reader (qcells 4254/4254) |
+| P-G5 cross-substrate weave | **PASS** | JS ⟷ Python byte-identical (5450 bytes; integer micro-unit weights; epoch-quantised SGD) |
+| P-G6 teacher channel | **PASS** | jev-latest noul 0.70; usage receipted (589+21 tokens, 283ms) |
+
+The honest headline: the **parametric tissue wins** on next-receipt
+prediction (three ensemble forms refuted on saturated soil), the
+**qthe integer substrate carries real signal**, the **semantic judge
+works in its own channel** with structure delegated to the chain, and
+the whole learned artifact is **byte-reproducible across substrates**.
+The living loop is real: watch → deform → observe → idle-compile →
+serve → escalate to the teacher (usage receipted) → grow.
+Queued: P-G2d (hard-world variant — memory-priors should pay where the
+head is weak), rhizome sense-table in weaves (weave-2), codespace
+idle-compile lane.
