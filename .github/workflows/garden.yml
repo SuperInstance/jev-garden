@@ -14,13 +14,14 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: 22 }
+      - name: fetch the soil (sister repo with the real ledgers)
+        run: git clone -q --depth 1 https://github.com/SuperInstance/quilt-qcells.git ../quilt-qcells
       - name: selftest (fail-closed seals + QTHE facts + tamper localization)
         run: node tests/selftest.mjs
       - name: smoke (one tiny garden end to end)
         run: node smoke.mjs
-      - name: bake-off on real qcells soil (needs the sister repo)
+      - name: bake-off on real qcells soil
         run: |
-          git clone -q --depth 1 https://github.com/SuperInstance/quilt-qcells.git ../quilt-qcells
           node experiments/e_g1_grow.mjs
           node experiments/e_g1b_addendum.mjs
           node experiments/e_g2c_growth.mjs
