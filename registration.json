@@ -1,15 +1,15 @@
 {
   "charter": "jev-garden pre-registration seal",
   "sealed_at_iso": "2026-09-28T07:24:39Z",
-  "sealed_note": "top block = current seal (v11); seal_history is append-only (v9 restored from the v9 top-block seal during the v10 hand-reseal)",
+  "sealed_note": "top block = current seal (v14); seal_history is append-only (v9 restored from the v9 top-block seal during the v10 hand-reseal)",
   "predictions": {
     "path": "docs/PREDICTIONS.md",
-    "sha256": "e938d0630090ba7458163f47f6587114d82abbb10e6a270e726cd97903069ebe",
-    "mtime_ns": 1790622916946150248,
-    "mtime_s": "1790622916946",
-    "size": 23894,
-    "v": 11,
-    "note": "addendum A8 verdicts of record (P-A8a PASS, P-A8b FAIL, P-A8c FAIL, P-A8d PASS; gate ships opt-in, default stays v1 law)"
+    "sha256": "3234563980addaea211b7e85dacbb9d00382b8cd07fb3e7762f6a1f2c8b648db",
+    "mtime_ns": 1790624468883398286,
+    "mtime_s": "1790624468883",
+    "size": 35247,
+    "v": 14,
+    "note": "addendum A9 verdicts of record (P-A9 PASS 4/4) + receipt provenance note (v12 run of record; committed receipt is the v13 re-run, measured bytes identical)"
   },
   "design": {
     "path": "docs/DESIGN.md",
@@ -88,6 +88,27 @@
       "mtime_ns": 1790622916946150248,
       "size": 23894,
       "note": "addendum A8 verdicts of record (P-A8a PASS, P-A8b FAIL, P-A8c FAIL, P-A8d PASS; gate ships opt-in, default stays v1 law)"
+    },
+    {
+      "v": 12,
+      "sha256": "47b13ac14bcb24ae456026ab1a1dccdd437fe8e127058f3b7039f11f6e7bb604",
+      "mtime_ns": 1790624002206897675,
+      "size": 31107,
+      "note": "addendum A9 (P-A9 fresh-memory serve law, grow-as-used) registered pre-run; A9 runs execute under v12"
+    },
+    {
+      "v": 13,
+      "sha256": "f4d86b1977abc0a8616d8a3c7339ab372fc69a91fbe87553ffa33804d819805c",
+      "mtime_ns": 1790624322966552214,
+      "size": 34603,
+      "note": "addendum A9 verdicts of record (P-A9 PASS 4/4: fresh value survives the gate/serve path +0.0292 on shift-H2; default law byte-safe; fresh law ships opt-in, default stays v1 law)"
+    },
+    {
+      "v": 14,
+      "sha256": "3234563980addaea211b7e85dacbb9d00382b8cd07fb3e7762f6a1f2c8b648db",
+      "mtime_ns": 1790624468883398286,
+      "size": 35247,
+      "note": "A9 verdict section + receipt provenance note (v12 run of record, committed receipt is the v13 re-run, measured bytes identical; e_a8 receipt of record stays the committed v10 run)"
     }
   ]
 }

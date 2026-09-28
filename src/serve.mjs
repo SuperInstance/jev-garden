@@ -29,9 +29,13 @@ export function loadWeave(artifact) {
   const loaded = { artifact, hash, qthe };
   // weave-2 (A7): the sense table rides in the artifact — rebuild the
   // living-memory arm for serve. v1 artifacts carry no field arm (unchanged).
+  // A9 (addendum A9, seal v12): the fresh-memory opt-in rides the artifact
+  // hyper — no new arm, no schema change; artifacts without the flag behave
+  // exactly as the A8-era law (v1 default everywhere).
   if (artifact.schema === 'jev-garden/weave-v2' && artifact.arms.field) {
     loaded.field = new SenseTablePrior(artifact.arms.field);
     loaded.ens3 = artifact.hyper.ens3 ?? { wh: 0.4, wq: 0.4, wf: 0.2 };
+    loaded.fresh = artifact.hyper?.fresh?.serve_with_fresh === true;
   }
   return loaded;
 }
@@ -60,10 +64,20 @@ export function judge(loaded, state, questions, judged) {
   // the stream grow law deforms with gamma=0, so the archived table's prior
   // is a distance-tilted frequency that never crosses a margin). Registered
   // FAIL branch executed: the served DEFAULT stays the v1 law everywhere;
-  // the gate ships OPT-IN only (hyper.ens3.hardness_gate = true). A9
-  // candidates priced in PREDICTIONS.md A8 verdicts: compile-time soil
-  // calibration (train-only) and/or FRESH stream memory in the artifact.
+  // the gate ships OPT-IN only (hyper.ens3.hardness_gate = true).
+  // A9 (P-A9, addendum A9, seal v12): the FRESH-memory serve law (grow-as-
+  // used) — the registered answer to the A8c mechanism receipt (the P-G2d
+  // +13.41pp came from priorCounted FRESH H1 memory, and the supervision
+  // aggregate the artifact already serializes is exactly its payload).
+  // Opt-in only (hyper.fresh.serve_with_fresh = true): gate s = top.p(ens2),
+  // H* = ESCALATE_BELOW (reused); gate-closed serves the exact v1 expression
+  // (byte-identical); gate-open serves priorCounted rebuilt from the
+  // SERIALIZED aggregate — the P-G2d law of record (lambda* = 0: all fresh
+  // memory on the open branch). Grow-as-used: the lane re-serializes
+  // arms.field from its own watched stream before serving. Branch order:
+  // A7 serve_with_field -> A9 serve_with_fresh -> A8 hardness_gate -> v1.
   // Modes: default = v1 law; `serve_with_field` = unconditional ens3 (A7);
+  // `serve_with_fresh: true` = the registered gated fresh law (A9, opt-in);
   // `hardness_gate: true` = the registered gated blend (A8, opt-in).
   let probs;
   if (loaded.field && loaded.ens3?.serve_with_field === true) {
@@ -71,6 +85,13 @@ export function judge(loaded, state, questions, judged) {
     const { wh, wq, wf } = loaded.ens3;
     probs = {};
     for (const o of OPS) probs[o] = wh * ph[o] + wq * pq[o] + wf * pf[o];
+  } else if (loaded.field && loaded.fresh === true) {
+    const e2 = ensemble(ph, pq, 0.5); // gate-closed path is THIS expression
+    if (argmax(e2).p >= ESCALATE_BELOW) {
+      probs = e2;
+    } else {
+      probs = loaded.field.priorCounted(tokens.join('|'));
+    }
   } else if (loaded.field && loaded.ens3?.hardness_gate === true) {
     const e2 = ensemble(ph, pq, 0.5); // v1 law — the gate-closed path is THIS expression
     if (argmax(e2).p >= ESCALATE_BELOW) {

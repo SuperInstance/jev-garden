@@ -9,8 +9,12 @@ epoch quantisation (Math.round semantics: floor(v+0.5)), and weights
 serialised as INTEGER MICRO-UNITS (micro = floor(w*1e6 + 0.5)) so that
 float repr never crosses the substrate boundary.
 
-Usage: python3 garden_ref.py <ledgers_dir> <out_json>
-"""
+Usage: python3 garden_ref.py <ledgers_dir> <out_json> [--fresh <ledger_jsonl> <fresh_out_json>]
+
+The optional --fresh mode (Addendum A9, seal v12) grows the FIRST HALF (H1)
+of a single ledger — the P-G2d watch protocol, per-ledger windows, OPS-filtered
+— and serializes its sense table (cells + supervision aggregate), byte-identical
+to the JS live rhizome's senseTable() (canonical JSON, integer counts)."""
 import json, hashlib, math, sys, os
 from pathlib import Path
 
@@ -171,7 +175,48 @@ def sense_table(cells, observed):
 
 # ---------- main ----------
 def main():
-    ledgers_dir, out_path = sys.argv[1], sys.argv[2]
+    args = sys.argv[1:]
+    if len(args) >= 3 and args[2] == '--fresh':
+        # A9 fresh mode: grow H1 of one ledger, serialize the fresh table.
+        ledger_path, fresh_out = args[3], args[4]
+        rows = [json.loads(l) for l in open(ledger_path) if l.strip()]
+        samples = []
+        for i in range(len(rows)):
+            if rows[i]['op'] not in OPS:
+                continue
+            toks = context_tokens(rows, i)
+            samples.append({'tokens': toks, 'ctx': '|'.join(toks), 'label': rows[i]['op']})
+        half = len(samples) // 2
+        h1 = samples[:half]
+        cells = {}
+        observed = {}
+        seq = 0
+        prev = 'JEVG-GENESIS'
+        for s in h1:
+            seq += 1
+            cell = context_cell(s['ctx'])
+            c = cells.setdefault(cell, [0.0, 0.0])
+            c[0] += 0.4 * 0
+            c[1] += 0.4
+            row = {'seq': seq, 'kind': 'deform', 'context': s['ctx'], 'cell': cell,
+                   'gamma': 0, 'eta': 1, 'delta': 0.5, 'tag': 'stream'}
+            h = sha256_hex(canonical([prev, row]))
+            row['row_hash'] = h
+            prev = h
+            seq += 1
+            row2 = {'seq': seq, 'kind': 'observe', 'context': s['ctx'], 'cell': context_cell(s['ctx']),
+                    'op': s['label'], 'source': 'receipt'}
+            h2 = sha256_hex(canonical([prev, row2]))
+            row2['row_hash'] = h2
+            prev = h2
+            m = observed.setdefault(s['ctx'], {})
+            m[s['label']] = m.get(s['label'], 0) + 1
+        st = sense_table(cells, observed)
+        Path(fresh_out).write_text(canonical(st), encoding='utf-8')
+        n_ctx = len(st['observed'])
+        print(f"twin fresh table: h1={len(h1)} observed_ctx={n_ctx} cells={len(st['cells'])} -> {fresh_out}")
+        return
+    ledgers_dir, out_path = args[0], args[1]
     files = sorted(f for f in os.listdir(ledgers_dir) if f.endswith('.jsonl'))
     train_files, eval_files = files[:12], files[12:]
     samples = []

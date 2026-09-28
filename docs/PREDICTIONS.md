@@ -397,3 +397,160 @@ carry FRESH stream memory (a table grown from the live lane's own
 judgments — grow-as-used), and the gamma channel must be fed real
 amplitudes (grow() currently deforms with gamma=0, structurally zeroing
 the prior the gate would gate on).
+
+## Addendum A9 (2026-09-28, BEFORE the A9 run) — P-A9: the fresh-memory serve law (grow-as-used)
+
+The A8 verdicts falsified the ARCHIVED lattice prior three ways (P-W2b unconditional,
+P-A8b gated closure, P-A8c hard-soil value) and priced A9: "if serve-time living memory
+is ever to pay, the artifact must carry FRESH stream memory (a table grown from the live
+lane's own judgments — grow-as-used)". This addendum registers the A9 mechanism BEFORE any
+run. Runs execute under seal v12.
+
+### Design choice (from the receipts; ONE mechanism taken)
+
+The A8 candidate list was (a) real gamma amplitudes in grow() and (b) fresh-stream memory
+in the artifact. Reading the code against the receipts: the +13.41pp payload (P-A8c
+mechanism receipt: priorCounted, exact-context memorization of FRESH H1 memory) never
+reads the lattice — it reads the supervision aggregate `observed`, which the weave-v2
+artifact ALREADY serializes (`arms.field.observed`, 56 train contexts, twin-verified in
+P-W2a). The missing piece is the SERVE LAW, not a payload: no registered serve path
+consumes the serialized aggregate as priorCounted. Taking (a) would feed the channel the
+receipts falsified three ways — and a CONSTANT gamma amplitude provably cancels in the
+prior normalization (w = (gamma+1e-9)/(1+d): a cell-independent gamma scales every weight
+alike and the normalized prior vector is byte-identical to the gamma=0 case), while a
+VARYING amplitude needs the head inside grow() and predicts no transfer of archived mass
+on shifted soil (the P-G2b/A8c family). A9 therefore takes (b): the fresh-memory serve
+law, grow-as-used, twin-verified. The gamma channel stays structurally zero — that is
+mechanism (a)'s home, left untouched and honestly priced for a later lane.
+
+### The registered law (serve, opt-in only; default untouched)
+
+- Carrier: `arms.field.observed` — the supervision aggregate the artifact already carries
+  ([[ctx, {op: count}], ...] sorted bytewise). NO new arm, NO schema change, NO new blend
+  constant: the compiled weave-v2 artifact bytes are UNCHANGED (artifact_sha256 stays
+  pinned to the e_w2 receipt 1bbc4fa7cc7a69726db28378507dafad9679d391ff9555bee98d110fe5902519).
+- Rebuild: SenseTablePrior gains `priorCounted(ctx)` — the EXACT field.mjs
+  Rhizome.priorCounted law (add-1 smoothing toward the global observed distribution;
+  unseen contexts fall back to the global distribution; OPS.length = 7) computed from the
+  SERIALIZED aggregate. Integer counts only — exact cross-substrate.
+- Serve branch (else-if chain: A7 serve_with_field -> A9 serve_with_fresh -> A8
+  hardness_gate -> default v1; registered total order for artifacts setting multiple
+  opt-ins): `hyper.fresh.serve_with_fresh === true` (explicit opt-in) AND the artifact
+  carries arms.field -> registered fresh law: gate signal s = top.p(ens2), H* =
+  ESCALATE_BELOW = 0.55 (both REUSED — zero new constants; the A8-proven gate, P-A8a),
+  gate-CLOSED (s >= H*) serves the exact v1 expression `ensemble(ph, pq, 0.5)`
+  (byte-identical), gate-OPEN (s < H*) serves `loaded.field.priorCounted(tokens.join('|'))`
+  PURE — the P-G2d law of record (per-ledger lambda* = 0 everywhere: all fresh memory, no
+  head mass on the open branch).
+- Default law untouched: artifacts without hyper.fresh.serve_with_fresh behave exactly as
+  the A8-era law (v1 default everywhere). The opt-in may ride the artifact hyper (set at
+  compile) or the loaded handle; both must produce identical bytes.
+- Grow-as-used semantics (the freshness): the live lane watches its own stream (deform +
+  observe per judgment/receipt — grow()), then RE-SERIALIZES arms.field :=
+  senseTable(live rhizome) and serves from the updated artifact. The update event is
+  receipted with its own artifact sha. Freshness is temporal, not architectural: the
+  fresh law consumes whatever the lane's own watching produced, never a compiled-only
+  archive.
+
+### Predictions (pre-registered under seal v12)
+
+- **P-A9a (opt-in wire mechanics)**: over every serve.judge() call on the two soils of
+  record (sealed eval slice n=259; shift-family H2 n=343; serve protocol, full-response
+  JSON): with the fresh opt-in ON, every gate-closed response is byte-identical to the
+  v1-law reference and every gate-open response is exactly the registered fresh law. The
+  artifact-hyper opt-in path and the loaded-handle opt-in path produce identical bytes.
+  PASS iff zero mismatches in both branches (and opt-in-path equality holds).
+- **P-A9b (default law safe)**: with the fresh flag ABSENT (the served default), every
+  serve.judge() call on both soils returns byte-identical full-response JSON to the
+  pre-A9 v1-law reference — 259/259 on the saturated slice and 343/343 on shift-H2. PASS
+  iff zero mismatches. (The house law: the served default stays the v1 law everywhere.)
+- **P-A9c (fresh value on shift-H2)**: battery protocol (per-ledger windows,
+  pipeline-v2), grow-as-used: watch H1 per shift ledger (fresh rhizome, P-G2d protocol),
+  re-serialize arms.field from it, serve H2 under the opt-in fresh law. Registered gate:
+  pooled fresh top-1 >= pooled ens2 top-1 + 0.01 over the 343 rows — integer-exact:
+  100*(fresh_hits - ens2_hits) >= 343 (ens2 = 242 hits, the P-A8c receipt number, pinned;
+  gate-open rows = 40, the A8 number). Direction registered: PASS predicted — the P-G2d
+  mechanism transfers through the gate (fresh memorization 298/343 = 0.8688 vs ens2 242:
+  +56 overall; the law replaces ens2 exactly on the 40 gate-open rows, ens2's weakest —
+  point estimate ~+10..16 hits). Honest FAIL = the freshness value does not survive the
+  gate/serve path; the served default stays the v1 law, the fresh law ships opt-in, the
+  finding is priced.
+- **P-A9d (twin + battery green)**: (i) P-W2a re-verified under seal v12 — weave-core-v2
+  JS == Python byte-identical (exact bytes, 9960B); (ii) the A9 rebuild consumes the
+  SERIALIZED aggregate: SenseTablePrior.priorCounted built from the TWIN's arms.field
+  reproduces the JS train-rhizome priorCounted vectors exactly (per-context JSON equality
+  over every context evaluated on both soils), and the JS rebuild from each serialized
+  live H1 table reproduces the live rhizome's own priorCounted vectors exactly (over all
+  H1+H2 contexts of that ledger); (iii) NEW twin mode: the Python twin grows the H1 slice
+  of each shift ledger and serializes the fresh table — byte-identical to the JS live
+  table (all 4 ledgers); (iv) smoke 9/9; (v) selftest green. PASS iff all five hold.
+
+Contrast receipts (no gates): the ungated fresh-everywhere pooled H2 number pinned to the
+P-G2d receipt (298/343 — rebuild faithfulness); H2 exact-context coverage (how many of
+the 40 gate-open rows hit the fresh map vs fall back to global); the saturated opt-in
+contrast (eval slice, compile-time train aggregate behind the opt-in: gate opens 11 — the
+A8 number — fresh serves priorCounted(train) on those rows; receipted with flips, no
+verdict); live-table re-serialization byte-determinism (two rebuilds identical); live
+cells' G still 0 (mechanism receipt: A9 took path (b); the gamma channel is untouched);
+the e_a8 receipt bytes reproduce exactly under the A9 law (CI regression).
+
+### A9 verdicts of record (run 2026-09-28, seal v12; receipts/e_a9.jsonl tip 44cc228e7be4395a)
+
+- **P-A9a PASS** — the implementation IS the registered fresh law: over 602
+  serve.judge() calls with the opt-in ON (259 eval-slice + 343 shift-H2), all
+  551 gate-closed responses byte-identical to the v1-law reference and all 51
+  gate-open responses exactly the registered fresh law (0 mismatches); the
+  artifact-hyper opt-in path and the loaded-handle opt-in path produced
+  identical bytes on all 40 sampled calls (40/0 bad).
+- **P-A9b PASS** — the served DEFAULT is safe: with the flag ABSENT, all 602
+  calls on both soils returned byte-identical full-response JSON to the
+  pre-A9 v1-law reference (0 mismatches; gate stats unchanged from A8: eval
+  min top.p 0.3921, shift min 0.4043). The house law held end to end.
+- **P-A9c PASS** — fresh value survives the gate/serve path: grow-as-used
+  (watch H1 per shift ledger, re-serialize arms.field, serve H2) pooled
+  fresh 252/343 = 0.7347 vs ens2 242/343 = 0.7055 (ens2 and gate_open=40
+  both pinned to the P-A8c receipt) — delta +0.0292 over the +0.01 gate
+  (integer-exact: 100*(252-242) = 1000 >= 343); flips +14 wrong2right /
+  -4 right2wrong on the 40 gate-open rows (open-row exact-context coverage
+  33/40, fallback 7). Inside the registered point-estimate band (+10..16).
+  Rebuild-faithfulness pins: ungated fresh-everywhere = 298/343 — EXACTLY
+  the P-G2d receipt number; the serve-rebuilt aggregate reproduces the live
+  rhizome's priorCounted over all 686 shift contexts and the twin's table
+  over all 46 evaluated train contexts (JSON-exact).
+- **P-A9d PASS** — P-W2a re-verified under seal v12 (weave-core-v2 9960B ==
+  9960B, journal tip aaa3ce6ab0dcbc94; compiled artifact still pinned to
+  1bbc4fa7cc7a69726db28378507dafad9679d391ff9555bee98d110fe5902519 — no
+  schema change, no new arm); the NEW twin fresh mode grew each ledger's H1
+  and serialized the fresh table byte-identically to the JS live table
+  (4/4 ledgers); live re-serialization byte-deterministic (4/4); live cells'
+  G max = 0 (the gamma channel untouched — A9 took path (b), mechanism (a)
+  remains honestly priced); smoke 9/9; selftest green. The e_a8 receipt
+  re-ran under the A9 law and reproduced every measured byte exactly (the
+  only field that changed is the seal version stamp, 10 -> 12, as it must).
+
+Verdict of record: P-A9 PASS (4/4). The A8c mechanism receipt is CONFIRMED:
+the archive pays exactly when it carries FRESH memory and the serve law
+reads it as priorCounted — same gate A8 proved (P-A8a), same payload P-G2d
+proved (+13.41pp), new composition: +0.0292 pooled on shift-H2 through the
+wire path, default law byte-safe on both soils. The receipts also price the
+gap the gate leaves: ungated fresh-everywhere is 298/343 (0.8688, the
+P-G2d number) vs 252/343 gated — the gate trades value capture for
+saturated-soil safety, and the saturated opt-in contrast shows why the
+default must stay v1 (fresh over the ARCHIVED train aggregate on the
+saturated slice: 0.9382 vs ens2 0.9537, flips -6/+2 — archived memory
+behind the gate still damages new soil, the P-G2b pattern). Priced into
+A10: whether a hardness meter can select fresh-everywhere on registered-hard
+soil without reopening the saturated slice (compile-time soil calibration,
+the remaining A8 candidate), and/or the real-lane trial (a quilt lane
+feeding judgments + receipts to the endpoint so arms.field carries its own
+freshness in production).
+
+> Provenance note (seal v14, append-only): the A9 verdict of record was
+> determined by the FIRST run, executed under seal v12 (receipt tip
+> 44cc228e7be4395a, "seal verified (v12)" in the run log). The run was then
+> repeated under the final seal v13 and every measured byte reproduced
+> exactly (determinism; the committed receipts/e_a9.jsonl is that final
+> re-run, tip 9aa5351090693e9d — the only field that differs from the
+> v12-run receipt is the seal version stamp, as designed). The e_a8
+> receipt of record remains the committed v10 run (tip 1ac2699bffe07d6d);
+> its A9-law regression re-run is documented above, not re-committed.

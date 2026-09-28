@@ -4,6 +4,13 @@
 // w = (gamma + 1e-9) / (1 + d) with gamma = G/aSum from the table, votes =
 // observed op counts of contexts mapped to cells within the radius, add-uniform
 // fallback when no votes. No mutation, no state.
+//
+// A9 (Addendum A9, seal v12): priorCounted(ctx) — the EXACT field.mjs
+// Rhizome.priorCounted law rebuilt from the SERIALIZED supervision aggregate
+// (arms.field.observed). The A8c mechanism receipt: the P-G2d +13.41pp came
+// from priorCounted fresh memory, not the lattice prior; this rebuild gives
+// the serve path the exact-context law behind the registered fresh opt-in.
+// Integer counts only — exact cross-substrate.
 import { OPS, buildLattice, contextCell, hexDist } from './field.mjs';
 
 export class SenseTablePrior {
@@ -39,5 +46,25 @@ export class SenseTablePrior {
       return Object.fromEntries(OPS.map((o) => [o, u]));
     }
     return Object.fromEntries(OPS.map((o) => [o, votes[o] / total]));
+  }
+
+  // A9 (Addendum A9, seal v12): the fresh-memory prior — the EXACT field.mjs
+  // Rhizome.priorCounted law over the serialized supervision aggregate.
+  // add-1 smoothing toward the global observed distribution; unseen contexts
+  // fall back to the global distribution; empty aggregate -> uniform.
+  priorCounted(contextStr2) {
+    const globalCounts = new Map();
+    let totalObs = 0;
+    for (const [, m] of this.observed) for (const [op, c] of m) { globalCounts.set(op, (globalCounts.get(op) ?? 0) + c); totalObs += c; }
+    const m = this.observed.get(contextStr2);
+    const probs = {};
+    if (m) {
+      let tot = 0;
+      for (const o of OPS) tot += m.get(o) ?? 0;
+      for (const o of OPS) probs[o] = ((m.get(o) ?? 0) + 1) / (tot + OPS.length);
+    } else {
+      for (const o of OPS) probs[o] = totalObs > 0 ? ((globalCounts.get(o) ?? 0) + 1) / (totalObs + OPS.length) : 1 / OPS.length;
+    }
+    return probs;
   }
 }

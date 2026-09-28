@@ -29,6 +29,8 @@ jobs:
         run: node experiments/e_g5_determinism.mjs
       - name: A8 hardness-gated serve blend receipts (gate rule, byte-identity, twin prior)
         run: node experiments/e_a8_gate.mjs
+      - name: A9 fresh-memory serve law receipts (grow-as-used, serialized-aggregate rebuild, twin fresh mode)
+        run: node experiments/e_a9_fresh.mjs
       - name: publish receipts
         uses: actions/upload-artifact@v4
         with: { name: garden-receipts, path: receipts/ }
