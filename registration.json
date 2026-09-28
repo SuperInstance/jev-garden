@@ -3,12 +3,12 @@
   "sealed_at_iso": "2026-09-28T07:24:39Z",
   "predictions": {
     "path": "docs/PREDICTIONS.md",
-    "sha256": "c488c249ceedf7217b42336ad02476cf64d896924a0ba2fbae38265f36bb24e1",
-    "mtime_ns": 1790582904484071224,
-    "mtime_s": "1790582904",
-    "size": 9408,
-    "v": 5,
-    "note": "addendum A4: reproducibility bind = sha256+size; mtime = local witness only"
+    "sha256": "c89d5858bb2747f61aae3632d3bdf5dfdf9ca9d0e2904ef3d64fc965d4098df8",
+    "mtime_ns": 1790609106105932321,
+    "mtime_s": "1790609106",
+    "size": 12764,
+    "v": 7,
+    "note": "addendum A6 (P-G2d PASS verdict + unified hardness law)"
   },
   "design": {
     "path": "docs/DESIGN.md",
@@ -42,6 +42,18 @@
       "sha256": "577fe99014e2b333665eee7da62c27ae2f24f9ceb2793bdae8db81ca0f709d33",
       "mtime_s": "1790581576",
       "note": "addendum A3 (pipeline v2 runs executed under v4)"
+    },
+    {
+      "v": 5,
+      "sha256": "c488c249ceedf7217b42336ad02476cf64d896924a0ba2fbae38265f36bb24e1",
+      "mtime_s": "1790582904",
+      "note": "addendum A4 cloud-battery runs (garden-battery workflow) executed under v5"
+    },
+    {
+      "v": 6,
+      "sha256": "21dc2e3d26733fa8b8b4c491e4e12e7cc9eb2c63f6d14d156e7d96985b397066",
+      "mtime_s": "1790609018",
+      "note": "P-G2d executed under v6 (receipts/e_g2d.jsonl tip f702bc0c56ad58a0)"
     }
   ]
 }

@@ -172,3 +172,59 @@ local-seal-time witness for audit. All experiment gates updated: sha+size
 enforced, mtime logged. This is the stone standard applied to ourselves:
 the harness refuses to weaken silently, so the weakening is registered,
 dated, and receipted instead.
+
+## Addendum A5 (2026-09-28, wave 51) — P-G2d: hard world under distribution shift
+
+The wave-50 FAILs (P-G2/G2b/G2c) localize to one sentence: memory-priors need a
+HARD world. The 4 sealed eval ledgers leave the frozen head at 95-97% — too easy,
+the same disease quilt-jepa round 2 diagnosed in its own substrate on the same day.
+
+### Soil (built BEFORE this registration; construction receipt only, no outcome data)
+
+`experiments/shift_family_gen.py` builds 4 "ladder-echo" ledgers with the REAL
+quilt-qcells machinery (CellCircuit on micromoth, chain-verified fail-closed):
+deep gate runs + MID-STREAM readout/collapse/VIEW echo cycles — EFFECT->BIND
+transitions and repeated BIND/EFFECT alternation that do not occur in train
+soil (where collapse blocks are terminal). Files: ladder7_echo3, ladder8_echo4,
+ladder9_echo4, ladder8_echo6 (686 rows total; sha256s in
+`experiments/outputs/shift_family/construction_receipt.json`). No garden
+judgment code ran on this soil before the seal below.
+
+### P-G2d (fresh memory under distribution shift)
+
+Protocol as P-G2c: per ledger, watch H1 (grow fresh-memory rhizome), judge H2;
+λ fit on H1 only; arm head = frozen hash head (12 train ledgers); arm ens3 =
+λ·head + (1-λ)·priorCounted (H1 memory only, no train-ledger prior).
+
+- HARDNESS GATE (prediction-based difficulty meter — quilt-jepa round-2 law L2
+  applied to the garden): pooled frozen-head H2 accuracy < 0.90. If the head
+  still clears 0.90 on the shift family, the run is VOID-AS-REGISTERED (soil
+  not hard enough; receipted as such, no verdict claimed).
+- CLAIM: pooled ens3 ≥ pooled head + 0.02 top-1 on H2.
+
+PASS iff both. Honest either way: FAIL with the hardness gate held means fresh
+memory does not transfer even under genuine shift — the rhizome's value claim
+narrows again; VOID means we still have not managed to build a hard enough
+world, which is itself the finding.
+
+## Addendum A6 (2026-09-28, wave 51, AFTER e_g2d) — P-G2d verdict + the unified hardness law
+
+P-G2d PASS (seal v6, run under v6, receipts/e_g2d.jsonl tip f702bc0c56ad58a0):
+hardness gate HELD (pooled head 73.47% < 0.90 — the ladder-echo family is a
+genuinely hard world for the frozen head), and pooled ens3 = 86.88% = head +
+13.41pp over 343 judged rows. Per-ledger: λ* = 0 everywhere — the optimal blend
+was ALL fresh watched-memory, no frozen-head mass. The living-model claim
+survives in its honest form once the world demands adaptation.
+
+The wave's unified law (quilt-jepa round 2 + garden P-G2d, same day):
+- quilt-jepa: an easy world makes every emergence claim vacuous (entry loss is
+  init noise; surprise has zero SNR; corruption is impact-insensitive) — and a
+  starved optimizer is misdiagnosable as a world property.
+- jev-garden: archived priors never transfer (G2, G2b FAIL); fresh memory is
+  worthless on easy soil (G2c FAIL, λ*=0 because nothing beats 97%); fresh
+  memory on genuinely shifted soil is worth +13.4pp (G2d PASS).
+Hardness is the gating variable for emergence claims, and it must be measured
+by PREDICTION accuracy on held-out structure (the L2 law), never by loss floors
+or entry statistics. Registered for wave 52: hardness-aware grow() (grow harder
+where the head is weaker), and the quilt-jepa L1 optimizer repair (per-latent
+gradient normalization) as a precondition for any further latent-grid claims.

@@ -1,0 +1,68 @@
+{
+ "generator": "shift_family_gen.py",
+ "family": "ladder-echo",
+ "machinery": "quilt-qcells CellCircuit + verify_ledger",
+ "micromoth_sha256": "bbd10ac2ffd4dd8bdee86480866107b3c0917ab09286b1d9e2ed144faed482df",
+ "ledgers": [
+  {
+   "name": "ladder7_echo3",
+   "file": "ladder7_echo3.jsonl",
+   "sha256": "45b176a17bfebc5466f11738a32bf1111a1469fed046f8a79f952e295b1b5151",
+   "rows": 134,
+   "op_counts": {
+    "LINK": 1,
+    "BIND": 30,
+    "TICK": 30,
+    "EFFECT": 68,
+    "VIEW": 4,
+    "PROOF": 1
+   },
+   "verify": "PASS"
+  },
+  {
+   "name": "ladder8_echo4",
+   "file": "ladder8_echo4.jsonl",
+   "sha256": "7822b1a60fb4bf2e5a2fe085b719d7a1297d7adcaf12becbc2bfce00665a4cea",
+   "rows": 166,
+   "op_counts": {
+    "LINK": 1,
+    "BIND": 37,
+    "TICK": 37,
+    "EFFECT": 85,
+    "VIEW": 5,
+    "PROOF": 1
+   },
+   "verify": "PASS"
+  },
+  {
+   "name": "ladder9_echo4",
+   "file": "ladder9_echo4.jsonl",
+   "sha256": "281afbafece0b1b659558799b169f157bf438bc9d8173742a5bdb44f0a987bd5",
+   "rows": 166,
+   "op_counts": {
+    "LINK": 1,
+    "BIND": 39,
+    "TICK": 35,
+    "EFFECT": 85,
+    "VIEW": 5,
+    "PROOF": 1
+   },
+   "verify": "PASS"
+  },
+  {
+   "name": "ladder8_echo6",
+   "file": "ladder8_echo6.jsonl",
+   "sha256": "429da828bc3527149c9e01debb9b111c421fc41775aa0c8e4e2b46a6abf231e3",
+   "rows": 220,
+   "op_counts": {
+    "LINK": 1,
+    "BIND": 46,
+    "TICK": 46,
+    "EFFECT": 119,
+    "VIEW": 7,
+    "PROOF": 1
+   },
+   "verify": "PASS"
+  }
+ ]
+}

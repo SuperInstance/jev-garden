@@ -1,0 +1,50 @@
+{
+  "run": "e_g2d_shift",
+  "pg2d": {
+    "head": 0.734694,
+    "ens3": 0.868805,
+    "margin": 0.134111,
+    "judged_rows": 343,
+    "hardness_gate": {
+      "threshold": 0.9,
+      "head": 0.734694,
+      "held": true
+    },
+    "protocol": "watch H1 -> judge H2 on shift soil, λ fit on H1 only; void unless head < 0.90",
+    "verdict": "PASS"
+  },
+  "perLedger": [
+    {
+      "ledger": "ladder7_echo3",
+      "h1": 67,
+      "h2": 67,
+      "lam_star": 0,
+      "head_h2": 0.761194,
+      "ens3_h2": 0.895522
+    },
+    {
+      "ledger": "ladder8_echo4",
+      "h1": 83,
+      "h2": 83,
+      "lam_star": 0,
+      "head_h2": 0.746988,
+      "ens3_h2": 0.879518
+    },
+    {
+      "ledger": "ladder9_echo4",
+      "h1": 83,
+      "h2": 83,
+      "lam_star": 0,
+      "head_h2": 0.686747,
+      "ens3_h2": 0.771084
+    },
+    {
+      "ledger": "ladder8_echo6",
+      "h1": 110,
+      "h2": 110,
+      "lam_star": 0,
+      "head_h2": 0.745455,
+      "ens3_h2": 0.918182
+    }
+  ]
+}
