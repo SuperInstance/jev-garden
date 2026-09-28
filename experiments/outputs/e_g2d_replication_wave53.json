@@ -1,0 +1,60 @@
+{
+  "receipt": "P-G2d replication — wave 53, lane d (run-and-receipt lane)",
+  "task_id": "53-d",
+  "date": "2026-09-28",
+  "what": "Second execution of the ALREADY-REGISTERED P-G2d protocol (docs/PREDICTIONS.md Addendum A5), unmodified: node experiments/e_g2d_shift.mjs, run exactly once, no edits to prediction/protocol/thresholds/soil/seals.",
+  "registration_state": {
+    "repo_head": "ea7df1d54039ead0b15764d8f8bae514d455f2c2",
+    "seal_at_run": "v7 (gate requires v6+; P-G2d executed under v6 in wave 51, verdict addendum A6 landed under v7 — v7 is the current registered tree state)",
+    "predictions_sha256_prefix": "c89d5858bb2747f6",
+    "soil": "4 ladder-echo ledgers, construction_receipt sha256 verified fail-closed before run",
+    "sister_soil": "quilt-qcells @ 615ddcf12d38c0b013972e07089474b8a0d6a06d, clean worktree, 16 ledgers (read-only)"
+  },
+  "environment": { "node": "v24.21.0", "network_calls_in_run_path": 0, "llm_api_spend_usd": 0.0 },
+  "registered_run_wave51": {
+    "verdict": "PASS",
+    "pooled_head": 0.7347,
+    "pooled_ens3": 0.8688,
+    "margin_pp": 13.41,
+    "judged_rows": 343,
+    "lambda_star": "0 on all 4 ledgers",
+    "receipts_tip": "f702bc0c56ad58a08c162e28e41d70664d12c84afe3a3270a883e0af22871850"
+  },
+  "this_run_wave53": {
+    "verdict": "PASS",
+    "pooled_head": 0.7347,
+    "pooled_ens3": 0.8688,
+    "margin_pp": 13.41,
+    "judged_rows": 343,
+    "lambda_star": "0 on all 4 ledgers",
+    "receipts_tip": "f702bc0c56ad58a08c162e28e41d70664d12c84afe3a3270a883e0af22871850",
+    "hardness_gate": { "threshold": 0.90, "pooled_head": 0.7347, "held": true },
+    "per_ledger": [
+      { "ledger": "ladder7_echo3", "lambda_star": 0, "head_h2": 0.761194, "ens3_h2": 0.895522, "watched_h1": 67, "judged_h2": 67 },
+      { "ledger": "ladder8_echo4", "lambda_star": 0, "head_h2": 0.746988, "ens3_h2": 0.87952, "watched_h1": 83, "judged_h2": 83 },
+      { "ledger": "ladder9_echo4", "lambda_star": 0, "head_h2": 0.686747, "ens3_h2": 0.771084, "watched_h1": 83, "judged_h2": 83 },
+      { "ledger": "ladder8_echo6", "lambda_star": 0, "head_h2": 0.745455, "ens3_h2": 0.918182, "watched_h1": 110, "judged_h2": 110 }
+    ]
+  },
+  "reproduction_proofs": {
+    "receipts_e_g2d_jsonl_sha256": {
+      "before_run": "f2108381051ea6bd91b57035455b72b2e0bb2aa8ecafd62cf1b398a1d4d25328",
+      "after_run": "f2108381051ea6bd91b57035455b72b2e0bb2aa8ecafd62cf1b398a1d4d25328",
+      "byte_identical": true
+    },
+    "e_g2d_summary_json_sha256": {
+      "before_run": "8750c5acab19d03343a68b7b22d81e96515fca8853596452781989879c3263a6",
+      "after_run": "8750c5acab19d03343a68b7b22d81e96515fca8853596452781989879c3263a6",
+      "byte_identical": true
+    },
+    "git_diff_after_run": "empty (both run-written artifacts bit-identical to the committed wave-51 bytes)",
+    "tip_row_hash_match_vs_registered": true,
+    "determinism_note": "run path contains no Math.random and no wall-clock input to any receipt row (hrtime in weaver.mjs is compileWeave timing only, unused by e_g2d)"
+  },
+  "verdict_of_record": "P-G2d PASS — REPRODUCED BIT-EXACTLY (independent re-run under the current registered seal v7, same hardness-gate HELD verdict, same +13.41pp margin, same receipts tip)",
+  "honesty_notes": [
+    "No prediction/protocol/threshold/seed/seal file was edited for this run (registration.json and docs/PREDICTIONS.md untouched; verified by empty git diff outside new lane artifacts).",
+    "The lane did not spend any LLM/API budget: the registered protocol is local hash/field computation only (zero network calls in the run path).",
+    "This file is a NEW lane artifact; the registered receipt chain (receipts/e_g2d.jsonl) is unchanged."
+  ]
+}

@@ -1,0 +1,9 @@
+seal verified (v7): c89d5858bb2747f6
+shift soil verified: 4 ledgers, construction receipts match
+  ladder7_echo3: λ*=0  head 76.12%  ens3 89.55%  (watched 67, judged 67)
+  ladder8_echo4: λ*=0  head 74.70%  ens3 87.95%  (watched 83, judged 83)
+  ladder9_echo4: λ*=0  head 68.67%  ens3 77.11%  (watched 83, judged 83)
+  ladder8_echo6: λ*=0  head 74.55%  ens3 91.82%  (watched 110, judged 110)
+
+P-G2d (hard world): PASS  (head 73.47 vs ens3 86.88, margin 13.41pp over 343 rows; hardness gate HELD)
+receipts: receipts/e_g2d.jsonl (tip f702bc0c56ad58a0)
