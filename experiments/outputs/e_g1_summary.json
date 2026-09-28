@@ -1,9 +1,9 @@
 {
   "run": "e_g1_grow",
   "measured_timings": {
-    "grow_ms": 26.552,
-    "compile_ms": 581.894,
-    "serve_ms_per_judgment": 0.0542
+    "grow_ms": 24.876,
+    "compile_ms": 575.788,
+    "serve_ms_per_judgment": 0.055
   },
   "note": "timings are measurements, kept out of the deterministic chain",
   "pg1": {
@@ -26,9 +26,9 @@
     "verdict": "FAIL"
   },
   "pg3": {
-    "compile_ms": 581.894,
+    "compile_ms": 575.788,
     "compile_budget_ms": 2000,
-    "serve_ms_per_judgment": 0.0542,
+    "serve_ms_per_judgment": 0.055,
     "serve_budget_ms": 0.5,
     "verdict": "PASS"
   },
