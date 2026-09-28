@@ -228,3 +228,43 @@ by PREDICTION accuracy on held-out structure (the L2 law), never by loss floors
 or entry statistics. Registered for wave 52: hardness-aware grow() (grow harder
 where the head is weaker), and the quilt-jepa L1 optimizer repair (per-latent
 gradient normalization) as a precondition for any further latent-grid claims.
+
+## Addendum A7 (2026-09-28, BEFORE the weave-2 run) — P-W2: the sense table rides
+
+serve.mjs receipted "rhizome prior is not serialized in the weave (sense table by
+weave-2)". This addendum registers weave-2 BEFORE any run. The weave-v2 artifact
+carries `arms.field` — the rhizome sense table: per-cell {G, aSum} (r6) for cells
+hosting >= 1 observed context, plus the supervision aggregate [ctx, {op: count}]
+sorted bytewise (order-free, byte-deterministic). Serve rebuilds the prior with the
+EXACT field.mjs neighborhood law (radius-2 hex, w = (gamma + 1e-9)/(1+d)) from the
+SERIALIZED table — compile-then-serve is honest distillation, not a live backdoor.
+
+- **P-W2a (cross-substrate, P-G5 discipline extended)**: the Python twin and the
+  JS garden produce byte-identical `weave-core-v2` cores (hash arm in integer
+  micro-units + arms.field) on the same sealed train slice. PASS iff identical.
+- **P-W2b (serve compatibility)**: with the registered ens3 = 0.4*hash + 0.4*qthe +
+  0.2*field-sense-table, serve-time top-1 on the sealed eval slice (last 4 ledgers,
+  pipeline-v2 per-ledger windows) satisfies ens3 >= ens2 − 0.005 (ens2 = 0.5/0.5
+  v1 law). The living-memory arm must ride without material degradation; the field
+  arm's own top-1 is receipted as contrast (saturated-soil expectation from the
+  hardness law: near-parity). PASS iff the inequality holds.
+
+### A7 verdicts of record (run 2026-09-28, seal v8; receipts/e_w2.jsonl)
+
+- **P-W2a PASS** — weave-core-v2 byte-identical cross-substrate: JS 9960B ==
+  Python 9960B (hash arm micro-units + arms.field: 43 sense cells, 56 observed
+  contexts, journal_len 2318, tip aaa3ce6ab0dcbc94). The P-G5 twin discipline
+  now covers the living-memory arm. Serve-roundtrip: the serve path rebuilt
+  from the serialized artifact reproduces compile-time ens3 exactly (< 1e-12).
+- **P-W2b FAIL** — ens3 = 0.9459 vs ens2 = 0.9537 on the sealed eval slice
+  (n=259): delta −0.0077, beyond the registered −0.005 tolerance. The field
+  arm (sense table) drags the ensemble on saturated soil — the hardness law
+  (A6) predicted exactly this shape ("amplitude prior is noise on saturated
+  soil"; P-G2/G2b/G2c FAIL family). Verdict of record: FAIL; no threshold
+  surgery. Engineering response (receipted in src/serve.mjs): served default
+  stays the v1 law (ens2) for all artifacts; the ens3 blend requires an
+  explicit `serve_with_field` opt-in until a registered hardness gate (A8
+  candidate, P-G2d pattern: ens3 only on hard/shifted soil) selects it.
+- Queued as A8 candidate: hardness-aware serve — blend ens3 iff the context's
+  soil is registered-hard (the P-G2d +13.41pp regime), else ens2; registered
+  BEFORE any run, with the hardness meter from the unified law.

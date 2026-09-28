@@ -3,17 +3,17 @@
   "sealed_at_iso": "2026-09-28T07:24:39Z",
   "predictions": {
     "path": "docs/PREDICTIONS.md",
-    "sha256": "c89d5858bb2747f61aae3632d3bdf5dfdf9ca9d0e2904ef3d64fc965d4098df8",
-    "mtime_ns": 1790609106105932321,
-    "mtime_s": "1790609106",
-    "size": 12764,
-    "v": 7,
-    "note": "addendum A6 (P-G2d PASS verdict + unified hardness law)"
+    "sha256": "8bfbc42a936df10d990a41d6bce9474470f715181c2bc6bfa42d63bafbbca98b",
+    "mtime_ns": 1790620960609243600,
+    "mtime_s": "1790620960609",
+    "size": 15512,
+    "v": 9,
+    "note": "addendum A7 verdicts of record (P-W2a PASS, P-W2b FAIL) + A8 candidate"
   },
   "design": {
     "path": "docs/DESIGN.md",
     "sha256": "4a2954afcb14363075d86c8fa1cc6bc2e7ebdff34e323a75953d67f6364322a3",
-    "mtime_ns": 1790580226506206302,
+    "mtime_ns": 1790580226506206200,
     "size": 9521,
     "mtime_s": "1790580226"
   },
@@ -22,7 +22,7 @@
     {
       "v": 1,
       "sha256": "712b5497041521f54ca98787fac96469bb1c6af378bc34a97d654c99917372a6",
-      "mtime_ns": 1790580265116256011,
+      "mtime_ns": 1790580265116256000,
       "note": "original pre-run seal (e_g1 run 1 executed under v1)"
     },
     {
@@ -54,6 +54,18 @@
       "sha256": "21dc2e3d26733fa8b8b4c491e4e12e7cc9eb2c63f6d14d156e7d96985b397066",
       "mtime_s": "1790609018",
       "note": "P-G2d executed under v6 (receipts/e_g2d.jsonl tip f702bc0c56ad58a0)"
+    },
+    {
+      "v": 7,
+      "sha256": "c89d5858bb2747f61aae3632d3bdf5dfdf9ca9d0e2904ef3d64fc965d4098df8",
+      "mtime_ns": 1790609106105932300,
+      "note": "addendum A6 (P-G2d PASS verdict + unified hardness law)"
+    },
+    {
+      "v": 8,
+      "sha256": "f3e4d02fd8ae8ea5e409c40ffc426754bc2ccd46504fc0dd06d8ca8307723515",
+      "mtime_ns": 1790620855461321200,
+      "note": "addendum A7 (P-W2 weave-2 sense table) registered pre-run"
     }
   ]
 }

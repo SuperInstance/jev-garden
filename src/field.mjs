@@ -7,7 +7,7 @@
 // IS the proof object (exoj law). Deformations = judgment events;
 // observations = the only place supervision exists.
 
-import { canonicalJSON, sha256Hex, fnv1a64 } from './canon.mjs';
+import { canonicalJSON, sha256Hex, fnv1a64, r6 } from './canon.mjs';
 
 export const GENESIS = 'JEVG-GENESIS';
 export const OPS = ['LINK', 'BIND', 'TICK', 'EFFECT', 'VIEW', 'FORGET', 'PROOF'];
@@ -176,5 +176,25 @@ export class Rhizome {
       zone: zone / n, prob_open: open / n,
       deformations: this.deformations, observations: this.observations,
     };
+  }
+
+  // weave-2 (Addendum A7): the rhizome sense table — the compact, order-free
+  // serialization of everything prior() consumes, so the weave artifact can
+  // carry the living-memory arm. Only cells hosting >= 1 observed context
+  // contribute votes; only their (G, aSum) and the supervision aggregate are
+  // serialized. Contexts sorted bytewise, ops sorted by name, G/aSum r6 —
+  // byte-deterministic under canonicalJSON (P-G5 discipline).
+  senseTable() {
+    const cellsWithObs = new Set();
+    for (const ctx of this.observed.keys()) cellsWithObs.add(contextCell(ctx, this.lattice));
+    const cells = {};
+    for (const k of [...cellsWithObs].sort()) {
+      const c = this.cells.get(k);
+      cells[k] = { G: r6(c.G), aSum: r6(c.aSum) };
+    }
+    const observed = [...this.observed.entries()]
+      .sort((a, b) => (a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0))
+      .map(([ctx, m]) => [ctx, Object.fromEntries([...m.entries()].sort((x, y) => (x[0] < y[0] ? -1 : 1)))]);
+    return { cells, observed };
   }
 }

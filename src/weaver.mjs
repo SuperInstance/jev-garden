@@ -110,3 +110,67 @@ export function trainBigramFromSamples(samples) {
   }
   return { kind: 'bigram', t };
 }
+
+// ---------- weave-2 (Addendum A7): the sense table rides in the artifact ----------
+import { SenseTablePrior } from './sensetable.mjs';
+
+// Evaluate the SERVE-time arms for a weave-v2 artifact: ens2 (0.5 hash + 0.5
+// qthe, v1 law) vs ens3 (registered 0.4/0.4/0.2 with the sense-table field
+// arm rebuilt from the SERIALIZED table — exactly what serve will see).
+export function evaluateServeArms(models, senseTable, samples) {
+  const prior = new SenseTablePrior(senseTable);
+  const names = ['hash', 'qthe', 'ens2', 'ens3'];
+  const hit = Object.fromEntries(names.map((n) => [n, 0]));
+  for (const s of samples) {
+    const ph = judgeHash(models.hash, s.tokens).probs;
+    const pq = judgeQthe(models.qthe, s.tokens).probs;
+    const pf = prior.prior(s.ctx);
+    const pe2 = {};
+    const pe3 = {};
+    for (const o of OPS) {
+      pe2[o] = 0.5 * ph[o] + 0.5 * pq[o];
+      pe3[o] = 0.4 * ph[o] + 0.4 * pq[o] + 0.2 * pf[o];
+    }
+    if (top1(ph, s.label)) hit.hash++;
+    if (top1(pq, s.label)) hit.qthe++;
+    if (top1(pe2, s.label)) hit.ens2++;
+    if (top1(pe3, s.label)) hit.ens3++;
+  }
+  const n = samples.length || 1;
+  return Object.fromEntries(names.map((k) => [k, hit[k] / n]));
+}
+
+// compileWeaveV2 — schema jev-garden/weave-v2: the compiled arms are trained
+// by the SAME laws as v1 (byte-identical hash/qthe arms); the NEW payload is
+// arms.field (the rhizome sense table). Registered serve ensemble (A7):
+// ens3 = 0.4*hash + 0.4*qthe + 0.2*field.
+export function compileWeaveV2({ rhizome, trainSamples, evalSamples, weaveIndex, notes }) {
+  const qtheM = trainQthe(trainSamples);
+  const hashM = trainHash(trainSamples);
+  const senseTable = rhizome.senseTable();
+  const serveMetrics = evaluateServeArms(
+    { hash: hashM, qthe: qtheM }, senseTable, evalSamples,
+  );
+  const W = hashM.W.map((w) => {
+    const sparse = {};
+    for (let i = 0; i < w.length; i++) if (w[i] !== 0) sparse[i] = r6(w[i]);
+    return sparse;
+  });
+  const b = Array.from(hashM.b, (x) => r6(x));
+  const artifact = {
+    schema: 'jev-garden/weave-v2',
+    index: weaveIndex,
+    journal_tip: rhizome.journalTip(),
+    journal_len: rhizome.journal.length,
+    hyper: { lr: 0.5, epochs: 12, wd: 0.0001, clip: 5, K: 3, HB: 2048, ens_lambda: 0.5, wormhole_weight: 0.3, ens3: { wh: 0.4, wq: 0.4, wf: 0.2 } },
+    arms: {
+      hash: { W, b },
+      qthe: { prototypes: qtheM.prototypes, wormhole: qtheM.wormhole },
+      field: senseTable,
+    },
+    serveMetrics: Object.fromEntries(Object.entries(serveMetrics).map(([k, v]) => [k, r6(v)])),
+    notes: notes ?? '',
+  };
+  artifact.artifact_sha256 = sha256Hex(canonicalJSON(artifact));
+  return { artifact, serveMetrics };
+}

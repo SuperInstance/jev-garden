@@ -72,6 +72,13 @@ OPS = ['LINK', 'BIND', 'TICK', 'EFFECT', 'VIEW', 'FORGET', 'PROOF']
 def r6(x):
     return math.floor(x * 1e6 + 0.5) / 1e6  # Math.round semantics
 
+def jnum(x):
+    # r6 + integral-float canonicalization: JS JSON.stringify emits 1.0 as "1";
+    # Python json.dumps emits "1.0". The twin must match JS byte-for-byte.
+    x6 = r6(x)
+    xi = int(x6)
+    return xi if x6 == xi else x6
+
 def micro(x):
     return math.floor(x * 1e6 + 0.5)  # integer micro-units (serialization)
 
@@ -127,9 +134,15 @@ def grow_journal(samples):
     journal = []
     prev = 'JEVG-GENESIS'
     seq = 0
+    cells = {}  # cellKey -> [G, aSum] — weave-2 (A7): sense-table accumulation
     for s in samples:
         seq += 1
-        row = {'seq': seq, 'kind': 'deform', 'context': s['ctx'], 'cell': context_cell(s['ctx']),
+        cell = context_cell(s['ctx'])
+        c = cells.setdefault(cell, [0.0, 0.0])
+        # deform law (field.mjs): alpha=0.4, gamma=0 -> G += 0.4*0, aSum += 0.4
+        c[0] += 0.4 * 0
+        c[1] += 0.4
+        row = {'seq': seq, 'kind': 'deform', 'context': s['ctx'], 'cell': cell,
                'gamma': 0, 'eta': 1, 'delta': 0.5, 'tag': 'stream'}
         h = sha256_hex(canonical([prev, row]))
         row['row_hash'] = h
@@ -142,7 +155,19 @@ def grow_journal(samples):
         row2['row_hash'] = h2
         journal.append(row2)
         prev = h2
-    return journal, prev
+    return journal, prev, cells
+
+def sense_table(cells, observed):
+    """weave-2 (A7): same shape as field.mjs senseTable() — cells hosting
+    >= 1 observed context carry {G, aSum} (r6, integral→int); observed is
+    [ctx, {op: count}] sorted bytewise by context, op keys sorted by canonical()."""
+    cells_with_obs = sorted({context_cell(ctx) for ctx in observed})
+    cell_out = {}
+    for k in cells_with_obs:
+        G, aSum = cells.get(k, [0.0, 0.0])
+        cell_out[k] = {'G': jnum(G), 'aSum': jnum(aSum)}
+    obs_out = [[ctx, observed[ctx]] for ctx in sorted(observed)]
+    return {'cells': cell_out, 'observed': obs_out}
 
 # ---------- main ----------
 def main():
@@ -158,8 +183,13 @@ def main():
             toks = context_tokens(rows, i)
             samples.append({'tokens': toks, 'ctx': '|'.join(toks), 'label': rows[i]['op'],
                             'prevOp': rows[i - 1]['op'] if i > 0 else '\u2400'})
-    journal, tip = grow_journal(samples)
+    journal, tip, cells = grow_journal(samples)
     W, b = train_hash(samples)
+    observed = {}
+    for s in samples:
+        m = observed.setdefault(s['ctx'], {})
+        m[s['label']] = m.get(s['label'], 0) + 1
+    st = sense_table(cells, observed)
     Wm = []
     for w in W:
         sparse = {}
@@ -169,12 +199,12 @@ def main():
         Wm.append(sparse)
     bm = [micro(x) for x in b]
     core = {
-        'schema': 'jev-garden/weave-core-v1',
+        'schema': 'jev-garden/weave-core-v2',
         'index': 1,
         'journal_tip': tip,
         'journal_len': len(journal),
-        'hyper': {'lr': 0.5, 'epochs': 12, 'wd': 0.0001, 'clip': 5, 'K': 3, 'HB': 2048, 'ens_lambda': 0.5, 'wormhole_weight': 0.3},
-        'arms': {'hash': {'W': Wm, 'b': bm}},
+        'hyper': {'lr': 0.5, 'epochs': 12, 'wd': 0.0001, 'clip': 5, 'K': 3, 'HB': 2048, 'ens_lambda': 0.5, 'wormhole_weight': 0.3, 'ens3': {'wf': 0.2, 'wh': 0.4, 'wq': 0.4}},
+        'arms': {'hash': {'W': Wm, 'b': bm}, 'field': st},
     }
     Path(out_path).write_text(canonical(core), encoding='utf-8')
     print(f"twin wrote {out_path}: journal_len={len(journal)} tip={tip[:16]} nnz={sum(len(w) for w in Wm)}")
