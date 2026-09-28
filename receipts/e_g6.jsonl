@@ -1,1 +1,1 @@
-{"n":1,"claim":"P-G6","verdict":"PASS","noul":0.7,"model":"jev-1.13.0","usage":{"input_tokens":589,"output_tokens":21},"row_hash":"17b6950df102705f5f86e20aadfb525439c45c25bd5bf5f503e13d38c68e6f41"}
+{"n":1,"claim":"P-G6","verdict":"FAIL","noul":0.69,"model":"jev-1.13.0","usage":{"input_tokens":589,"output_tokens":21},"row_hash":"be1c4158725e163494bb11364f065fb79213b9439757262e6c64ede4fc3eb0c3"}

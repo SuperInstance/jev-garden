@@ -1,10 +1,10 @@
 {
   "pg6": {
-    "noul": 0.7,
+    "noul": 0.69,
     "usage_receipted": true,
     "model": "jev-1.13.0",
-    "latency_ms": 282.947,
-    "verdict": "PASS"
+    "latency_ms": 21125.961,
+    "verdict": "FAIL"
   },
   "state_bytes": 714
 }
