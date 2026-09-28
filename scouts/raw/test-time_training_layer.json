@@ -1,0 +1,65 @@
+[
+  {
+    "url": "https://arxiv.org",
+    "name": "MoSE: Mixture of Slimmable Experts for Efficient and",
+    "snippet": "Feb 5, 2026 — We introduce inference - time width allocation strategies, including a lightweight test - time training method that learns compute-aware width ... Read more",
+    "host_name": "arxiv.org",
+    "rank": 0,
+    "date": "Feb 5, 2026",
+    "favicon": ""
+  },
+  {
+    "url": "https://openreview.net",
+    "name": "Buffer layers for Test-Time Adaptation",
+    "snippet": "by H Kim · Cited by 7 — This paper introduces a Buffer Layer for test - time adaptation (TTA), a lightweight parallel module that adapts at inference while keeping the backbone frozen. Read more",
+    "host_name": "openreview.net",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://charonhub.deeplearning.ai",
+    "name": "Test-Time Training End-to-End (TTT-E2E) Retrains Model",
+    "snippet": "The authors used a form of meta- learning , or learning how to learn ; in this case, the model learns how to learn from input provided at inference time . Training ...",
+    "host_name": "charonhub.deeplearning.ai",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://pub.towardsai.net",
+    "name": "The Complete Guide to Model Inference: Every Time You",
+    "snippet": "Aug 16, 2026 — LLM inference is the process of running a trained large language model to turn a prompt into output tokens. The model reads your input, predicts ... Read more",
+    "host_name": "pub.towardsai.net",
+    "rank": 3,
+    "date": "Aug 16, 2026",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.alphaxiv.org",
+    "name": "Test-Time Training with KV Binding Is Secretly Linear Attention",
+    "snippet": "Test - time training (TTT) with KV binding as sequence modeling layer is commonly interpreted as a form of online meta- learning that memorizes a key-value ...",
+    "host_name": "www.alphaxiv.org",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.emergentmind.com",
+    "name": "Self-Supervised Test-Time Adaptation",
+    "snippet": "Self-supervised test-time adaptation is a framework that enables models to update parameters during inference using unlabeled data and self-supervised ...",
+    "host_name": "www.emergentmind.com",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://scholar.hit.edu.cn",
+    "name": "ML-NC-TTT: Multi-layer Noise Contrastive Learning for Test-",
+    "snippet": "Test-Time Training (TTT ) improves model robustness under distribution shifts by adapting the model at inference time using unlabeled test data, enabling ...",
+    "host_name": "scholar.hit.edu.cn",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  }
+]

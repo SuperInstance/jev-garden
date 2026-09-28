@@ -1,0 +1,74 @@
+[
+  {
+    "url": "https://arxiv.org/html/2602.00116v1",
+    "name": "THDC: Training Hyperdimensional Computing Models with",
+    "snippet": "Hyperdimensional computing (HDC) offers lightweight learning for energy-constrained devices by encoding data into high-dimensional vectors.",
+    "host_name": "arxiv.org",
+    "rank": 0,
+    "date": "Jan 27, 2026",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.reddit.com/r/cognitivescience/comments/1u5pxgg/the_machine_implementing_a_discrete_gradientfree",
+    "name": "Implementing a discrete, gradient-free cognitive",
+    "snippet": "It is an exploratory reasoning engine built entirely on Vector Symbolic Architectures (VSA) / Hyperdimensional Computing (HDC). discrete spaces.",
+    "host_name": "www.reddit.com",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://dl.acm.org/doi/10.1145/3558000",
+    "name": "A Survey on Hyperdimensional Computing aka Vector",
+    "snippet": "This comprehensive survey examines hyperdimensional computing and vector symbolic architectures, which represent information using high-dimensional distributed ...",
+    "host_name": "dl.acm.org",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.hd-computing.com",
+    "name": "Hyperdimensional Computing/Vector Symbolic Architectures",
+    "snippet": "Unlike many traditional neural networks, HD/VSA do not rely on backpropagation or other compute-intensive learning algorithms, and, as shown in the example ...",
+    "host_name": "www.hd-computing.com",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=TQvP5ujaY0w",
+    "name": "The Vector Symbolic Architecture That Could Replace Neural",
+    "snippet": "This video has Dr. Shaoeli Ren of UC Riverside, introducing Tiny Vector Symbolic Architecture (VSA) as a fresh approach to machine learning, ...",
+    "host_name": "www.youtube.com",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://research.ibm.com/projects/neuro-vector-symbolic-architecture",
+    "name": "Neuro-Vector-Symbolic Architecture",
+    "snippet": "In NeuroVSA, processing takes place with vectors where information is superposed rather than occupying non-overlapping fields. Learning is incremental and fast,",
+    "host_name": "research.ibm.com",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://raw.githubusercontent.com/mlresearch/v284/main/assets/carzaniga25a/carzaniga25a.pdf",
+    "name": "Practical Lessons on Vector-Symbolic Architectures in Deep",
+    "snippet": "by F Carzaniga · 2025 · Cited by 1 — TorchHD: An open source python library to support research on hyperdimensional computing and vector symbolic architectures. Journal of Machine Learning Research ...",
+    "host_name": "raw.githubusercontent.com",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.alphaxiv.org/abs/2207.12932",
+    "name": "Hyperdimensional Computing vs. Neural Networks",
+    "snippet": "Hyperdimensional Computing (HDC) is a brain-inspired computing paradigm that represents information using high-dimensional vectors, often called Hypervectors ( ...",
+    "host_name": "www.alphaxiv.org",
+    "rank": 7,
+    "date": "",
+    "favicon": ""
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "url": "https://arxiv.org",
+    "name": "Human-JEPA: A Human-Centric Vision Model that",
+    "snippet": "Aug 21, 2026 — Human- JEPA built from the released V - JEPA 2.1 (Mur-Labadia et al., 2026 ) by anchored forecasting with two changes and one omission. The anchor ... Read more",
+    "host_name": "arxiv.org",
+    "rank": 0,
+    "date": "Aug 21, 2026",
+    "favicon": ""
+  },
+  {
+    "url": "https://zylos.ai",
+    "name": "AI World Models 2026: The Next Frontier Beyond LLMs",
+    "snippet": "Jan 21, 2026 — Research on world models : LeCun's AMI Labs ($5B), JEPA architecture with 1.5-6x training efficiency, and 80%+ autonomous driving adoption.",
+    "host_name": "zylos.ai",
+    "rank": 1,
+    "date": "Jan 21, 2026",
+    "favicon": ""
+  },
+  {
+    "url": "https://github.com",
+    "name": "ThinkJEPA: Empowering Latent World Models with Large",
+    "snippet": "Mar 25, 2026 — ThinkJEPA : Empowering Latent World Models with Large Vision-Language Reasoning Model . Unofficial MVP implementation of the paper: Haichao Zhang, ... Read more",
+    "host_name": "github.com",
+    "rank": 2,
+    "date": "Mar 25, 2026",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.emergentmind.com",
+    "name": "V-JEPA 2: Physics-Guided Video Embedding",
+    "snippet": "Jan 14, 2026 — It employs a dual loss combining diffusion and physics regression to jointly optimize generative accuracy and latent physical representation. Read more",
+    "host_name": "www.emergentmind.com",
+    "rank": 3,
+    "date": "Jan 14, 2026",
+    "favicon": ""
+  }
+]

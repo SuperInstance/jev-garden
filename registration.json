@@ -1,0 +1,17 @@
+{
+  "charter": "jev-garden pre-registration seal",
+  "sealed_at_iso": "2026-09-28T07:24:39Z",
+  "predictions": {
+    "path": "docs/PREDICTIONS.md",
+    "sha256": "712b5497041521f54ca98787fac96469bb1c6af378bc34a97d654c99917372a6",
+    "mtime_ns": 1790580265116256011,
+    "size": 4246
+  },
+  "design": {
+    "path": "docs/DESIGN.md",
+    "sha256": "4a2954afcb14363075d86c8fa1cc6bc2e7ebdff34e323a75953d67f6364322a3",
+    "mtime_ns": 1790580226506206302,
+    "size": 9521
+  },
+  "rule": "experiments verify these seals at startup; mismatch -> exit 2 (fail-closed). sealed BEFORE first run."
+}

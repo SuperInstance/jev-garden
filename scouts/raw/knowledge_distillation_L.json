@@ -1,0 +1,65 @@
+[
+  {
+    "url": "https://arxiv.org",
+    "name": "Distilling Compact GUI Agents with Reinforcement Learning",
+    "snippet": "May 8, 2026 — We first present the initial systematic integration of generalized knowledge distillation into the GUI agent domain via Guided On-policy  ...",
+    "host_name": "arxiv.org",
+    "rank": 0,
+    "date": "May 8, 2026",
+    "favicon": ""
+  },
+  {
+    "url": "https://dev.to",
+    "name": "Fine-tuning a VLM to build an on-device fashion-scoring app",
+    "snippet": "Fine-tune by knowledge distillation : Teacher = large model (Qwen3-VL-235B-A22B); Student = small model (Qwen3-VL-2B). Feed a theory document ...",
+    "host_name": "dev.to",
+    "rank": 1,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.linkedin.com",
+    "name": "Deploying AI Without the Bloat: The Rise of Distilled LLMs (Part 1",
+    "snippet": "On the other hand, knowledge distillation involves transfer of embedded knowledge from a pre-trained teacher model to a smaller student model where the student ...",
+    "host_name": "www.linkedin.com",
+    "rank": 2,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://openreview.net",
+    "name": "Distilling LLM Agent into Small Models with Retrieval and",
+    "snippet": "by M Kang · Cited by 44 — This work contributes toward the development of small language agents capable of running on local devices , enabling functional on- device AI",
+    "host_name": "openreview.net",
+    "rank": 3,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://www.alphaxiv.org",
+    "name": "Collaborative LLM Numerical Reasoning with Local Data",
+    "snippet": "A collaborative framework allows low-capacity local models to perform complex numerical reasoning over documents by interacting with powerful remote LLMs, ...",
+    "host_name": "www.alphaxiv.org",
+    "rank": 4,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://papers.ssrn.com",
+    "name": "Structured Knowledge Transfer in Language Model Distillation",
+    "snippet": "Abstract. Knowledge graphs are structured, auditable repositories of relational facts that can serve as verification signals in machine learning pipelines.",
+    "host_name": "papers.ssrn.com",
+    "rank": 5,
+    "date": "",
+    "favicon": ""
+  },
+  {
+    "url": "https://docshare.wps.com",
+    "name": "Different Teachers, Different Capabilities Sub-1B On-Device",
+    "snippet": "High-volume structured extraction imposes per-item latency costs on large language models , motivating distillation into small on-device models .",
+    "host_name": "docshare.wps.com",
+    "rank": 6,
+    "date": "",
+    "favicon": ""
+  }
+]
