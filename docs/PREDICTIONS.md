@@ -806,3 +806,151 @@ NOT threshold surgery on the A9 mode).
 > every run the e_a9 receipt was temporarily re-stamped by the in-run
 > regression and restored byte-for-byte (restored=true receipted in the
 > A9-regression receipt row).
+
+## Addendum A11 (2026-09-28, BEFORE the A11 run) — P-A11: the real-lane production trial (fresh-everywhere under grow-as-used on the real qcells streams)
+
+A9 queued and A10 priced "the real-lane trial (a quilt lane feeding judgments
++ receipts to the endpoint so arms.field carries its own freshness in
+production)". A11 makes that definition concrete and testable, registers the
+trial BEFORE any A11 run, and adds ZERO source changes (the A10 law already
+ships; the trial drives it). Runs execute under seal v17.
+
+### What "real lane" means (the testable definition, registered)
+
+- **The real-lane soil**: the 16 qcells receipt ledgers ON DISK at
+  `../quilt-qcells/receipts/ledgers/` — git-pinned in SuperInstance/quilt-qcells
+  @ 615ddcf (ledger files byte-identical to HEAD; local mode-bit noise only,
+  core.fileMode=false quarantine per the crab-traps precedent). 1418 rows
+  total, every row an OPS opcode (1418 walk samples). Sealed split unchanged:
+  byte-order sort, first 12 train / last 4 eval (train 908 samples / eval 510
+  by construction — measured at registration: train bell 75, crossed_measure
+  136, crx_case 138, forget_bell 75, ghz3 141, init_complex 73, init_flat 74,
+  layers_depth 142, measure_only 20, noise_bell 137, ry_decomposition 74,
+  swap_case 74; eval unsealed_bell 74, xx_return 41, y_decomposition 72,
+  zt_decomposition 72). These are the PRODUCTION receipts the garden ships
+  against — the soil the artifact was compiled from — NOT the synthetic shift
+  family (shift_family_gen.py built those AFTER training).
+- **The endpoint**: `src/serve.mjs judge()` — the exact serve path the garden
+  ships, byte-for-byte as committed at e92d00d, law chain A7 serve_with_field
+  > A10 fresh_everywhere > A9 serve_with_fresh > A8 hardness_gate > default v1.
+- **Production semantics (grow-as-used, the registered A10 law)**: the lane
+  walks its stream in arrival order; every row it has already judged and
+  receipted is an observation (field.mjs law: observations are the only
+  collapse, source 'receipt'); before serving sample k the lane re-serializes
+  arms.field from its own watched prefix [0..k) and serves under the A10
+  opt-in (priorCounted over the SERIALIZED aggregate — the exact A9/A10
+  payload, lambda* = 0). Each ledger is its own chain (seq 0, prev
+  0000000000000000): the walk is PER-LEDGER — cross-ledger pollution would be
+  a design error, not a law. Cold start is the registered law, not
+  special-cased: at k=0 the aggregate is empty and priorCounted serves
+  uniform (argmax ties resolve in OPS order, LINK — the same behavior any
+  production cold stream gets).
+- **Escalation is RECORDED, not executed**: escalate = top.p(served) <
+  ESCALATE_BELOW (0.55, sealed, reused, mode-independent) is receipted on
+  every call; the hosted teacher channel (e_g6) is out of scope — A11 stays
+  local and deterministic; the walk grows from the RECEIPTS (the ledger's
+  actual ops), never from teacher answers.
+
+Why this is a genuine trial and not a re-measurement: A9/A10 measured fresh
+memory (i) as the FROZEN compile-time train aggregate over the eval slice
+(saturated cost -0.0154, flips -6/+2) and (ii) as H1-watched memory on the
+SYNTHETIC shift soil (+0.1633 through the serve path). NEITHER is the
+production shape: production memory is the lane's OWN stream prefix — thinner
+than the archive, fresher than any split, carrying the stream's own patterns.
+The walk-forward everywhere-live number is a genuinely NEW measurement of the
+shipped law on the shipped soil; its verdict is registered below as a
+relation gate with a pre-priced safety envelope, honest either way (the A8
+precedent: an honest FAIL is a pin that moves).
+
+### Registered protocols (deterministic; zero new constants)
+
+- **Walk protocol (the A11 headline)**: for each of the 16 real ledgers
+  (sealed byte-order), for each sample k (0-based over the OPS-filtered
+  samples): watched prefix = samples [0..k); live table = the walk rhizome's
+  senseTable() (grown incrementally, deform+observe per receipt); handle =
+  loadWeave(artifact with arms.field replaced by the live table) under the
+  A10 opt-in hyper.fresh.fresh_everywhere = true; serve call judged-free
+  (state.context = rows.slice(max(0, i_k − K), i_k), no judged row — the
+  P-G2d/P-A9c battery convention); everywhere-live choice = answers.q1.choice;
+  hit = (choice === label). After the call the receipt is observed — the walk
+  grows. Sample row i_k of the ledger is identified by samplesWithIdx
+  (byte-equal to makeSamples by construction, guarded in-run as in A10).
+- **Default arm**: the identical walk with the flag ABSENT (v1 law) — the
+  default byte-safety gate; reference expression ensemble(judgeHash,
+  judgeQthe, 0.5) on every call.
+- **Leakage probe (judged-free integrity)**: for every walk step, the serve
+  call repeated with rows[i_k].op mutated to a different OPS value must
+  return BYTE-IDENTICAL responses (the judgment must never read the row under
+  judgment: the walk table is the prefix [0..k), the context slice is
+  [i_k − K, i_k)).
+- **Wire protocol sample (endpoint shape, P-A9a convention)**: 10 sampled
+  calls per ledger (judged-carrying: state.context = the K rows before the
+  target, judged = the target row), everywhere-live vs the registered
+  reference expression over the same step's serialized table — byte-identity.
+- **Pin re-measurement (the A9/A10 pins through the A11 driver)**: (i) the
+  sealed eval slice (4 eval ledgers, 259 samples) served with the COMPILE-TIME
+  train aggregate (the shipped no-re-serialization fallback): everywhere
+  micro == 938224, ens2 micro == 953668, flips -6/+2; (ii) the shift-H2
+  battery (4 shift ledgers, grow-as-used H1→H2): everywhere == 298/343, ens2
+  == 242/343.
+- **Predecessor regression**: experiments/e_a10_fresh_everywhere.mjs re-runs
+  under the A11 seal; every MEASURED byte of receipts/e_a10.jsonl must
+  reproduce (identical after stripping the seal stamp and the chain
+  row_hashes that witness it); the committed A10 receipt of record is
+  restored byte-for-byte after the check (append-only).
+
+### Predictions (pre-registered under seal v17)
+
+- **P-A11a (wire byte-exactness on the real-lane walk)**: over all 1418 walk
+  steps × three arms (everywhere-live, default, leakage probe): every
+  response byte-identical to the registered reference expression for its arm
+  (leakage probe: byte-identical to the unmutated call) — 0 mismatches; the
+  160 sampled judged-carrying wire calls byte-identical — 0 mismatches;
+  artifact-hyper opt-in path == loaded-handle opt-in path on the sampled
+  path-equality calls — 0 mismatches. PASS iff zero mismatches everywhere.
+- **P-A11b (the A9/A10 pins hold through the A11 driver)**: eval slice
+  everywhere micro == 938224 AND ens2 micro == 953668 AND flips -6/+2;
+  shift-H2 everywhere == 298/343 AND ens2 == 242/343 (pinned to the committed
+  receipts). PASS iff all five.
+- **P-A11c (walk semantics exact + no leakage)**: (i) walk serialization
+  byte-deterministic at EVERY step (double serialization, all 16 ledgers);
+  (ii) incremental walk == prefix re-grow: at every 16th step (≥1 per ledger)
+  the live table byte-equals a fresh rhizome grown on samples [0..k); (iii)
+  leakage probe 0 violations over all 1418 steps; (iv) escalate ==
+  (top.p(served) < 0.55) on every call; (v) each ledger's final walk table
+  byte-equals the JS full-ledger grow (walk continuity). PASS iff all.
+- **P-A11d (twin + battery green + predecessor regression)**: weave-core-v2
+  JS == Python (9960B == 9960B); the Python twin's fresh H1 tables on the
+  REAL ledgers byte-equal the JS midpoint walk tables (16/16 — the existing
+  garden_ref.py --fresh tool, no ref changes); smoke 9/9; selftest green;
+  e_a10 regression measured-identical + receipt of record restored. PASS iff
+  all.
+- **P-A11e (the production question — relation gate, FAIL branch registered
+  NOW)**: pooled walk-forward everywhere-live hits >= pooled walk-forward
+  ens2 hits over the 1418 real-lane samples. PASS iff the relation holds.
+  Registered FAIL branch (no threshold surgery, decided before the run): if
+  ens2 > everywhere-live, the trial's honest answer of record is
+  "production grow-as-used does not pay on the real lane"; the mode stays
+  opt-in trial (the served default stays v1 law regardless of the verdict —
+  unchanged by construction); the measured cost is receipted; AND the safety
+  envelope must hold: (ens2_hits − everywhere_hits) / 1418 <= 0.05 — the
+  promotion gate's own DISCARD bound (weaver.mjs promotionGate discards a
+  challenger degrading a tracked metric > 0.05; 0.05 is an EXISTING sealed
+  constant, reused — zero new constants; integer form: gap <= 70 hits). If
+  the envelope is breached, the walk exposes a failure mode beyond the
+  compiler's own safety discipline and the production semantics must not
+  ship even opt-in without a soil gate (A12 pricing).
+
+Contrast receipts (no gates): per-ledger everywhere-live vs ens2 table with
+flips decomposed (exact-ctx vs fallback rows); the walk's exact-ctx coverage
+(how much of the stream the lane's own memory sees); escalate counts per arm;
+cold-start (k=0) receipts; the fallback law receipt (unseen-context steps
+serve the prefix marginal, add-1 smoothed — the priorCounted fallback law).
+
+Operating point UNCHANGED: H* = ESCALATE_BELOW = 0.55 (escalate organ only,
+mode-independent); ens3 weights untouched (0.4/0.4/0.2, the registered
+weights); the A10 opt-in flag hyper.fresh.fresh_everywhere reused as-is;
+branch order A7 > A10 > A9 > A8 > v1 unchanged; artifact_sha256 pinned to
+1bbc4fa7cc7a69726db28378507dafad9679d391ff9555bee98d110fe5902519 (the e_w2
+receipt pin); default law = v1 everywhere; NO new arm, NO schema change, NO
+new numeric constant. A11 adds ZERO changes to src/.

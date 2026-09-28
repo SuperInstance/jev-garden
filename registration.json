@@ -4,12 +4,12 @@
   "sealed_note": "top block = current seal (v15); seal_history is append-only (v9 restored from the v9 top-block seal during the v10 hand-reseal)",
   "predictions": {
     "path": "docs/PREDICTIONS.md",
-    "sha256": "cd8ecefdb3f434088e61631d8c525c1607e34f17c6ce101c38111808e34db5b3",
-    "mtime_ns": 1790632139624500849,
-    "mtime_s": "1790632139",
-    "size": 51812,
-    "v": 16,
-    "note": "addendum A10 verdicts of record (P-A10 PASS 4/4: gap closed 298/343 through the wire, saturated risk pinned 938224, default byte-safe; fresh-everywhere ships opt-in, default stays v1 law)"
+    "sha256": "0b90be29c9ec4fcfb06130b78f4015f67f39316a891839bd2d51ea62222d5612",
+    "mtime_ns": 1790638608978603854,
+    "mtime_s": "1790638608",
+    "size": 61641,
+    "v": 17,
+    "note": "addendum A11 (P-A11 real-lane production trial: fresh-everywhere grow-as-used on the real qcells streams, walk-forward, zero source changes) registered pre-run; A11 runs execute under v17"
   },
   "design": {
     "path": "docs/DESIGN.md",
@@ -123,7 +123,14 @@
       "mtime_ns": 1790632139624500849,
       "size": 51812,
       "note": "A10 verdicts of record (P-A10 PASS 4/4) + gap mechanism receipts (interleave proof, flat train calibration, A9 flip-label audit); fresh-everywhere ships opt-in, default stays v1 law"
+    },
+    {
+      "v": 17,
+      "sha256": "0b90be29c9ec4fcfb06130b78f4015f67f39316a891839bd2d51ea62222d5612",
+      "mtime_ns": 1790638608978603854,
+      "size": 61641,
+      "note": "addendum A11 (P-A11 real-lane production trial, grow-as-used on the real qcells streams) registered pre-run; A11 runs execute under v17"
     }
   ],
-  "seal_note": "top block = current seal (v16); seal_history is append-only (v9 restored from the v9 top-block seal during the v10 hand-reseal)"
+  "seal_note": "top block = current seal (v17); seal_history is append-only (v9 restored from the v9 top-block seal during the v10 hand-reseal)"
 }
