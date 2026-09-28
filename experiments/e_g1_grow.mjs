@@ -21,7 +21,7 @@ const QCELLS = new URL('../../quilt-qcells/receipts/ledgers/', import.meta.url).
 const reg = JSON.parse(readFileSync('registration.json', 'utf8'));
 const sha = sha256Hex(readFileSync('docs/PREDICTIONS.md'));
 const stB = statSync('docs/PREDICTIONS.md', { bigint: true });
-if (sha !== reg.predictions.sha256 || stB.mtimeNs / 1000000000n !== BigInt(reg.predictions.mtime_s)) {
+if (sha !== reg.predictions.sha256 || st.size !== reg.predictions.size) { // A4: sha+size bind; mtime is a local witness
   console.error('SEAL MISMATCH — refusing to run (fail-closed)');
   process.exit(2);
 }

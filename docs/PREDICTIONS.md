@@ -161,3 +161,14 @@ marked pipeline-v1 and SUPERSEDED by corrected re-runs under seal v4
 re-evaluated unchanged; the corrected verdicts are the verdicts of record.
 The cross-substrate discipline did its job: a solo-substrate lane would
 have shipped the leak silently.
+
+## Addendum A4 (2026-09-28, cloud battery) — mtime is a local witness, not a checkout invariant
+
+The first GitHub Actions run failed exactly as it should: a fresh checkout
+re-stamps file mtimes, so the seal's mtime binding trips fail-closed
+off-repo. Correction: the seal's REPRODUCIBILITY bind is sha256+size
+(content is the law); mtime is retained in registration.json as a
+local-seal-time witness for audit. All experiment gates updated: sha+size
+enforced, mtime logged. This is the stone standard applied to ourselves:
+the harness refuses to weaken silently, so the weakening is registered,
+dated, and receipted instead.
