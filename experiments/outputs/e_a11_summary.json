@@ -1,0 +1,211 @@
+{
+  "run": "e_a11_real_lane",
+  "verdict": "FAIL",
+  "pA11a": true,
+  "pA11b": true,
+  "pA11c": true,
+  "pA11d": false,
+  "pA11e": false,
+  "law": {
+    "trial": "real-lane production grow-as-used walk, judged-free, zero source changes",
+    "opt_in": "hyper.fresh.fresh_everywhere",
+    "precedence": "A7 > A10 > A9 > A8 > v1"
+  },
+  "walkQuestion": {
+    "rows": 1418,
+    "everywhere": 1261,
+    "ens2": 1378,
+    "delta": -117,
+    "envelope_held": false
+  },
+  "pins": {
+    "eval_everywhere_micro": 938224,
+    "eval_ens2_micro": 953668,
+    "shift_everywhere": 298,
+    "shift_ens2": 242
+  },
+  "coverage": {
+    "exact_ctx": 1216,
+    "fallback": 202,
+    "escalate_everywhere": 297,
+    "escalate_default": 32
+  },
+  "perLedger": [
+    {
+      "ledger": "bell.jsonl",
+      "samples": 75,
+      "ens2_hits": 72,
+      "everywhere_hits": 64,
+      "exact_ctx": 61,
+      "fallback": 14,
+      "escalate_everywhere": 20,
+      "escalate_default": 2,
+      "twin_midpoint_fresh_bytes_equal": true
+    },
+    {
+      "ledger": "crossed_measure.jsonl",
+      "samples": 136,
+      "ens2_hits": 133,
+      "everywhere_hits": 128,
+      "exact_ctx": 125,
+      "fallback": 11,
+      "escalate_everywhere": 17,
+      "escalate_default": 1,
+      "twin_midpoint_fresh_bytes_equal": true
+    },
+    {
+      "ledger": "crx_case.jsonl",
+      "samples": 138,
+      "ens2_hits": 136,
+      "everywhere_hits": 128,
+      "exact_ctx": 125,
+      "fallback": 13,
+      "escalate_everywhere": 19,
+      "escalate_default": 1,
+      "twin_midpoint_fresh_bytes_equal": true
+    },
+    {
+      "ledger": "forget_bell.jsonl",
+      "samples": 75,
+      "ens2_hits": 72,
+      "everywhere_hits": 64,
+      "exact_ctx": 61,
+      "fallback": 14,
+      "escalate_everywhere": 19,
+      "escalate_default": 2,
+      "twin_midpoint_fresh_bytes_equal": true
+    },
+    {
+      "ledger": "ghz3.jsonl",
+      "samples": 141,
+      "ens2_hits": 137,
+      "everywhere_hits": 129,
+      "exact_ctx": 125,
+      "fallback": 16,
+      "escalate_everywhere": 22,
+      "escalate_default": 2,
+      "twin_midpoint_fresh_bytes_equal": true
+    },
+    {
+      "ledger": "init_complex.jsonl",
+      "samples": 73,
+      "ens2_hits": 71,
+      "everywhere_hits": 63,
+      "exact_ctx": 61,
+      "fallback": 12,
+      "escalate_everywhere": 18,
+      "escalate_default": 1,
+      "twin_midpoint_fresh_bytes_equal": true
+    },
+    {
+      "ledger": "init_flat.jsonl",
+      "samples": 74,
+      "ens2_hits": 72,
+      "everywhere_hits": 64,
+      "exact_ctx": 61,
+      "fallback": 13,
+      "escalate_everywhere": 19,
+      "escalate_default": 1,
+      "twin_midpoint_fresh_bytes_equal": true
+    },
+    {
+      "ledger": "layers_depth.jsonl",
+      "samples": 142,
+      "ens2_hits": 139,
+      "everywhere_hits": 129,
+      "exact_ctx": 125,
+      "fallback": 17,
+      "escalate_everywhere": 23,
+      "escalate_default": 5,
+      "twin_midpoint_fresh_bytes_equal": true
+    },
+    {
+      "ledger": "measure_only.jsonl",
+      "samples": 20,
+      "ens2_hits": 18,
+      "everywhere_hits": 16,
+      "exact_ctx": 13,
+      "fallback": 7,
+      "escalate_everywhere": 13,
+      "escalate_default": 1,
+      "twin_midpoint_fresh_bytes_equal": true
+    },
+    {
+      "ledger": "noise_bell.jsonl",
+      "samples": 137,
+      "ens2_hits": 136,
+      "everywhere_hits": 128,
+      "exact_ctx": 125,
+      "fallback": 12,
+      "escalate_everywhere": 18,
+      "escalate_default": 2,
+      "twin_midpoint_fresh_bytes_equal": true
+    },
+    {
+      "ledger": "ry_decomposition.jsonl",
+      "samples": 74,
+      "ens2_hits": 73,
+      "everywhere_hits": 63,
+      "exact_ctx": 61,
+      "fallback": 13,
+      "escalate_everywhere": 19,
+      "escalate_default": 2,
+      "twin_midpoint_fresh_bytes_equal": true
+    },
+    {
+      "ledger": "swap_case.jsonl",
+      "samples": 74,
+      "ens2_hits": 72,
+      "everywhere_hits": 64,
+      "exact_ctx": 61,
+      "fallback": 13,
+      "escalate_everywhere": 19,
+      "escalate_default": 1,
+      "twin_midpoint_fresh_bytes_equal": true
+    },
+    {
+      "ledger": "unsealed_bell.jsonl",
+      "samples": 74,
+      "ens2_hits": 72,
+      "everywhere_hits": 64,
+      "exact_ctx": 61,
+      "fallback": 13,
+      "escalate_everywhere": 19,
+      "escalate_default": 2,
+      "twin_midpoint_fresh_bytes_equal": true
+    },
+    {
+      "ledger": "xx_return.jsonl",
+      "samples": 41,
+      "ens2_hits": 38,
+      "everywhere_hits": 31,
+      "exact_ctx": 29,
+      "fallback": 12,
+      "escalate_everywhere": 18,
+      "escalate_default": 2,
+      "twin_midpoint_fresh_bytes_equal": true
+    },
+    {
+      "ledger": "y_decomposition.jsonl",
+      "samples": 72,
+      "ens2_hits": 69,
+      "everywhere_hits": 63,
+      "exact_ctx": 61,
+      "fallback": 11,
+      "escalate_everywhere": 17,
+      "escalate_default": 4,
+      "twin_midpoint_fresh_bytes_equal": true
+    },
+    {
+      "ledger": "zt_decomposition.jsonl",
+      "samples": 72,
+      "ens2_hits": 68,
+      "everywhere_hits": 63,
+      "exact_ctx": 61,
+      "fallback": 11,
+      "escalate_everywhere": 17,
+      "escalate_default": 3,
+      "twin_midpoint_fresh_bytes_equal": true
+    }
+  ]
+}

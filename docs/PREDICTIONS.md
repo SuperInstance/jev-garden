@@ -954,3 +954,114 @@ branch order A7 > A10 > A9 > A8 > v1 unchanged; artifact_sha256 pinned to
 1bbc4fa7cc7a69726db28378507dafad9679d391ff9555bee98d110fe5902519 (the e_w2
 receipt pin); default law = v1 everywhere; NO new arm, NO schema change, NO
 new numeric constant. A11 adds ZERO changes to src/.
+
+### A11 verdicts of record (run 2026-09-28, seal v17; receipts/e_a11.jsonl tip 461faf80852d7b56)
+
+- **P-A11a PASS** — the implementation IS the registered real-lane trial:
+  over all 1418 walk steps × three arms, every response byte-identical to
+  the registered reference expressions — everywhere-live vs the reference
+  rebuilt from the RE-PARSED SERIALIZED walk table (0 mismatches), the
+  default vs the independent v1 expression (0 mismatches), the leakage probe
+  vs the unmutated call (0 mismatches — the judgment never reads the row
+  under judgment); the 160 judged-carrying wire calls (first 10 steps per
+  ledger, the SAME step's serialized table) byte-identical (0 everywhere
+  mismatches; 0 default, receipted as contrast); artifact-hyper opt-in ==
+  loaded-handle opt-in (32/0 bad).
+- **P-A11b PASS** — the A9/A10 pins hold through the A11 driver: eval slice
+  (compile-time train aggregate) everywhere micro 938224 == the A9 receipt
+  pin, ens2 micro 953668 == the P-W2b pin, flips -6/+2 == the A10 receipt;
+  shift-H2 grow-as-used battery everywhere 298/343 == the P-G2d/A9/A10 pin,
+  ens2 242/343 pinned. The production driver drives the same serve path to
+  the same bytes.
+- **P-A11c PASS** — walk semantics exact: per-step serialization byte-
+  deterministic (0 bad, double serialization at EVERY step of 16 ledgers);
+  incremental walk == prefix re-grow (0/95 bad at every 16th step); final
+  walk table == full-ledger grow on 16/16 ledgers (continuity); leakage
+  probe 0 violations over 1418 steps; escalate == (top.p(served) < 0.55) on
+  every call (0 violations).
+- **P-A11d FAIL (literal strip) — receipted as a stamp-witness artifact,
+  every measured field matched**: twin core-v2 IDENTICAL (9960B == 9960B);
+  the Python --fresh H1 midpoint tables on the REAL ledgers byte-equal the
+  JS walk tables 16/16; smoke 9/9; selftest green; e_a10 re-ran under the
+  A11 seal with P-A10 overall PASS and its receipt of record restored
+  byte-for-byte. The single failing component: the registered measured-byte
+  strip of receipts/e_a10.jsonl (strip top-level seal_v + row_hashes)
+  returned false. The post-run field-level audit enumerated ALL differing
+  paths between the committed v16 receipt and the v17 re-run: row1.seal_v
+  (16→17), row1.a9_regression.seal_stamps.1 (16→17), and the three
+  propagated row_hashes — NOTHING else. The nested stamps field is a
+  STAMP-CLASS WITNESS the A10 experiment itself introduced (it records which
+  seal the inner e_a9 regression executed under); every MEASURED field
+  matched. The registered strip did not carve out the nested witness; the
+  FAIL of record stands exactly as executed (the lane does not touch its
+  gates after the run); this audit is the receipt of why it is bookkeeping,
+  not measurement. The same audit applies to the e_a10_summary.json nested
+  stamps field (restored byte-for-byte after the check).
+- **P-A11e FAIL — the production question answered NO, envelope BREACHED**:
+  pooled walk-forward everywhere-live 1261/1418 (0.8893) vs ens2 default
+  1378/1418 (0.9718); delta −117 hits = −0.0825. The registered safety
+  envelope (gap ≤ 70 hits = the promotion gate's own 0.05 DISCARD bound) is
+  BREACHED (117 > 70). Registered FAIL branch executes: the mode stays
+  opt-in trial; the real lane must NOT set hyper.fresh.fresh_everywhere;
+  the served default stays the v1 law (unchanged by construction); the
+  measured cost is the receipt of record. P-A11 overall: FAIL.
+
+Mechanism receipts (the science of the honest FAIL):
+
+1. **EXACT-CTX NEUTRALITY**: zero hit-outcome flips on ALL 1216 exact-ctx
+  steps (85.75% of the walk). When the lane's own memory HAS seen the exact
+  3-window, its memorized continuation agrees with the compiled heads
+  everywhere — fresh memory is never wrong on what it actually memorized;
+  on the real lane it is merely never better (the compiled artifact already
+  saturates its own training soil: ens2 walk 97.18%). This is the exact
+  mirror of the shift soil, where the memorized echo was precisely where
+  fresh WON (A10: all 50 gross gains exact-ctx).
+2. **FALLBACK DAMAGE CONCENTRATION**: 100% of the A11 damage sits on the
+  202 fallback steps (unseen context): 118 ens2-right→everywhere-wrong vs 1
+  the other way. There priorCounted serves the prefix marginal (add-1): its
+  argmax distribution across the walk was LINK 62 / BIND 99 / EFFECT 41 —
+  a biased guesser; the 118 loss rows' true labels: EFFECT 49, BIND 28,
+  TICK 26, PROOF 15; ens2 is confident on those rows (top.p 0.4578–0.9500,
+  median 0.6821) and mostly right. The A9/A10 pricing said "archived memory
+  still damages new soil" at −0.0154; production self-memory damages MORE
+  (−0.0825) because the single-stream prefix marginal is weaker than the
+  12-ledger archive on unseen windows.
+3. **ESCALATE LOAD**: everywhere escalates 297/1418 = 20.9% of real-lane
+  judgments vs the default's 32/1418 = 2.3% — a 9× teacher-load signal if
+  the mode were enabled in production (escalation RECORDED, not executed,
+  per the registered protocol).
+4. **THE A6 LAW CONFIRMED FROM THE THIRD SOIL**: freshness value is a
+  property of the WORLD. Shift soil (memorized echo, heads confidently
+  wrong): fresh pays +0.1633. Saturated eval slice (archived memory on new
+  soil): fresh costs −0.0154. The real lane walked in production (self-
+  memory, saturated heads): fresh costs −0.0825, damage entirely in the
+  fallback class. The soil-level selector law (the lane declares its soil;
+  the served default never changes) is the only guard, and A11 measured
+  exactly what it guards against on the production soil.
+
+Erratum (append-only, honest): the A11 registration's split-total
+parenthetical reads "train 908 / eval 510"; the correct totals are train
+1159 / eval 259 — the per-ledger list in the same sentence is correct and
+sums to 1159/259; the 1418 total and every registered gate are unaffected.
+Receipted here, not silently fixed (the v17 registration bytes stand).
+
+A12 pricing (from the A11 receipts, a NEW mechanism — no threshold surgery
+on any shipped mode): the fallback-aware everywhere candidate — serve the
+walk memory on exact-ctx steps, fall back to the v1 law (not the prefix
+marginal) on unseen contexts. The joint receipts predict it keeps the
+shift-soil gains (A10: the 50 gross gains are ALL exact-ctx rows) while
+being hit-identical to the v1 default on the real-lane walk (A11: zero
+exact-ctx flips ⇒ its real-lane hits == ens2's hits exactly). It requires a
+new serve branch and a registered addendum with its own seals; A9's gate,
+A10's everywhere, and the default stay byte-identical regardless.
+
+> Provenance note (seal v18, append-only): the A11 verdict of record was
+> determined by the FIRST official run, executed under seal v17 immediately
+> after the registration commit 75fd8cf (receipt tip 461faf80852d7b56, "seal
+> verified (v17)" in the run log). The committed receipts/e_a11.jsonl is the
+> v18 re-run executed under this seal; its measured bytes are identical to
+> the v17 run of record except the stamp-class fields (top-level seal_v, the
+> chain row_hashes that witness them, and the nested
+> e_a10_regression.seal_stamps array — the same stamp-class witness the
+> P-A11d audit carves out). The e_a10 receipt of record and summary were
+> restored byte-for-byte after every run.

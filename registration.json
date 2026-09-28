@@ -4,12 +4,12 @@
   "sealed_note": "top block = current seal (v15); seal_history is append-only (v9 restored from the v9 top-block seal during the v10 hand-reseal)",
   "predictions": {
     "path": "docs/PREDICTIONS.md",
-    "sha256": "0b90be29c9ec4fcfb06130b78f4015f67f39316a891839bd2d51ea62222d5612",
-    "mtime_ns": 1790638608978603854,
-    "mtime_s": "1790638608",
-    "size": 61641,
-    "v": 17,
-    "note": "addendum A11 (P-A11 real-lane production trial: fresh-everywhere grow-as-used on the real qcells streams, walk-forward, zero source changes) registered pre-run; A11 runs execute under v17"
+    "sha256": "f1ec2c2233fbb9d85e1e0f0801dca426886213b042e15c78a58569bad2403099",
+    "mtime_ns": 1790639510758578316,
+    "mtime_s": "1790639510",
+    "size": 69012,
+    "v": 18,
+    "note": "A11 verdicts of record (P-A11a/b/c PASS, P-A11d FAIL-as-executed receipted as a stamp-witness artifact with every measured field matching, P-A11e FAIL: the production question answered NO -0.0825, envelope BREACHED; fresh-everywhere stays opt-in trial, the real lane must not set it, A12 priced)"
   },
   "design": {
     "path": "docs/DESIGN.md",
@@ -130,7 +130,14 @@
       "mtime_ns": 1790638608978603854,
       "size": 61641,
       "note": "addendum A11 (P-A11 real-lane production trial, grow-as-used on the real qcells streams) registered pre-run; A11 runs execute under v17"
+    },
+    {
+      "v": 18,
+      "sha256": "f1ec2c2233fbb9d85e1e0f0801dca426886213b042e15c78a58569bad2403099",
+      "mtime_ns": 1790639510758578316,
+      "size": 69012,
+      "note": "A11 verdicts of record (P-A11a/b/c PASS; P-A11d literal-strip FAIL receipted as stamp-witness artifact, measured fields all match; P-A11e FAIL -0.0825 envelope BREACHED; mode stays opt-in trial, A12 priced)"
     }
   ],
-  "seal_note": "top block = current seal (v17); seal_history is append-only (v9 restored from the v9 top-block seal during the v10 hand-reseal)"
+  "seal_note": "top block = current seal (v18); seal_history is append-only (v9 restored from the v9 top-block seal during the v10 hand-reseal)"
 }
