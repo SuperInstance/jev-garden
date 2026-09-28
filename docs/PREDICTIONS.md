@@ -723,3 +723,86 @@ identified (the row gate's only remaining value); everywhere's open-row vs
 closed-row hit decomposition on both soils; the A9 eval-contrast field-label
 audit (w2r/r2w swapped in the committed A9 receipt row; verdict text of
 record correct; both A9 micro pins reproduce exactly).
+
+### A10 verdicts of record (run 2026-09-28, seal v15; receipts/e_a10.jsonl tip 5d8c77eb22d65e19)
+
+- **P-A10a PASS** — the implementation IS the registered trial mode: over
+  602 serve.judge() calls with the everywhere opt-in ON (259 eval-slice +
+  343 shift-H2), every response byte-identical to the registered everywhere
+  reference (0 mismatches); with the flag ABSENT, all 602 default responses
+  byte-identical to the pre-A10 v1-law reference (0 mismatches); an artifact
+  setting BOTH fresh flags served EVERYWHERE on all 602 precedence calls
+  (A10 > A9, 0 mismatches); artifact-hyper opt-in path == loaded-handle
+  opt-in path (40/40); the grow-as-used live-table handle served the
+  live-table reference byte-exactly (40/40 sampled wire calls).
+- **P-A10b PASS** — the gap is CLOSED: pooled fresh-everywhere 298/343 =
+  0.8688, EXACTLY the P-G2d/A9 ungated pin reproduced through the serve path
+  (judged-free battery protocol, grow-as-used per ledger); ens2 242/343
+  pinned to the P-A8c/A9 receipts; delta +0.1633 (integer-exact:
+  100*(298-242) = 5600 >= 343). Per-ledger everywhere 60/67, 73/83, 64/83,
+  101/110 (ens2 49/59/56/78 — every ledger gains double digits).
+- **P-A10c PASS** — the priced risk CONFIRMED at the pin: saturated eval
+  everywhere micro 938224 == the A9 receipt's fresh_micro (243/259 = 0.9382);
+  ens2 micro 953668 == the P-W2b pin. Flips -6/+2, net -4 hits = -0.0154,
+  and the run localizes the damage COMPLETELY to the 11 A9-open rows
+  (-6/+2 there; ZERO flips on the 248 gate-closed rows — fresh(train) and
+  ens2 agree hit-for-hit there, the structural identity the pricing was
+  derived from). The mode ships opt-in ONLY; the served default stays v1.
+- **P-A10d PASS** — P-W2a re-verified under seal v15 (weave-core-v2 9960B ==
+  9960B, journal tip aaa3ce6ab0dcbc94; compiled artifact still pinned to
+  1bbc4fa7cc7a69726db28378507dafad9679d391ff9555bee98d110fe5902519 — no
+  schema change, no new arm, no new constant); grow-as-used live tables
+  byte-identical to the Python twin (4/4) and live re-serialization
+  byte-deterministic (4/4); the e_a9 regression reproduced every MEASURED
+  byte of the A9 receipt under the A10 law (identical after stripping the
+  seal stamp 13->15 and the chain hashes that witness it — every measured
+  field matched), and the committed A9 receipt of record was restored
+  byte-for-byte after the check; smoke 9/9; selftest green.
+
+Verdict of record: P-A10 PASS (4/4). The 298-vs-252 gap is closed honestly,
+and the characterization survived contact with the run: (i) the 46-net gap
+decomposes into 50 gross gains minus 4 protection losses, ALL on
+exact-context rows — the gains are the echo rhythm (BIND->TICK 21,
+VIEW->TICK 15, TICK->BIND 13; ens2's argmax is EFFECT on 50/50: confidently
+wrong, top.p up to 0.8514), the losses are ambiguous windows the row gate
+was saving; (ii) the INTERLEAVE PROOF held — protection top.p range
+[0.7890, 0.8514] nested inside the gap range [0.5560, 0.8514]; the in-run H*
+frontier (0.40: 242/247 ... 0.55: 252/243 ... 0.75: 300/243 ... 1.01:
+298/243) shows no threshold captures the gap without the -4 eval damage;
+(iii) mechanism (a) is impossible-by-derivation, CONFIRMED in-run: the
+train-only walk-forward objective is exactly flat in H* (569/582 at every
+grid point — the gate is a no-op on the only soil compile time sees);
+(iv) the A9 receipt audit: the committed A9 eval-contrast flip FIELDS carry
+swapped labels (w2r=6/r2w=2 inconsistent with the same row's micros); the
+A9 verdict text of record (-6/+2) is the consistent reading and both A9
+micro pins reproduce exactly. The A9 law itself is untouched byte-for-byte
+(same receipts under the new seal stamp).
+
+Unified law after A10: freshness pays on hard soil — and the MODE SELECTOR
+must be soil-level, because per-row confidence provably cannot separate
+"confidently right" (saturated) from "confidently wrong but memorized"
+(shifted): compile-time calibration has a flat objective (no signal), the
+row-level distributions interleave (no separator), so the fresh-everywhere
+trial ships as an explicit LANE opt-in with the saturated risk pinned at
+-0.0154 (4 hits/259) and the served default stays the v1 law everywhere.
+
+Priced into A11: the real-lane trial (a quilt lane feeding judgments +
+receipts to the endpoint so arms.field carries its own freshness in
+production — queued since A9); the gamma channel (grow() still deforms with
+gamma=0 — every live cell G max = 0; mechanism (a)'s home, honestly priced
+since A9); the H*=0.50 dominance observation (shift 254 at ZERO eval damage
+vs the A9 point 252/-4 — recorded as a contrast for a future registered run,
+NOT threshold surgery on the A9 mode).
+
+> Provenance note (seal v16, append-only): the A10 verdict of record was
+> determined by the FIRST official run, executed under seal v15 immediately
+> after the registration commit fce983c (receipt tip 5d8c77eb22d65e19, "seal
+> verified (v15)" in the run log). Two uncommitted shakedown runs before
+> that commit, under the same v15 seal content, and one re-run under the
+> final seal v16 all reproduced every measured byte (the only differences
+> anywhere are the seal version stamps and the chain hashes that witness
+> them, as designed — pipeline determinism across four runs). The committed
+> receipts/e_a10.jsonl is the final v16 re-run, tip 0ed10e49430dfeb1. During
+> every run the e_a9 receipt was temporarily re-stamped by the in-run
+> regression and restored byte-for-byte (restored=true receipted in the
+> A9-regression receipt row).

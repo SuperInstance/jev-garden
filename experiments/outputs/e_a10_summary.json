@@ -1,0 +1,92 @@
+{
+  "run": "e_a10_fresh_everywhere",
+  "verdict": "PASS",
+  "pA10a": true,
+  "pA10b": true,
+  "pA10c": true,
+  "pA10d": true,
+  "law": {
+    "opt_in": "hyper.fresh.fresh_everywhere",
+    "branch": "priorCounted everywhere (lambda*=0, no threshold)",
+    "precedence": "A7 > A10 > A9 > A8 > v1"
+  },
+  "shiftBattery": {
+    "rows": 343,
+    "ens2": 242,
+    "everywhere": 298,
+    "pin298": true,
+    "delta": 0.16326530612244897
+  },
+  "evalCost": {
+    "rows": 259,
+    "ens2_micro": 953668,
+    "everywhere_micro": 938224,
+    "flips": {
+      "ens2right_everywherewrong": 6,
+      "ens2wrong_everywhereright": 2
+    },
+    "a9_open_rows": 11
+  },
+  "gap": {
+    "closed": 303,
+    "gains": 50,
+    "losses": 4,
+    "net": 46,
+    "interleave": true
+  },
+  "trainCalib": {
+    "flat": true,
+    "hits": 569,
+    "n": 582
+  },
+  "a9_regression": {
+    "ran": true,
+    "bytes_identical_except_seal": true,
+    "seal_stamps": [
+      13,
+      16
+    ]
+  },
+  "perLedger": [
+    {
+      "ledger": "ladder7_echo3",
+      "h1": 67,
+      "h2": 67,
+      "ens2_hits": 49,
+      "everywhere_hits": 60,
+      "ser_deterministic": true,
+      "twin_fresh_bytes_equal": true,
+      "artifact_carrying_live_table_sha": "106ab38f57078b6cc47fcf6d0c7aa621517ebb061e7a9e93a670929d52cf94ba"
+    },
+    {
+      "ledger": "ladder8_echo4",
+      "h1": 83,
+      "h2": 83,
+      "ens2_hits": 59,
+      "everywhere_hits": 73,
+      "ser_deterministic": true,
+      "twin_fresh_bytes_equal": true,
+      "artifact_carrying_live_table_sha": "5b9592c33ceef628cbaf0995d2ce392c2ce48ea600c19f00d5145088ebcb6957"
+    },
+    {
+      "ledger": "ladder9_echo4",
+      "h1": 83,
+      "h2": 83,
+      "ens2_hits": 56,
+      "everywhere_hits": 64,
+      "ser_deterministic": true,
+      "twin_fresh_bytes_equal": true,
+      "artifact_carrying_live_table_sha": "5a4577d93e91cced92367e107d3db72bb9f2d21d1b09b6539bb95bebebe0017c"
+    },
+    {
+      "ledger": "ladder8_echo6",
+      "h1": 110,
+      "h2": 110,
+      "ens2_hits": 78,
+      "everywhere_hits": 101,
+      "ser_deterministic": true,
+      "twin_fresh_bytes_equal": true,
+      "artifact_carrying_live_table_sha": "9e8a6dc4ea07a1b9ff3d67810a931760004b80bdc84d778c6322a76f172d3cf8"
+    }
+  ]
+}
