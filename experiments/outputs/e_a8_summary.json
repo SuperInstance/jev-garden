@@ -1,0 +1,88 @@
+{
+  "run": "e_a8_gate",
+  "verdict": "FAIL",
+  "pA8a": true,
+  "pA8b": false,
+  "pA8c": false,
+  "pA8d": true,
+  "gate_rule": {
+    "signal": "top.p(ens2)",
+    "threshold": 0.55,
+    "w": "binary 0|1"
+  },
+  "evalWire": {
+    "closed": 248,
+    "open": 11,
+    "closedMismatch": 0,
+    "openMismatch": 0,
+    "calls": 259,
+    "minTopP": 0.39209300717628237
+  },
+  "shiftWire": {
+    "closed": 303,
+    "open": 40,
+    "closedMismatch": 0,
+    "openMismatch": 0,
+    "calls": 343,
+    "minTopP": 0.40429573813834174
+  },
+  "shiftBattery": {
+    "rows": 343,
+    "gate_open": 40,
+    "ens2": 0.705539,
+    "gated": 0.705539,
+    "flips": {
+      "right2wrong": 0,
+      "wrong2right": 0
+    }
+  },
+  "evalBattery": {
+    "rows": 259,
+    "ens2_micro": 953668,
+    "gate_open": 11
+  },
+  "perLedger": [
+    {
+      "ledger": "ladder7_echo3",
+      "h2": 67,
+      "gate_open": 7,
+      "head_h2": 0.761194,
+      "ens2_top1": 0.731343,
+      "gated_top1": 0.731343,
+      "field_top1": 0.656716
+    },
+    {
+      "ledger": "ladder8_echo4",
+      "h2": 83,
+      "gate_open": 11,
+      "head_h2": 0.746988,
+      "ens2_top1": 0.710843,
+      "gated_top1": 0.710843,
+      "field_top1": 0.614458
+    },
+    {
+      "ledger": "ladder9_echo4",
+      "h2": 83,
+      "gate_open": 8,
+      "head_h2": 0.686747,
+      "ens2_top1": 0.674699,
+      "gated_top1": 0.674699,
+      "field_top1": 0.626506
+    },
+    {
+      "ledger": "ladder8_echo6",
+      "h2": 110,
+      "gate_open": 14,
+      "head_h2": 0.745455,
+      "ens2_top1": 0.709091,
+      "gated_top1": 0.709091,
+      "field_top1": 0.618182
+    }
+  ],
+  "twin": {
+    "identical": true,
+    "bytes": 9960,
+    "prior_ctx": 47,
+    "prior_ok": true
+  }
+}

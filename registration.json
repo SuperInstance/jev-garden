@@ -1,14 +1,15 @@
 {
   "charter": "jev-garden pre-registration seal",
   "sealed_at_iso": "2026-09-28T07:24:39Z",
+  "sealed_note": "top block = current seal (v11); seal_history is append-only (v9 restored from the v9 top-block seal during the v10 hand-reseal)",
   "predictions": {
     "path": "docs/PREDICTIONS.md",
-    "sha256": "8bfbc42a936df10d990a41d6bce9474470f715181c2bc6bfa42d63bafbbca98b",
-    "mtime_ns": 1790620960609243600,
-    "mtime_s": "1790620960609",
-    "size": 15512,
-    "v": 9,
-    "note": "addendum A7 verdicts of record (P-W2a PASS, P-W2b FAIL) + A8 candidate"
+    "sha256": "e938d0630090ba7458163f47f6587114d82abbb10e6a270e726cd97903069ebe",
+    "mtime_ns": 1790622916946150248,
+    "mtime_s": "1790622916946",
+    "size": 23894,
+    "v": 11,
+    "note": "addendum A8 verdicts of record (P-A8a PASS, P-A8b FAIL, P-A8c FAIL, P-A8d PASS; gate ships opt-in, default stays v1 law)"
   },
   "design": {
     "path": "docs/DESIGN.md",
@@ -66,6 +67,27 @@
       "sha256": "f3e4d02fd8ae8ea5e409c40ffc426754bc2ccd46504fc0dd06d8ca8307723515",
       "mtime_ns": 1790620855461321200,
       "note": "addendum A7 (P-W2 weave-2 sense table) registered pre-run"
+    },
+    {
+      "v": 9,
+      "sha256": "8bfbc42a936df10d990a41d6bce9474470f715181c2bc6bfa42d63bafbbca98b",
+      "mtime_ns": 1790620960609243600,
+      "size": 15512,
+      "note": "addendum A7 verdicts of record (P-W2a PASS, P-W2b FAIL) + A8 candidate (restored from the v9 top-block seal; append-only completion of the history chain)"
+    },
+    {
+      "v": 10,
+      "sha256": "8c661ff5bc927b3d03d26e5808191d35550aa5e4e9e31a06ff33e6e71c57223f",
+      "mtime_ns": 1790622577322609185,
+      "size": 20610,
+      "note": "addendum A8 (P-A8 hardness-gated serve blend) registered pre-run; both A8 runs executed under v10"
+    },
+    {
+      "v": 11,
+      "sha256": "e938d0630090ba7458163f47f6587114d82abbb10e6a270e726cd97903069ebe",
+      "mtime_ns": 1790622916946150248,
+      "size": 23894,
+      "note": "addendum A8 verdicts of record (P-A8a PASS, P-A8b FAIL, P-A8c FAIL, P-A8d PASS; gate ships opt-in, default stays v1 law)"
     }
   ]
 }

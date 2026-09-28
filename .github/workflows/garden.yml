@@ -27,6 +27,8 @@ jobs:
           node experiments/e_g2c_growth.mjs
       - name: cross-substrate determinism (JS == Python twin)
         run: node experiments/e_g5_determinism.mjs
+      - name: A8 hardness-gated serve blend receipts (gate rule, byte-identity, twin prior)
+        run: node experiments/e_a8_gate.mjs
       - name: publish receipts
         uses: actions/upload-artifact@v4
         with: { name: garden-receipts, path: receipts/ }

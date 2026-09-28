@@ -268,3 +268,132 @@ SERIALIZED table — compile-then-serve is honest distillation, not a live backd
 - Queued as A8 candidate: hardness-aware serve — blend ens3 iff the context's
   soil is registered-hard (the P-G2d +13.41pp regime), else ens2; registered
   BEFORE any run, with the hardness meter from the unified law.
+
+## Addendum A8 (2026-09-28, BEFORE the A8 run) — P-A8: the hardness-gated serve blend
+
+A7 queued A8: "blend ens3 iff the context's soil is registered-hard (the
+P-G2d +13.41pp regime), else ens2; registered BEFORE any run, with the
+hardness meter from the unified law." This addendum registers the rule and
+the prediction set. Runs execute under seal v10.
+
+### The registered gate (serve law for weave-v2 artifacts carrying arms.field)
+
+Saturation signal — the only per-context hardness proxy that exists at serve
+time, where no labels are available: s(context) = top.p(ens2), the predictive
+mass the v1 law puts on its own argmax (the `ensemble(ph, pq, 0.5)` expression
+serve already evaluates). This is the serve-time instantiation of the L2 law
+(A6: difficulty is measured by prediction, never by loss floors or entry
+statistics): the escalation organ already treats top.p < ESCALATE_BELOW as
+"not confident". A8 REUSES that sealed constant as the hardness threshold —
+H* := ESCALATE_BELOW = 0.55 (serve.mjs, sealed pre-weave-1). NO new numeric
+constant is registered; the gate reads the same sealed constant, so the gate
+and the escalation organ can never disagree about which contexts are hard.
+
+Registered rule: w(ens3) = 0 if s >= H* (saturated context — serve the v1
+law EXACTLY: the gate-closed path IS the same `ensemble(ph, pq, 0.5)`
+expression, byte-identical output), w(ens3) = 1 if s < H* (hard context —
+serve the registered ens3 blend 0.4*ph + 0.4*pq + 0.2*pf, pf = the
+sense-table prior rebuilt from the SERIALIZED artifact, the P-W2a-verified
+rebuild). w is binary because the only blend weights with receipts are the
+registered ens3 weights (A7); a ramp would be an unregistered continuum
+(threshold surgery). Polarity follows the receipts: s measures SATURATION of
+the ensemble's vote — w = 0 when saturation is at/above H*, w = 1 below it
+(A6/P-G2d: memory pays on hard soil — gate open; A7/P-W2b: archived memory
+is noise on saturated soil — gate closed). The gate rides as the DEFAULT
+serve law for weave-v2 field artifacts; v1 artifacts (no field arm) are
+untouched; the A7 unconditional opt-in (`serve_with_field`) is unchanged; an
+artifact may opt OUT with hyper.ens3.hardness_gate = false.
+
+### Predictions (pre-registered under seal v10)
+
+- **P-A8a (conditional byte-identity, wire path)**: over every serve.judge()
+  call on the two soils of record — the sealed eval slice (n=259 judged
+  calls) and the shift-family H2 (n=343) — each gate-CLOSED call returns a
+  response byte-identical (full-response JSON: model, answers,
+  probabilities, escalate) to the pre-A8 v1-law reference, and each
+  gate-OPEN call returns exactly the registered ens3 blend. PASS iff zero
+  mismatches in both branches.
+- **P-A8b (saturated closure)**: on the saturated soil of record (the sealed
+  eval slice, driven through serve.judge() with the established serve
+  protocol: state.context = ledger prefix, judged = the target row), the
+  gate opens on ZERO of the 259 judged calls — the served default over the
+  whole slice is byte-identical end-to-end to the current served default.
+  PASS iff gate_open_count == 0. Registered FAIL branch: the served default
+  reverts to unconditional ens2 (the gate ships behind explicit
+  hyper.ens3.hardness_gate opt-in), the FAIL is the verdict of record, and
+  the finding is priced: a per-row confidence gate cannot guarantee
+  whole-slice closure, so A9 (compile-time soil-hardness calibration carried
+  in the artifact, train-only, P-G2b pattern) becomes the candidate.
+- **P-A8c (hard-soil margin, battery protocol)**: on the shift-family H2 —
+  the non-saturated soil the repo has receipts for (P-G2d: pooled frozen-head
+  73.47% < 0.90 gate HELD) — pooled gated top-1 >= pooled ens2 top-1 + 0.01
+  over the 343 rows (battery windows per pipeline-v2; gate decided
+  per-sample by the same rule on ens2 top.p; pf from the serve-rebuilt
+  serialized table). PASS iff 100*(gated_hits − ens2_hits) >= 343 (the
+  integer-exact form of delta >= 0.01). Honest either way: FAIL with the
+  receipts means the ARCHIVED sense table does not carry the P-G2d
+  fresh-memory value even behind a confidence gate — the hardness law
+  narrows to "FRESH memory only", the served default stays the v1 law, and
+  the finding is priced.
+- **P-A8d (twin + battery green)**: (i) P-W2a re-verified under seal v10 —
+  weave-core-v2 JS == Python byte-identical (exact bytes); (ii) the serve
+  prior rebuild consumes the TWIN's serialized table — SenseTablePrior built
+  from arms.field of weave_core_v2_py.json reproduces the JS-table prior
+  vectors exactly (per-context JSON equality over every context evaluated on
+  both soils); (iii) smoke stays 9/9; (iv) selftest green under the seal.
+  PASS iff all four hold.
+
+Contrast receipts (no gates): per-ledger gate-open rates, flip accounting
+(opened rows: ens2-right→gated-wrong vs ens2-wrong→gated-right), arm top-1s
+(hash, qthe, field alone) on H2, min ens2 top.p over the eval slice, and the
+eval-slice battery-protocol ens2 top-1 pinned to the P-W2b receipt (953668
+micro).
+
+### A8 verdicts of record (run 2026-09-28, seal v10; receipts/e_a8.jsonl tip 1ac2699bffe07d6d)
+
+- **P-A8a PASS** — the implementation IS the registered rule: over 602
+  serve.judge() calls (259 eval-slice + 343 shift-H2), all 551 gate-closed
+  responses were byte-identical to the pre-A8 v1-law reference and all 51
+  gate-open responses exactly the registered ens3 blend (0 mismatches in
+  both branches, full-response JSON equality).
+- **P-A8b FAIL** — saturated closure does not hold: the gate opens on
+  11/259 eval-slice calls (min ens2 top.p = 0.3921 < H* = 0.55). The damage
+  is fully CONCENTRATED, not avoided: the battery-protocol gated slice
+  scores 0.9459 — exactly the P-W2b unconditional number — i.e. every
+  P-W2b flip happened on the 11 would-escalate rows (net -2). A per-row
+  confidence gate cannot guarantee whole-slice closure. Per the registered
+  FAIL branch: the served default reverts to the unconditional v1 law; the
+  gate ships behind explicit hyper.ens3.hardness_gate opt-in only (commit
+  carries the final law; the receipt bytes reproduce exactly under it).
+  A9 candidate registered by this branch: compile-time soil-hardness
+  calibration carried in the artifact (train-only, P-G2b pattern).
+- **P-A8c FAIL** — on shift-family H2 the gated blend EXACTLY equals ens2:
+  242/343 = 0.7055 both (delta +0.0000 against the +0.01 gate; 40/343
+  gate-opens, ZERO flips either way). Mechanism receipt: under the stream
+  grow() law every cell deforms with gamma=0 — all 43 serialized cells carry
+  G=0 — so the rebuilt prior is a distance-tilted frequency of train-ledger
+  op counts; 0.2*pf never crosses an ens2 argmax margin, and the field arm
+  alone sits at 61.45-65.67% on H2, BELOW both heads (68.67-76.12%). The
+  P-G2d +13.41pp came from priorCounted (exact-context memorization of
+  FRESH H1 memory), not from the lattice prior. The hardness law narrows to
+  "FRESH memory only": an ARCHIVED sense table carries no serve-time value
+  on either soil. The served default stays the v1 law.
+- **P-A8d PASS** — P-W2a re-verified under seal v10 (weave-core-v2
+  9960B == 9960B, journal tip aaa3ce6ab0dcbc94; weave-v2 artifact pinned to
+  the e_w2 receipt 1bbc4fa7cc7a69726db28378507dafad9679d391ff9555bee98d110fe5902519);
+  the serve prior rebuild consumed the TWIN's serialized table and
+  reproduced the JS prior vectors on all 47 evaluated contexts; smoke 9/9;
+  selftest green. The re-run against the final (opt-in) serve law
+  reproduced the receipt bytes exactly (pipeline determinism).
+
+Verdict of record: P-A8 FAIL (2/4 — the conditional-identity and twin
+predictions held; both blend-value predictions failed). The archived
+lattice-prior blend is now falsified three ways (P-W2b unconditional,
+P-A8b gated closure, P-A8c hard-soil value). Priced into A9: (i)
+compile-time soil-hardness calibration carried in the artifact (train-only
+fit, P-G2b pattern) since no per-row serve signal can guarantee saturated
+closure; (ii) if serve-time living memory is ever to pay, the artifact must
+carry FRESH stream memory (a table grown from the live lane's own
+judgments — grow-as-used), and the gamma channel must be fed real
+amplitudes (grow() currently deforms with gamma=0, structurally zeroing
+the prior the gate would gate on).

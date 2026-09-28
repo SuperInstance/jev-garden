@@ -51,17 +51,36 @@ export function judge(loaded, state, questions, judged) {
   // VERDICT OF RECORD: the registered ens3 blend FAILED on the saturated eval
   // slice (0.9459 vs ens2 0.9537, delta -0.0077 < -0.005) — the hardness law
   // predicted exactly this (amplitude memory prior = noise on saturated soil).
-  // Engineering response (receipted, NOT threshold surgery): the served
-  // default stays the v1 law (ens2) until a registered hardness gate selects
-  // the blend (A8 candidate: ens3 only on hard/shifted soil, P-G2d pattern).
-  // The ens3 blend remains available explicitly via loaded.ens3 for lanes
-  // that opt in (e.g. hardness-gated callers).
+  // A8 (P-A8, addendum A8, seal v10) VERDICT OF RECORD: the registered
+  // hardness gate (saturation s = top.p(ens2), H* = ESCALATE_BELOW = 0.55
+  // reused) FAILED 2 of 4 — P-A8b: the gate opens on 11/259 saturated eval
+  // calls (every P-W2b flip sits on a would-escalate row; a per-row
+  // confidence gate cannot guarantee whole-slice closure); P-A8c: on shift
+  // H2 the gated blend EXACTLY equals ens2 (0.7055, 40 opens, zero flips —
+  // the stream grow law deforms with gamma=0, so the archived table's prior
+  // is a distance-tilted frequency that never crosses a margin). Registered
+  // FAIL branch executed: the served DEFAULT stays the v1 law everywhere;
+  // the gate ships OPT-IN only (hyper.ens3.hardness_gate = true). A9
+  // candidates priced in PREDICTIONS.md A8 verdicts: compile-time soil
+  // calibration (train-only) and/or FRESH stream memory in the artifact.
+  // Modes: default = v1 law; `serve_with_field` = unconditional ens3 (A7);
+  // `hardness_gate: true` = the registered gated blend (A8, opt-in).
   let probs;
   if (loaded.field && loaded.ens3?.serve_with_field === true) {
     const pf = loaded.field.prior(tokens.join('|'));
     const { wh, wq, wf } = loaded.ens3;
     probs = {};
     for (const o of OPS) probs[o] = wh * ph[o] + wq * pq[o] + wf * pf[o];
+  } else if (loaded.field && loaded.ens3?.hardness_gate === true) {
+    const e2 = ensemble(ph, pq, 0.5); // v1 law — the gate-closed path is THIS expression
+    if (argmax(e2).p >= ESCALATE_BELOW) {
+      probs = e2;
+    } else {
+      const pf = loaded.field.prior(tokens.join('|'));
+      const { wh, wq, wf } = loaded.ens3;
+      probs = {};
+      for (const o of OPS) probs[o] = wh * ph[o] + wq * pq[o] + wf * pf[o];
+    }
   } else {
     probs = ensemble(ph, pq, 0.5);
   }
