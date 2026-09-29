@@ -1363,3 +1363,220 @@ needs its own registration).
 > e_a10/e_a11 receipts of record and summaries were restored
 > byte-for-byte by the runner itself after the in-run predecessor
 > regressions (restored=true receipted in row 1).
+
+## Addendum A13 (2026-09-29, BEFORE the A13 run) — P-A13: the escalation organ under a pre-registered budget cap (the M10+M4 budget-cap header)
+
+**Mine citations in the header (lode mines.jsonl, the M1 novelty gate).**
+This registration is the wave-60/61 queue item "jev-garden A13
+registration cites M10+M4 for the budget-cap header" — M10's own adoption
+hook of record ("lane": "fleet-seeds/lode/engine …; adoption hook:
+jev-garden A13 registration (wave-60 queue item 4) cites M10 alongside
+M4"). Header cites: **M10** (Regularized RSI, github.com/google-research/
+rrsi, paper arXiv:2609.24972; mines.jsonl line 10) — "constrain HOW the
+search moves, not WHAT the harness may contain"; its selection-side cost
+rule is "added inference cost must be paid for by measured gain" (the
+pricing-first law arriving independently at Google Research, externally
+replicated PASS in the lode resolution). **M4** (weco AIDE-squared;
+mines.jsonl line 4) — "per-lane budget caps become pre-registered
+constraints in every registration header, not just policy"; cost-
+constraint as selection pressure, the independent theoretical
+justification of the pricing-first law.
+
+**Nearest prior (M1 novelty gate): M4.** Delta: M4 is GOVERNANCE-LEVEL —
+its measurable claim is registration hygiene across lanes (headers carry
+caps; verdicts state spend; new constants need pricing notes), not an
+executable mechanism. A13 instantiates the cap as an EXECUTABLE MECHANISM
+on the garden's LIVE serve path: an organ-level spend-authority cap with
+refusal semantics, byte-safety bindings, and a measured verdict — the
+first EXECUTED budget cap in the fleet (M4's own prediction runs through
+wave 62 and is measured against registration files, not serve traffic).
+Second nearest prior: **M10** (the same cost rule at paper strength,
+fleet/RSI scale); delta: A13 is the garden-strength instance — ONE organ,
+ONE production walk, deterministic need-side measurement. This addendum
+is also M4-compliant FOR ITSELF: its own pre-registered spend cap is
+$0.00 external API, 0 teacher calls, 0 tokens — deterministic local
+execution only — and the verdict of record must state spend against it.
+
+A12 priced this candidate from its receipts (sealed v20): escalate load
+collapsed 20.9% -> 9.03% (128/1418) under the fallback-aware law, and
+"the remaining load is the priced A13 open question". The registered
+reading: the 128 exact-ctx escalate signals are a spend AUTHORITY the
+A12 mode would route to the hosted teacher — richer than the shipped
+default's own 32 — and the budget-cap law (M4, M10) says that authority
+must be capped and the cap's spend must earn its keep. A13 caps the
+escalation organ at the shipped default's own real-lane load of record
+and measures, deterministically, whether the capped spend still satisfies
+the cost rule's need-side on this soil. The GAIN-side (executing the
+granted teacher calls and measuring hit gain) requires the live channel
+and its own registration — priced, NOT pre-approved, as the follow-up
+candidate. Runs execute under seal v21.
+
+### The registered law (escalation organ, opt-in only; everything shipped stays byte-identical)
+
+- Flag: `hyper.serve.budget.escalate_max_per_walk = 32` — explicit opt-in,
+  riding the artifact hyper or the loaded handle; both paths MUST expose
+  the same cap value. NO new arm, NO schema change; the compiled weave-v2
+  artifact bytes are UNCHANGED (artifact_sha256 stays pinned to the e_w2
+  receipt 1bbc4fa7cc7a69726db28378507dafad9679d391ff9555bee98d110fe5902519).
+- **The cap value 32 is a NEW constant, introduced WITH its registered
+  pricing note (the M4-lawful path — M4's FAIL event is a new constant
+  WITHOUT one): 32 = the shipped v1 default's own real-lane escalate load
+  of record (the A12 receipt, walk.escalate_default = 32/1418 = 2.3%,
+  micro 22567). The law of the cap: the A12 fallback-aware mode may not
+  AUTHORIZE more teacher spend per production walk than the shipped
+  default already justifies.** The budget is enforced per walk (one
+  production stream = the 16-ledger real-lane walk of record), not per
+  step.
+- Mechanism scope: the cap gates the ESCALATION ORGAN (the teacher-
+  routing decision) — NEVER the served expression. src/serve.mjs gains
+  exactly (1) ONE one-line flag load (`loaded.escalateBudgetCap =
+  artifact.hyper?.serve?.budget?.escalate_max_per_walk` — undefined
+  unless pre-registered; artifacts without the flag are untouched) and
+  (2) ONE new export, `makeEscalationBudget(cap)` — a fail-closed counter
+  organ (`grant(signal)`: a refused grant is COUNTED with the honest
+  reason budget_exhausted and never swallowed silently; non-integer or
+  negative caps throw). `judge()` is UNTOUCHED: the wire's `escalate`
+  field stays the honest local signal (top.p(served) < ESCALATE_BELOW,
+  0.55 sealed, reused, mode-independent); the grant/refuse decision rides
+  OUTSIDE the response bytes, so a capped organ cannot perturb a served
+  judgment by construction.
+- Grant law: ARRIVAL ORDER — the first 32 escalate signals of the
+  production stream are granted, every later signal is refused with
+  reason budget_exhausted. (A live lane cannot reorder its own future; a
+  retrospective value-ordered grant law would be a DIFFERENT registration
+  — this experiment's P-A13c measures whether arrival-order spend
+  satisfies the M10 need-side and prices that law either way.)
+- Teacher channel: OUT OF SCOPE (the A11/A12 convention: escalation
+  RECORDED not executed). The organ governs spend AUTHORITY on the
+  production stream (one judged-free judgment per step); protocol-
+  verification calls (the judged-carrying wire sample, the leakage probe)
+  are receipted but consume no budget — they are not production
+  judgments.
+
+### Protocols of record (reused verbatim; zero new protocol constants)
+
+- Real-lane walk: the REGISTERED A11/A12 protocol, machinery
+  byte-for-byte — the 16 git-pinned qcells ledgers (1418 rows) walked in
+  arrival order through the shipped serve path; arms.field re-serialized
+  from the lane's own receipted prefix [0..k) before every judged-free
+  serve call (grow-as-used); per-ledger chains; cold start = the
+  registered law (an empty aggregate is the FALLBACK class: the v1 law at
+  k=0); judged-free, leakage probe per step on the trial arm (the
+  judgment must never read the row under judgment); judged-carrying wire
+  sample = first 10 steps per ledger (the A8/A9 wire convention);
+  serialization byte-determinism, incremental walk == prefix re-grow
+  (every 16th step), final table == full-ledger grow (continuity, 16/16).
+- Arms: **arm C** = fallback-aware (the A12 opt-in, loaded-handle path) +
+  the budget organ at cap 32 — the A13 trial arm; **arm U** =
+  fallback-aware uncapped — recomputed in-run as the byte-safety
+  reference (its pins must reproduce the A12 run of record); **arm D** =
+  default (all flags ABSENT — must load escalateBudgetCap undefined).
+- References rebuilt from the RE-PARSED serialized table (the registered
+  A12 convention): the fallback_aware reference expression and the v1
+  reference expression — proving in-run that the serve.mjs edit changed
+  no served byte.
+- Predecessor regression: e_a12_fallback_aware.mjs re-runs under the A13
+  seal (its own registered protocol already re-runs e_a11_real_lane.mjs,
+  which re-runs e_a10_fresh_everywhere.mjs, which re-checks the e_a9
+  receipt — one spawn binds the whole predecessor chain); P-A12's
+  verdict of record must STAND (PASS) with P-A12a–d PASS reproducing;
+  every MEASURED byte of receipts/e_a12.jsonl, receipts/e_a11.jsonl and
+  receipts/e_a10.jsonl must reproduce after stripping the STAMP-CLASS
+  fields — top-level seal_v, the chain row_hashes that witness them, AND
+  the nested *_regression.seal_stamps arrays (the exact stamp class the
+  A11 P-A11d audit enumerated, carved BEFORE the run); the committed
+  receipts of record and summaries are restored byte-for-byte after the
+  check (append-only). Eval-slice pins are NOT re-registered here — the
+  predecessor regression re-verifies them under the A13 seal.
+
+### Predictions (pre-registered under seal v21)
+
+- **P-A13a (the cap binds; spend exactness — the M4 header executed)**:
+  over the 1418-step real-lane walk with cap B = 32: (i) the organ grants
+  EXACTLY 32 escalations and refuses EXACTLY 96 (from the A12 receipts of
+  record: fallback-aware escalate signals = 128, the default's own load =
+  32, hence refused = 128 − 32 = 96 — the cap BINDS on this soil; a cap
+  that did not bind would make the experiment vacuous); (ii) every
+  refusal carries the honest wire signal (escalate = true) with grant =
+  false and reason budget_exhausted — the cap never hides a signal; (iii)
+  the granted set is EXACTLY the first 32 signals in arrival order (the
+  registered grant law — a prefix of the signal stream); (iv) final organ
+  counters exactly {spent: 32, refused: 96}. PASS iff all.
+- **P-A13b (the budget-cap law: capping does not degrade the gate metric
+  — the pre-stated threshold is ZERO)**: (i) the capped arm's responses
+  are byte-identical to the uncapped arm's responses on ALL 1418 steps —
+  0 mismatches (the organ gates the teacher decision, never the served
+  expression); (ii) wire byte-exactness: every capped-arm response
+  byte-identical to the A12 fallback-aware reference expression and every
+  default-arm response byte-identical to the v1 reference expression —
+  0 mismatches each (the serve.mjs edit changed no served byte); (iii)
+  hit degradation EXACTLY 0: capped hits == uncapped hits == 1378/1418
+  (the registered A11/A12 default pin) — the stated bound is 0 hit flips,
+  the strictest honest bound (the cap must not perturb the judgment at
+  all); (iv) the escalate SIGNAL is cap-independent: on every step,
+  arm C's escalate field == arm U's escalate field — 0 violations; (v)
+  the default arm is untouched: flag absent, escalateBudgetCap loads
+  undefined, all 1418 default responses byte-identical to the v1
+  reference; (vi) escalate law: escalate ⇔ top.p(served) < 0.55 on every
+  call — 0 violations; (vii) leakage probe: 0 violations over the 1418
+  walk steps; (viii) opt-in path equality: the artifact-hyper A13 flag ==
+  the loaded-handle A13 flag (same loaded cap value; byte-identical
+  responses on sampled calls); (ix) the judged-carrying wire sample
+  (first 10 steps per ledger, 160 calls) byte-identical C-vs-U — 0
+  mismatches. PASS iff all.
+- **P-A13c (the M10 cost rule, need-side, on this soil)**: from the
+  per-signal receipt (every escalate signal's top.p, exact-ctx class,
+  granted/refused): mean top.p of the 32 GRANTED signals <= mean top.p of
+  the 96 REFUSED signals (micro-rounded) — under a scarce budget the
+  organ's granted spend must buy AT LEAST as much uncertainty coverage as
+  the refused set it displaces (M10: added inference cost must be paid
+  for by measured gain; with the gain leg priced separately, the
+  deterministic need-leg is uncertainty concentration). PASS iff
+  granted-uncertainty >= refused-uncertainty. Honest-FAIL branch
+  registered NOW: if mean top.p(granted) > mean top.p(refused),
+  arrival-order spend is ANTI-CONCENTRATED on this soil — the cap wastes
+  its scarce slots on early, more-confident windows; the verdict FAILs
+  and prices a value-ordered grant law as a NEW registration (no
+  threshold surgery, no post-hoc re-grading, no grant-law edit after the
+  run).
+- **P-A13d (house-style bindings)**: (i) weave-core-v2 twin: JS ==
+  Python byte-identical; the compiled artifact pinned to the e_w2
+  receipt; (ii) the Python --fresh H1 midpoint tables on the REAL ledgers
+  byte-equal the JS walk tables 16/16 (the existing garden_ref.py --fresh
+  tool, no ref changes); (iii) smoke 9/9; selftest green; (iv)
+  predecessor regressions: e_a12 re-runs under the A13 seal with P-A12
+  overall == the recorded verdict (PASS stands, P-A12a–d PASS reproduce)
+  and every MEASURED byte of receipts/e_a12.jsonl + receipts/e_a11.jsonl
+  + receipts/e_a10.jsonl reproducing after the stamp-class strip;
+  committed receipts of record restored byte-for-byte. PASS iff all.
+
+Contrast receipts (no gates): the per-signal table (ledger, k, i,
+exact-ctx class, top.p micro, granted) — the honest per-row receipt;
+per-ledger grant/refuse table; the granted-set ledger distribution vs the
+signal-set distribution; mean/median top.p over granted vs refused vs all
+128 signals; the organ-spend fraction of the capped arm (32/1418 = 2.3%
+micro 22567 == the default's own load of record — the cap makes the trial
+arm cost the SAME teacher load the shipped default already pays, the M4
+header law stated as a measured number); the class decomposition of
+granted vs refused (exact-ctx counts); a pointer receipt that A12's
+second priced candidate (the shift-soil composition default question)
+remains OPEN and needs its own registration.
+
+Operating point UNCHANGED: H* = ESCALATE_BELOW = 0.55 (escalate SIGNAL
+only, mode-independent); ens3 weights untouched (0.4/0.4/0.2); the
+A7/A8/A9/A10/A12 opt-in flags reused as-is; branch order as registered in
+A12; artifact_sha256 pinned to
+1bbc4fa7cc7a69726db28378507dafad9679d391ff9555bee98d110fe5902519; default
+law = v1 everywhere. A13 adds ONE organ export + ONE flag load — the
+priced mechanism — and nothing else.
+
+Honest-FAIL branches (registered NOW, no threshold surgery): if P-A13a
+fails (the cap does not bind or the spend counters drift), the organ
+machinery is wrong — fix is a NEW registration, never an edit; if P-A13b
+fails (capping perturbs a served byte or a hit), the organ leaks into the
+serve path — the A13 law is refuted as implemented and the mechanism is
+withdrawn from any ship consideration; if P-A13c fails (arrival-order
+spend is anti-concentrated), the M10 need-side is NOT satisfied by this
+grant law and a value-ordered grant law is priced. In no case does the
+default law change, and no gate is edited after the run. An honest FAIL
+is a pin that moves (the A8/A11 precedent).

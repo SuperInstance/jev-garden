@@ -1,15 +1,15 @@
 {
   "charter": "jev-garden pre-registration seal",
   "sealed_at_iso": "2026-09-28T07:24:39Z",
-  "sealed_note": "top block = current seal (v20); seal_history is append-only (v9 restored from the v9 top-block seal during the v10 hand-reseal)",
+  "sealed_note": "top block = current seal (v21); seal_history is append-only (v9 restored from the v9 top-block seal during the v10 hand-reseal)",
   "predictions": {
     "path": "docs/PREDICTIONS.md",
-    "sha256": "cb99be9f2ba15406349043d2a0a33e9e224f458e1960b6ba8ae57bd63c64129a",
-    "mtime_ns": 1790644767263324934,
-    "mtime_s": "1790644767",
-    "size": 88402,
-    "v": 20,
-    "note": "A12 verdicts of record (P-A12 PASS 4/4: real-lane hit-identity 1378/1418 == default 1378/1418, 0 mismatches over the 1418 paired steps; shift-H2 300/343 >= the 298 class bound - BEATS everywhere 298 by exactly the 2 fallback-class protection losses converted; byte-safety 0 mismatches everywhere incl. 1204 precedence calls; twin + midpoint twins + e_a11 regression with the stamp-class strip, receipts of record restored; escalate load 9.03% vs everywhere 20.9%; the fallback-aware mode ships opt-in, the served default stays the v1 law, A13 priced)"
+    "sha256": "e65c19b080b5c4ee0078111c7ce2c0d921ad85ef4dc1aaceea9fefda873232be",
+    "mtime_ns": 1790654537586719285,
+    "mtime_s": "1790654537",
+    "size": 102442,
+    "v": 21,
+    "note": "addendum A13 (P-A13: the escalation organ under a pre-registered budget cap - the M10+M4 budget-cap header experiment, the wave-60 queue item 4 adoption hook; nearest_prior M4 with the governance-vs-executed delta; own spend cap $0.00/0 calls/0 tokens; cap B=32 = the shipped default's own real-lane escalate load of record, pricing note registered; organ gates spend AUTHORITY never the served expression; grant law arrival order; teacher channel out of scope) registered pre-run; A13 runs execute under v21"
   },
   "design": {
     "path": "docs/DESIGN.md",
@@ -151,7 +151,14 @@
       "mtime_ns": 1790644767263324934,
       "size": 88402,
       "note": "A12 verdicts of record (P-A12 PASS 4/4: real-lane hit-identity 0 mismatches over 1418 paired steps at 1378/1418 == ens2; shift-H2 300/343 beats the everywhere pin 298 by exactly the 2 fallback-class protection losses converted; byte-safety 0 mismatches incl. 1204 precedence calls; twin + e_a11 regression stamp-strip clean, receipts restored; escalate 9.03% vs 20.9%; mode ships opt-in, default stays v1, A13 priced)"
+    },
+    {
+      "v": 21,
+      "sha256": "e65c19b080b5c4ee0078111c7ce2c0d921ad85ef4dc1aaceea9fefda873232be",
+      "mtime_ns": 1790654537586719285,
+      "size": 102442,
+      "note": "addendum A13 (P-A13: the escalation organ under a pre-registered budget cap - the M10+M4 budget-cap header experiment; nearest_prior M4 + delta; cap B=32 priced from the A12 receipt; src/serve.mjs: ONE flag load + ONE organ export, judge() untouched) registered pre-run; A13 runs execute under v21"
     }
   ],
-  "seal_note": "top block = current seal (v20); seal_history is append-only (v9 restored from the v9 top-block seal during the v10 hand-reseal)"
+  "seal_note": "top block = current seal (v21); seal_history is append-only (v9 restored from the v9 top-block seal during the v10 hand-reseal)"
 }

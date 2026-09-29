@@ -46,6 +46,13 @@ export function loadWeave(artifact) {
     // on the serialized aggregate, not a threshold): zero new constants.
     // Artifacts without the flag are untouched.
     loaded.freshAware = artifact.hyper?.fresh?.fresh_everywhere_fallback_aware === true;
+    // A13 (addendum A13, seal v21): the pre-registered escalation budget cap
+    // (the M10+M4 budget-cap header). Opt-in only: undefined unless the
+    // artifact pre-registers hyper.serve.budget.escalate_max_per_walk. The
+    // cap gates the ESCALATION ORGAN's spend AUTHORITY (see
+    // makeEscalationBudget below) — NEVER the served expression: judge() is
+    // untouched, the wire's escalate field stays the honest local signal.
+    loaded.escalateBudgetCap = artifact.hyper?.serve?.budget?.escalate_max_per_walk;
   }
   return loaded;
 }
@@ -181,5 +188,33 @@ export function judge(loaded, state, questions, judged) {
     model: `jev-garden/${loaded.artifact.schema}@w${loaded.artifact.index}`,
     answers, escalate,
     usage: { model: 'garden-local', tokens: 0 },
+  };
+}
+
+// A13 (addendum A13, seal v21): the budget-gated escalation organ — the M10+M4
+// budget-cap mechanism, EXECUTED. The organ holds the lane's spend authority
+// for ONE production walk: the first `cap` honest escalate signals are granted
+// (routed to the teacher), every later signal is refused and COUNTED with the
+// honest reason budget_exhausted — a refusal is never swallowed silently. The
+// organ consumes only the SIGNAL: it never sees or changes the served bytes
+// (judge() is untouched), so a capped organ cannot perturb a judgment by
+// construction. Fail-closed: a non-integer or negative cap throws at
+// construction, not mid-walk.
+export function makeEscalationBudget(cap) {
+  if (!Number.isInteger(cap) || cap < 0) {
+    throw new Error(`refuse: escalate_max_per_walk must be a non-negative integer, got ${cap}`);
+  }
+  return {
+    cap,
+    spent: 0,
+    refused: 0,
+    reason: null,
+    grant(escalateSignal) {
+      if (!escalateSignal) return false; // no signal — the organ is not consulted
+      if (this.spent < this.cap) { this.spent += 1; return true; }
+      this.refused += 1;
+      this.reason = 'budget_exhausted';
+      return false;
+    },
   };
 }
