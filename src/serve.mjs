@@ -40,6 +40,12 @@ export function loadWeave(artifact) {
     // fresh law with the gate REMOVED, opt-in only. Zero new constants: the
     // mode has no threshold at all. Artifacts without the flag are untouched.
     loaded.freshEverywhere = artifact.hyper?.fresh?.fresh_everywhere === true;
+    // A12 (addendum A12, seal v19): the fallback-aware everywhere trial mode —
+    // the mechanism A11 priced from its honest FAIL. Opt-in only. The
+    // exact-ctx test is the registered A11 classification (a membership test
+    // on the serialized aggregate, not a threshold): zero new constants.
+    // Artifacts without the flag are untouched.
+    loaded.freshAware = artifact.hyper?.fresh?.fresh_everywhere_fallback_aware === true;
   }
   return loaded;
 }
@@ -94,11 +100,27 @@ export function judge(loaded, state, questions, judged) {
   // -6/+2 — archived memory still damages new soil, the P-G2b pattern).
   // Serves priorCounted from the SERIALIZED aggregate on EVERY row (the exact
   // A9 payload, gate removed; zero new constants — the mode has no
-  // threshold). Registered branch order: A7 serve_with_field -> A10
-  // fresh_everywhere -> A9 serve_with_fresh -> A8 hardness_gate -> default
-  // v1 (strictest-freshest wins among fresh modes; A7's ens3 blend kept
-  // first for byte-compat with the A7-A9 registered order).
+  // threshold). Registered branch order: A7 serve_with_field -> A12
+  // fresh_everywhere_fallback_aware -> A10 fresh_everywhere -> A9
+  // serve_with_fresh -> A8 hardness_gate -> default v1 (strictest-freshest
+  // wins among fresh modes: the A12 fallback-aware restriction serves fresh
+  // on a SUBSET of A10's rows, so it beats plain everywhere; A7's ens3 blend
+  // kept first for byte-compat with the A7-A11 registered order).
+  // A12 (P-A12, addendum A12, seal v19): the FALLBACK-AWARE everywhere trial
+  // mode — the mechanism priced by A11's honest FAIL (seal v18 pricing text
+  // of record): serve the walk memory ONLY on exact-ctx steps (where A11
+  // measured EXACT-CTX NEUTRALITY: zero hit-outcome flips on all 1216
+  // exact-ctx steps — fresh memory is never wrong on what it memorized), and
+  // the v1 law on unseen contexts (where A11 concentrated 100% of the
+  // everywhere damage: the prefix-marginal argmax LINK 62/BIND 99/EFFECT 41
+  // lost 118 rows vs 1 against ens2's heads on the 202 fallback steps).
+  // The exact-ctx test is `observed.has(token key)` — the registered A11
+  // classification, a MEMBERSHIP test, not a threshold: zero new constants.
+  // Both served expressions are existing registered pieces (the A10 payload
+  // and the v1 law); the branch only SELECTS between them per step.
   // Modes: default = v1 law; `serve_with_field` = unconditional ens3 (A7);
+  // `fresh_everywhere_fallback_aware: true` = the fallback-aware everywhere
+  // trial (A12, opt-in);
   // `fresh_everywhere: true` = the fresh-everywhere trial (A10, opt-in);
   // `serve_with_fresh: true` = the registered gated fresh law (A9, opt-in);
   // `hardness_gate: true` = the registered gated blend (A8, opt-in).
@@ -108,6 +130,16 @@ export function judge(loaded, state, questions, judged) {
     const { wh, wq, wf } = loaded.ens3;
     probs = {};
     for (const o of OPS) probs[o] = wh * ph[o] + wq * pq[o] + wf * pf[o];
+  } else if (loaded.field && loaded.freshAware === true) {
+    // A12 branch: exact-ctx -> the EXACT A10 payload (priorCounted over the
+    // SERIALIZED aggregate); fallback (unseen context) -> the EXACT v1 law
+    // (NOT the prefix marginal A11 measured as the whole of the everywhere
+    // damage, -0.0825, envelope-breaching on the real lane).
+    if (loaded.field.observed.has(tokens.join('|'))) {
+      probs = loaded.field.priorCounted(tokens.join('|'));
+    } else {
+      probs = ensemble(ph, pq, 0.5); // the v1 law — the A11 fallback repair
+    }
   } else if (loaded.field && loaded.freshEverywhere === true) {
     probs = loaded.field.priorCounted(tokens.join('|'));
   } else if (loaded.field && loaded.fresh === true) {

@@ -1065,3 +1065,184 @@ A10's everywhere, and the default stay byte-identical regardless.
 > e_a10_regression.seal_stamps array — the same stamp-class witness the
 > P-A11d audit carves out). The e_a10 receipt of record and summary were
 > restored byte-for-byte after every run.
+
+## Addendum A12 (2026-09-28, BEFORE the A12 run) — P-A12: fallback-aware everywhere (the A11-priced mechanism, one new serve branch)
+
+A11's honest FAIL priced this candidate from the joint receipts. The
+pricing text of record (sealed v18): "the fallback-aware everywhere
+candidate — serve the walk memory on exact-ctx steps, fall back to the v1
+law (not the prefix marginal) on unseen contexts. The joint receipts
+predict it keeps the shift-soil gains (A10: the 50 gross gains are ALL
+exact-ctx rows) while being hit-identical to the v1 default on the
+real-lane walk (A11: zero exact-ctx flips => its real-lane hits == ens2's
+hits exactly). It requires a new serve branch and a registered addendum
+with its own seals; A9's gate, A10's everywhere, and the default stay
+byte-identical regardless." The mechanism receipts it is built from: (1)
+EXACT-CTX NEUTRALITY — zero hit-outcome flips on ALL 1216 exact-ctx steps
+(85.75% of the walk): fresh memory is never wrong on what it memorized and
+never better on the real lane (the compiled artifact saturates its own soil
+at 97.18%); (2) FALLBACK DAMAGE CONCENTRATION — 100% of the A11 damage sat
+on the 202 unseen-context steps (118 ens2-right/everywhere-wrong vs 1 the
+other way): the prefix-marginal argmax (LINK 62 / BIND 99 / EFFECT 41) is a
+biased guesser against ens2's 97% heads; (3) ESCALATE LOAD — everywhere
+escalated 20.9% of real-lane judgments vs the default's 2.3%. A12 removes
+the damage channel while keeping the fresh channel exactly where A11
+measured it harmless (and A10 measured it valuable on shift soil). Runs
+execute under seal v19.
+
+### The registered law (serve, opt-in only; everything shipped stays byte-identical)
+
+- Flag: `hyper.fresh.fresh_everywhere_fallback_aware === true` (explicit
+  opt-in), riding the artifact hyper (set at compile / re-serialization) or
+  the loaded handle; both paths MUST produce identical bytes. NO new arm,
+  NO schema change, NO new numeric constant. The compiled weave-v2 artifact
+  bytes are UNCHANGED (artifact_sha256 stays pinned to the e_w2 receipt
+  1bbc4fa7cc7a69726db28378507dafad9679d391ff9555bee98d110fe5902519).
+- Serve branch (the priced new branch, built ENTIRELY from existing
+  registered pieces): `loaded.field && freshAware` ->
+  - exact-ctx (the memory has seen the exact token key:
+    `observed.has(tokens.join('|'))` — the registered A11 exact-ctx
+    classification, a MEMBERSHIP test, NOT a threshold): probs =
+    `priorCounted(tokens.join('|'))` — the EXACT A10/A9 payload;
+  - fallback (unseen context): probs = `ensemble(ph, pq, 0.5)` — the EXACT
+    v1 law (the default path as shipped), NOT the prefix marginal.
+  Every served expression is an existing registered piece; the branch only
+  SELECTS between them per step by the A11 classification. The escalate
+  organ is unchanged and mode-independent: escalate = (top.p of the SERVED
+  distribution) < ESCALATE_BELOW (0.55, sealed, reused).
+- Registered branch order (total, for artifacts setting multiple opt-ins):
+  A7 serve_with_field -> A12 fresh_everywhere_fallback_aware -> A10
+  fresh_everywhere -> A9 serve_with_fresh -> A8 hardness_gate -> default
+  v1. (Strictest-freshest wins among fresh modes: A12 serves fresh on a
+  SUBSET of A10's rows — the fallback-aware restriction beats plain
+  everywhere; A7's ens3 blend stays first for byte-compatibility with the
+  A7-A11 registered order. Artifacts setting only A10/A9/A8 flags, or
+  none, are byte-unchanged by construction — verified in P-A12c.)
+- Source-change scope of record: src/serve.mjs gains exactly ONE else-if
+  branch + the one-line flag load (+ law comments) — nothing else in src/
+  changes. This is the first src/ change since A10, and it IS the priced
+  mechanism (the v18 pricing text of record prices exactly this new
+  branch).
+
+### Protocols of record (reused verbatim; zero new protocol constants)
+
+- Real-lane walk: the REGISTERED A11 protocol, machinery byte-for-byte —
+  the 16 git-pinned qcells ledgers (1418 rows) walked in arrival order
+  through the shipped serve path; arms.field re-serialized from the lane's
+  own receipted prefix [0..k) before every judged-free serve call
+  (grow-as-used); per-ledger chains; cold start = the registered law (an
+  empty aggregate is the FALLBACK class: A12 serves the v1 law at k=0,
+  where the everywhere mode served uniform — receipted as contrast);
+  escalation RECORDED not executed; leakage probe per step on the trial
+  arm (the judgment must never read the row under judgment);
+  judged-carrying wire sample = first 10 steps per ledger (the A8/A9 wire
+  convention: tokens include the judged row's channel; the A12 exact-ctx
+  test applies to the SAME key the fresh payload would serve from — the
+  wire key differs from the battery key exactly as in A9/A10/A11).
+- Shift-H2 battery: the A10/P-G2d protocol — 4 shift ledgers, grow-as-used
+  watch H1, re-serialize arms.field, judged-free serve of H2.
+- Eval-slice pins: the compile-time train aggregate (the shipped
+  no-re-serialization fallback), the A9/A10/A11 pins.
+- Predecessor regressions: e_a11_real_lane.mjs re-runs under the A12 seal
+  (its own registered protocol already re-runs e_a10_fresh_everywhere.mjs,
+  which re-checks the e_a9 receipt — one spawn binds the whole predecessor
+  chain); every MEASURED byte of receipts/e_a11.jsonl and
+  receipts/e_a10.jsonl must reproduce after stripping the STAMP-CLASS
+  fields — top-level seal_v, the chain row_hashes that witness them, AND
+  the nested *_regression.seal_stamps arrays (the exact stamp-class the
+  A11 P-A11d field audit enumerated; the P-A11d literal-strip FAIL is the
+  recorded lesson this strip corrects for — the registered strip of A12
+  carves the witness class out BEFORE the run, so a stamp-only difference
+  can never again read as a measured divergence); the committed receipts
+  of record and the e_a10 summary of record are restored byte-for-byte
+  after the check (append-only).
+
+### Predictions (pre-registered under seal v19)
+
+- **P-A12a (real-lane hit-identity — the production prediction)**: over
+  the 1418-step real-lane walk (the A11 protocol), the fallback-aware arm
+  and the default arm are judged on identical steps: (i) pooled
+  fallback-aware hits == pooled default hits — 0 hit mismatches over the
+  1418 paired steps (the pricing's "its real-lane hits == ens2's hits
+  exactly"); (ii) the default arm reproduces the A11 run-of-record pin
+  1378/1418 (hence fallback-aware == 1378); (iii) wire byte-exactness:
+  every fallback-aware response byte-identical to the A12 reference
+  expression (exact-ctx step -> priorCounted over the RE-PARSED serialized
+  live table; fallback step -> ensemble(ph, pq, 0.5)) — 0 mismatches;
+  (iv) channel byte-identity: on every fallback-class step the
+  fallback-aware response is byte-identical to the default response, and
+  on every exact-ctx-class step byte-identical to the everywhere (A10)
+  response — 0 violations (the branch IS the selector between the two
+  shipped expressions); (v) the judged-carrying wire sample (first 10
+  steps per ledger, 160 calls) byte-identical to the A12 reference — 0
+  mismatches. PASS iff all.
+- **P-A12b (shift-H2 class preservation — the shift gains hold)**:
+  battery protocol, grow-as-used H1->H2, fallback-aware opt-in: pooled
+  fallback-aware top-1 >= 298/343 (the A10 pin held or improved — the
+  registered class bound: A10's 50 gross gains are ALL exact-ctx rows, so
+  the fresh channel still serves and wins there; any A10 protection loss
+  sitting on a fallback row converts to the default answer, which can only
+  add hits) AND ens2 == 242/343 (the pinned receipt). PASS iff both.
+  Contrast receipts (no gates): the exact pooled number; the class
+  decomposition of the everywhere-vs-default shift flips (gain/loss x
+  exact-ctx/fallback — closes where the 4 A10 protection losses sit);
+  per-ledger table.
+- **P-A12c (byte-safety — everything shipped stays byte-identical)**:
+  (i) with the A12 flag ABSENT, all 1418 walk default responses and all
+  602 battery default responses (eval 259 + shift 343) byte-identical to
+  the v1 reference expression — 0 mismatches; (ii) A10 mode unchanged:
+  with ONLY the A10 opt-in set (loaded-handle path), all 602 battery
+  responses byte-identical to the everywhere reference (priorCounted over
+  the serve tokens) — 0 mismatches (the new branch must not perturb the
+  shipped A10 mode; the artifact-hyper A10 path is bound byte-exact by the
+  e_a10 predecessor regression); (iii) precedence: an artifact setting
+  BOTH the A12 and A10 flags serves the A12 law on all 602 battery calls,
+  and an artifact setting BOTH the A12 and A9 flags serves the A12 law
+  (A12 > A10 > A9 in the registered order) — 0 mismatches; (iv) opt-in
+  path equality: the artifact-hyper A12 flag == the loaded-handle A12 flag,
+  byte-identical on sampled calls — 0 mismatches; (v) eval-slice pins
+  through the A12 driver: everywhere micro == 938224, ens2 micro == 953668,
+  flips -6/+2; (vi) escalate law: escalate == (top.p(served) < 0.55) on
+  EVERY call of the run — 0 violations; (vii) leakage probe: 0 violations
+  over the 1418 walk steps; (viii) walk semantics: per-step serialization
+  byte-determinism (double serialization, all 16 ledgers), incremental
+  walk == prefix re-grow (every 16th step), final walk table == full-ledger
+  grow (continuity, 16/16). PASS iff all.
+- **P-A12d (house-style bindings)**: (i) weave-core-v2 twin: JS == Python
+  byte-identical (9960B == 9960B); the compiled artifact pinned to the
+  e_w2 receipt; (ii) the Python --fresh H1 midpoint tables on the REAL
+  ledgers byte-equal the JS walk tables 16/16 (the existing garden_ref.py
+  --fresh tool, no ref changes); (iii) smoke 9/9; selftest green; (iv)
+  predecessor regressions: e_a11 re-runs under the A12 seal with P-A11
+  overall == the recorded verdict (FAIL — the honest FAIL of record
+  STANDS) and every MEASURED byte of receipts/e_a11.jsonl +
+  receipts/e_a10.jsonl reproducing after the stamp-class strip; committed
+  receipts of record restored byte-for-byte. PASS iff all.
+
+Contrast receipts (no gates): per-ledger walk table with the
+exact-ctx/fallback decomposition; the hit-flip list fallback-aware vs
+default (predicted EMPTY on the real lane); A12 escalate load vs the
+everywhere 297/1418 = 20.9% and default 32/1418 = 2.3% (the fallback-aware
+law escalates exactly as the default does on fallback steps and exactly as
+everywhere does on exact-ctx steps); cold-start receipts (k=0 now serves
+the v1 law; everywhere served uniform, argmax LINK); the eval-slice
+fallback-aware number with its exact-ctx/fallback decomposition (the fresh
+channel serves the 243-class outcomes on seen windows, the v1 law the
+247-class on unseen — no gate); the shift class decomposition of the A10
+protection losses.
+
+Operating point UNCHANGED: H* = ESCALATE_BELOW = 0.55 (escalate organ
+only, mode-independent); ens3 weights untouched (0.4/0.4/0.2, the
+registered weights); the A7/A8/A9/A10 opt-in flags reused as-is; branch
+order as registered above; artifact_sha256 pinned to
+1bbc4fa7cc7a69726db28378507dafad9679d391ff9555bee98d110fe5902519; default
+law = v1 everywhere. A12 adds ONE serve branch — the priced mechanism —
+and nothing else.
+
+Honest-FAIL branches (registered NOW, no threshold surgery): if P-A12a
+fails (the real lane is NOT hit-identical), the A11 neutrality receipt was
+incomplete — the fallback-aware law does NOT ship, the mode stays an
+opt-in trial, and the divergence is receipted; if P-A12b fails (the shift
+gains do not hold at the class bound), the class bound was wrong — same
+law. In no case does the default law change, and no gate is edited after
+the run. An honest FAIL is a pin that moves (the A8/A11 precedent).

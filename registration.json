@@ -1,15 +1,15 @@
 {
   "charter": "jev-garden pre-registration seal",
   "sealed_at_iso": "2026-09-28T07:24:39Z",
-  "sealed_note": "top block = current seal (v15); seal_history is append-only (v9 restored from the v9 top-block seal during the v10 hand-reseal)",
+  "sealed_note": "top block = current seal (v19); seal_history is append-only (v9 restored from the v9 top-block seal during the v10 hand-reseal)",
   "predictions": {
     "path": "docs/PREDICTIONS.md",
-    "sha256": "f1ec2c2233fbb9d85e1e0f0801dca426886213b042e15c78a58569bad2403099",
-    "mtime_ns": 1790639510758578316,
-    "mtime_s": "1790639510",
-    "size": 69012,
-    "v": 18,
-    "note": "A11 verdicts of record (P-A11a/b/c PASS, P-A11d FAIL-as-executed receipted as a stamp-witness artifact with every measured field matching, P-A11e FAIL: the production question answered NO -0.0825, envelope BREACHED; fresh-everywhere stays opt-in trial, the real lane must not set it, A12 priced)"
+    "sha256": "6eed0a1019b97ef2ffc8e1ab3020089e80eeb47534aebe0efcf4bd367524b90b",
+    "mtime_ns": 1790644121594657582,
+    "mtime_s": "1790644121",
+    "size": 80795,
+    "v": 19,
+    "note": "Addendum A12 (P-A12 fallback-aware everywhere, the A11-priced mechanism) registered pre-run: exact-ctx -> the A10 fresh payload (observed.has membership test, not a threshold), fallback -> the exact v1 law; zero new constants, one priced serve branch, A7>A12>A10>A9>A8>v1; gates P-A12a-d pre-registered (real-lane hit-identity 0 mismatches over 1418 + default pin 1378; shift-H2 >= 298/343 with ens2 242 pin; byte-safety of default/A10/precedence/paths + pins + escalate law + leakage + walk semantics; twin + predecessor regressions with the stamp-class strip the A11 audit taught)"
   },
   "design": {
     "path": "docs/DESIGN.md",
@@ -137,7 +137,14 @@
       "mtime_ns": 1790639510758578316,
       "size": 69012,
       "note": "A11 verdicts of record (P-A11a/b/c PASS; P-A11d literal-strip FAIL receipted as stamp-witness artifact, measured fields all match; P-A11e FAIL -0.0825 envelope BREACHED; mode stays opt-in trial, A12 priced)"
+    },
+    {
+      "v": 19,
+      "sha256": "6eed0a1019b97ef2ffc8e1ab3020089e80eeb47534aebe0efcf4bd367524b90b",
+      "mtime_ns": 1790644121594657582,
+      "size": 80795,
+      "note": "addendum A12 (P-A12 fallback-aware everywhere, the A11-priced mechanism: exact-ctx -> A10 fresh payload via the observed.has membership test, fallback -> exact v1 law; one priced serve branch, zero new constants) registered pre-run; A12 runs execute under v19"
     }
   ],
-  "seal_note": "top block = current seal (v18); seal_history is append-only (v9 restored from the v9 top-block seal during the v10 hand-reseal)"
+  "seal_note": "top block = current seal (v19); seal_history is append-only (v9 restored from the v9 top-block seal during the v10 hand-reseal)"
 }
