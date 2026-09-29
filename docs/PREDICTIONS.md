@@ -1246,3 +1246,120 @@ opt-in trial, and the divergence is receipted; if P-A12b fails (the shift
 gains do not hold at the class bound), the class bound was wrong — same
 law. In no case does the default law change, and no gate is edited after
 the run. An honest FAIL is a pin that moves (the A8/A11 precedent).
+
+### A12 verdicts of record (run 2026-09-28, seal v19; receipts/e_a12.jsonl tip ae294a28960f51fa)
+
+- **P-A12a PASS — the A11-priced production prediction CONFIRMED**: over the
+  1418-step real-lane walk (the registered A11 machinery), pooled
+  fallback-aware hits == pooled default hits — **1378/1418 == 1378/1418, 0
+  hit mismatches over the 1418 paired steps** (delta +0 = +0.0000); the
+  default arm reproduces the A11 run-of-record pin 1378 exactly; wire
+  byte-exactness: battery mismatches aw/def/ev/leak 0/0/0/0 over 1418 steps
+  x4 arms (references rebuilt from the RE-PARSED serialized live table);
+  channel byte-identity: 0 fallback-class violations vs the default bytes
+  (202 steps) and 0 exact-ctx-class violations vs the everywhere bytes
+  (1216 steps) — the branch IS the selector between the two shipped
+  expressions, verified byte-for-byte at every step; judged-carrying wire
+  sample 160 calls, 0 mismatches (default contrast 0).
+- **P-A12b PASS — the shift gains hold at the class bound, and BEAT the
+  pin**: grow-as-used shift-H2 battery, fallback-aware pooled **300/343 >=
+  298/343** (the registered class bound); everywhere 298/343 (pin
+  reproduced) and ens2 242/343 (pinned receipt) both reproduce. The class
+  decomposition CLOSES the A10 protection-loss question: everywhere-vs-
+  default flips = gains {exact_ctx 64, fallback 0} / losses {exact_ctx 6,
+  fallback 2} — ZERO gains sat on fallback rows (the A10 class receipt
+  confirmed verbatim), and 2 of the 8 protection losses sat on FALLBACK
+  rows, which the fallback-aware law converts to default answers: 300 =
+  298 + 2. Per-ledger fallback-aware 60/67, 73/83, 66/83, 101/110.
+- **P-A12c PASS — everything shipped stays byte-identical**: with the A12
+  flag ABSENT, all 1418 walk default responses + all 602 battery default
+  responses byte-identical to the v1 reference (0 mismatches); A10-only
+  mode: all 602 battery responses byte-identical to the everywhere
+  reference (0 mismatches — the new branch does not perturb the shipped
+  mode); precedence: artifacts setting BOTH A12+A10 and BOTH A12+A9 flags
+  serve the A12 law on all 602 battery calls each (1204 checked, 0 bad —
+  A12 > A10 > A9 as registered); opt-in path equality 32/0 bad; eval pins
+  through the A12 driver: everywhere micro 938224 == the A9 receipt pin,
+  ens2 micro 953668 == the P-W2b pin, flips -6/+2; escalate law 0
+  violations on every call; leakage probe 0 violations over 1418 steps;
+  walk semantics exact: serialization byte-determinism 0 bad (double
+  serialization at every step), incremental == prefix re-grow 0/95 bad,
+  final continuity 16/16.
+- **P-A12d PASS — house bindings**: weave-core-v2 twin IDENTICAL (9960B ==
+  9960B); artifact pinned to the e_w2 receipt
+  (1bbc4fa7cc7a69726db28378507dafad9679d391ff9555bee98d110fe5902519);
+  Python --fresh H1 midpoint tables on the REAL ledgers byte-equal the JS
+  walk tables 16/16; smoke 9/9; selftest green; the e_a11 predecessor
+  regression under the A12 seal: P-A11's verdict of record STANDS (FAIL —
+  the honest FAIL is not erased by its repair), P-A11a/b/c PASS
+  components reproduce, and every MEASURED byte of receipts/e_a11.jsonl +
+  receipts/e_a10.jsonl + both summaries reproduces after the STAMP-CLASS
+  strip (top-level seal_v + chain row_hashes + nested *_regression
+  .seal_stamps — the exact stamp class the P-A11d audit enumerated, carved
+  BEFORE the run: the P-A11d literal-strip lesson executed as registered);
+  committed receipts of record restored byte-for-byte.
+
+Verdict of record: **P-A12 PASS (4/4)** — the honest FAIL of A11 priced a
+mechanism, the mechanism registered, and the mechanism delivered exactly
+the priced prediction: hit-identical to the v1 default on the real lane
+(0 flips over 1418), shift gains preserved and improved (300 >= 298),
+zero perturbation of any shipped law, zero new constants.
+
+Mechanism receipts (the science of the PASS):
+
+1. **THE DAMAGE CHANNEL IS GONE**: A11's everywhere-live scored
+   1261/1418 (reproduced exactly in-run as the byte-safety reference arm) —
+   the fallback-aware law scores 1378/1418, byte-identical to the default
+   on ALL 202 fallback steps. The −0.0825 production cost A11 measured
+   exists ONLY in the prefix-marginal fallback, and A12 never serves it.
+2. **SHIFT IMPROVEMENT, MECHANISM VISIBLE**: 300 vs everywhere's 298 —
+   the +2 is exactly the 2 fallback-class protection losses converted to
+   default answers; the fresh channel keeps every one of its 64
+   exact-ctx-class gains (64 exact-ctx gains / 0 fallback gains, 6
+   exact-ctx / 2 fallback losses — the A10 interleave story closes with
+   the losses classified too).
+3. **SATURATED RISK ELIMINATED ON EVAL**: fallback-aware eval slice
+   247/259 == the ens2 pin (953668 class) vs everywhere 243/259 (938224):
+   the A9/A10 priced cost of −0.0154 (archived memory damaging new soil)
+   is also entirely a FALLBACK-class phenomenon on this slice (exact-ctx
+   240/249, fallback 7/10). The fallback-aware law dominates plain
+   everywhere on BOTH non-production soils measured (eval +4, shift +2)
+   at ZERO real-lane cost.
+4. **ESCALATE LOAD COLLAPSES (recorded, not executed)**: fallback-aware
+   escalates 128/1418 = 9.03% vs everywhere's 297/1418 = 20.9% (default
+   32/1418 = 2.3%) — the A11 9x teacher-load signal drops to ~4x, exactly
+   as the channel law predicts (fallback steps escalate exactly as the
+   default, exact-ctx steps exactly as everywhere). The remaining load is
+   the A9 escalation organ operating on memorized-but-uncertain windows;
+   receipted as the priced open question (an A13 candidate: whether the
+   exact-ctx escalate signal carries teacher value on the real lane).
+5. **THE SOIL-LEVEL SELECTOR LAW, NOW FULLY FACTORED**: freshness value is
+   a property of the WORLD (A6), and the A12 law is the first serve mode
+   that harvests it with zero new constants — the per-step selector is the
+   A11 membership classification (has the lane's own memory seen this
+   exact window), not a threshold, so no H* calibration question can
+   arise: on the train-only soils the objective would be flat exactly as
+   A10 proved, because the selector is not a number.
+
+Registered next-step pricing (from the A12 receipts, NOT pre-approved):
+A13 candidate — the exact-ctx escalate signal (128 real-lane judgments,
+9.03%): teacher-value trial on the escalation organ, RECORDED-only here;
+and the composition question — whether a shift-soil lane's registered
+hardness declaration should default its opt-in to fallback-aware rather
+than plain everywhere (A10's risk line: everywhere pays the 11 A9-open
+eval rows -0.0154; fallback-aware pays 0 — the pricing says the
+composition strictly dominates, but it is a NEW default question and
+needs its own registration).
+
+> Provenance note (seal v20, append-only): the A12 verdict of record was
+> determined by the FIRST official run, executed under seal v19
+> immediately after the registration commit 7109ea8 (receipt tip
+> ae294a28960f51fa, "seal verified (v19)" in the run log). There were NO
+> shakedown runs: the first execution of the runner was the run of
+> record. The committed receipts/e_a12.jsonl is the v20 re-run executed
+> under this seal; its measured bytes are identical to the v19 run of
+> record except the stamp-class fields (top-level seal_v and the chain
+> row_hashes that witness them — verified in-run before commit). The
+> e_a10/e_a11 receipts of record and summaries were restored
+> byte-for-byte by the runner itself after the in-run predecessor
+> regressions (restored=true receipted in row 1).

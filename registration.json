@@ -1,15 +1,15 @@
 {
   "charter": "jev-garden pre-registration seal",
   "sealed_at_iso": "2026-09-28T07:24:39Z",
-  "sealed_note": "top block = current seal (v19); seal_history is append-only (v9 restored from the v9 top-block seal during the v10 hand-reseal)",
+  "sealed_note": "top block = current seal (v20); seal_history is append-only (v9 restored from the v9 top-block seal during the v10 hand-reseal)",
   "predictions": {
     "path": "docs/PREDICTIONS.md",
-    "sha256": "6eed0a1019b97ef2ffc8e1ab3020089e80eeb47534aebe0efcf4bd367524b90b",
-    "mtime_ns": 1790644121594657582,
-    "mtime_s": "1790644121",
-    "size": 80795,
-    "v": 19,
-    "note": "Addendum A12 (P-A12 fallback-aware everywhere, the A11-priced mechanism) registered pre-run: exact-ctx -> the A10 fresh payload (observed.has membership test, not a threshold), fallback -> the exact v1 law; zero new constants, one priced serve branch, A7>A12>A10>A9>A8>v1; gates P-A12a-d pre-registered (real-lane hit-identity 0 mismatches over 1418 + default pin 1378; shift-H2 >= 298/343 with ens2 242 pin; byte-safety of default/A10/precedence/paths + pins + escalate law + leakage + walk semantics; twin + predecessor regressions with the stamp-class strip the A11 audit taught)"
+    "sha256": "cb99be9f2ba15406349043d2a0a33e9e224f458e1960b6ba8ae57bd63c64129a",
+    "mtime_ns": 1790644767263324934,
+    "mtime_s": "1790644767",
+    "size": 88402,
+    "v": 20,
+    "note": "A12 verdicts of record (P-A12 PASS 4/4: real-lane hit-identity 1378/1418 == default 1378/1418, 0 mismatches over the 1418 paired steps; shift-H2 300/343 >= the 298 class bound - BEATS everywhere 298 by exactly the 2 fallback-class protection losses converted; byte-safety 0 mismatches everywhere incl. 1204 precedence calls; twin + midpoint twins + e_a11 regression with the stamp-class strip, receipts of record restored; escalate load 9.03% vs everywhere 20.9%; the fallback-aware mode ships opt-in, the served default stays the v1 law, A13 priced)"
   },
   "design": {
     "path": "docs/DESIGN.md",
@@ -144,7 +144,14 @@
       "mtime_ns": 1790644121594657582,
       "size": 80795,
       "note": "addendum A12 (P-A12 fallback-aware everywhere, the A11-priced mechanism: exact-ctx -> A10 fresh payload via the observed.has membership test, fallback -> exact v1 law; one priced serve branch, zero new constants) registered pre-run; A12 runs execute under v19"
+    },
+    {
+      "v": 20,
+      "sha256": "cb99be9f2ba15406349043d2a0a33e9e224f458e1960b6ba8ae57bd63c64129a",
+      "mtime_ns": 1790644767263324934,
+      "size": 88402,
+      "note": "A12 verdicts of record (P-A12 PASS 4/4: real-lane hit-identity 0 mismatches over 1418 paired steps at 1378/1418 == ens2; shift-H2 300/343 beats the everywhere pin 298 by exactly the 2 fallback-class protection losses converted; byte-safety 0 mismatches incl. 1204 precedence calls; twin + e_a11 regression stamp-strip clean, receipts restored; escalate 9.03% vs 20.9%; mode ships opt-in, default stays v1, A13 priced)"
     }
   ],
-  "seal_note": "top block = current seal (v19); seal_history is append-only (v9 restored from the v9 top-block seal during the v10 hand-reseal)"
+  "seal_note": "top block = current seal (v20); seal_history is append-only (v9 restored from the v9 top-block seal during the v10 hand-reseal)"
 }
