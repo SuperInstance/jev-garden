@@ -1,15 +1,15 @@
 {
   "charter": "jev-garden pre-registration seal",
   "sealed_at_iso": "2026-09-28T07:24:39Z",
-  "sealed_note": "top block = current seal (v21); seal_history is append-only (v9 restored from the v9 top-block seal during the v10 hand-reseal)",
+  "sealed_note": "top block = current seal (v22); seal_history is append-only (v9 restored from the v9 top-block seal during the v10 hand-reseal)",
   "predictions": {
     "path": "docs/PREDICTIONS.md",
-    "sha256": "e65c19b080b5c4ee0078111c7ce2c0d921ad85ef4dc1aaceea9fefda873232be",
-    "mtime_ns": 1790654537586719285,
-    "mtime_s": "1790654537",
-    "size": 102442,
-    "v": 21,
-    "note": "addendum A13 (P-A13: the escalation organ under a pre-registered budget cap - the M10+M4 budget-cap header experiment, the wave-60 queue item 4 adoption hook; nearest_prior M4 with the governance-vs-executed delta; own spend cap $0.00/0 calls/0 tokens; cap B=32 = the shipped default's own real-lane escalate load of record, pricing note registered; organ gates spend AUTHORITY never the served expression; grant law arrival order; teacher channel out of scope) registered pre-run; A13 runs execute under v21"
+    "sha256": "2be7eba5c7f5fdcc9b2c0140001d4eed08757012364448dcf0303db4f425b719",
+    "mtime_ns": 1790656778023190811,
+    "mtime_s": "1790656778",
+    "size": 109161,
+    "v": 22,
+    "note": "A13 verdicts of record (P-A13 PASS 4/4: the cap BINDS - exactly 32 granted / 96 refused from the 128 A12-record signals, refusals honest with reason budget_exhausted, granted set = first 32 in arrival order, counters exact; zero degradation - capped == uncapped == default == 1378/1418, all byte mismatches 0 incl. references, leakage, wire sample 160, path-eq 32/0, the serve.mjs edit changed no served byte; M10 cost rule need-side holds - mean top.p granted 0.425716 <= refused 0.428008, medians receipted as honest contrast, class mix perfectly proportional 24:8 == 72:24; twin 9960B, midpoint twins 16/16, smoke 9/9, selftest green, e_a12 regression verdict-of-record stands with measured bytes identical after the stamp strip; organ spend 32/1418 = 2.3% == the shipped default's own load of record; registration's own M4 spend cap: $0.00/0 calls/0 tokens, not approached; receipt of record: committed receipt = the v22 re-run tip 8feac72e248b7c3f, measured bytes == the v21 run-of-record tip d46a0a1c711f1dd1 modulo the registered stamp class, receipt file sha256 95c937cc reproduced byte-identically across two independent v22 executions - this reseal adds the receipt-of-record provenance note only, zero gates/constants touched)"
   },
   "design": {
     "path": "docs/DESIGN.md",
@@ -158,7 +158,14 @@
       "mtime_ns": 1790654537586719285,
       "size": 102442,
       "note": "addendum A13 (P-A13: the escalation organ under a pre-registered budget cap - the M10+M4 budget-cap header experiment; nearest_prior M4 + delta; cap B=32 priced from the A12 receipt; src/serve.mjs: ONE flag load + ONE organ export, judge() untouched) registered pre-run; A13 runs execute under v21"
+    },
+    {
+      "v": 22,
+      "sha256": "2be7eba5c7f5fdcc9b2c0140001d4eed08757012364448dcf0303db4f425b719",
+      "mtime_ns": 1790656778023190811,
+      "size": 109161,
+      "note": "A13 verdicts of record (P-A13 PASS 4/4: the cap binds 32/96 of 128; zero degradation 1378/1378/1378 with 0 byte mismatches; M10 need-side granted 0.425716 <= refused 0.428008; house bindings green incl. e_a12 regression stamp-strip; run of record under v21, first-completed execution, infra-kill provenance receipted; committed receipt = the v22 re-run tip 8feac72e248b7c3f, measured bytes == v21 run of record modulo the registered stamp class, reproduced byte-identically across two independent v22 executions)"
     }
   ],
-  "seal_note": "top block = current seal (v21); seal_history is append-only (v9 restored from the v9 top-block seal during the v10 hand-reseal)"
+  "seal_note": "top block = current seal (v22); seal_history is append-only (v9 restored from the v9 top-block seal during the v10 hand-reseal)"
 }
