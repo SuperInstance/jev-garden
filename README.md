@@ -112,3 +112,32 @@ serve → escalate to the teacher (usage receipted) → grow.
 Queued: P-G2d (hard-world variant — memory-priors should pay where the
 head is weak), rhizome sense-table in weaves (weave-2), codespace
 idle-compile lane.
+
+---------------
+
+## Documentation (wave-69 doc package)
+
+Route by audience — all seven files live in `docs/` and were written against
+this tree (every command verified by execution during wave-69):
+
+- **New agent, zero context** → [docs/ONBOARDING.md](docs/ONBOARDING.md) —
+  identity, verified commands (incl. what needs credentials), reading order,
+  gotchas (seal gate, stale e_g5, broken CI trigger), open frontier.
+- **End user of the capability** → [docs/USER-GUIDE.md](docs/USER-GUIDE.md) —
+  install, first success (the bake-off), everyday tasks (serve, weave,
+  verify seals, twin check, escalation), troubleshooting table, FAQ.
+- **Developer extending the code** →
+  [docs/DEVELOPER-GUIDE.md](docs/DEVELOPER-GUIDE.md) — code layout, core
+  concepts (rhizome / vessel heads / weave / promotion gate / seal
+  discipline / A-line serve laws), how to extend (prediction, substrate,
+  serve mode, escalation), testing, conventions, editor gotchas.
+- **Engineer operating/reviewing** →
+  [docs/ENGINEERING-NOTES.md](docs/ENGINEERING-NOTES.md) — architecture
+  diagram, invariants, failure modes & blast radius, measured cost envelope,
+  operations & credentials model, design decisions.
+- **Executive deciding investment** → [docs/CTO-BRIEF.md](docs/CTO-BRIEF.md) —
+  value, maturity with evidence, risks/mitigations, cost, strategic options.
+- **Index of all deeper knowledge** →
+  [docs/KNOWLEDGE-MAP.md](docs/KNOWLEDGE-MAP.md) — in-repo clusters,
+  pre-existing docs, fleet relationships, journal Task IDs (50, 58-a, 61-a,
+  61, 63-f, 66-b), receipts of record, search recipes.
